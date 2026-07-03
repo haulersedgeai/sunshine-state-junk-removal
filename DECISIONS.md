@@ -47,9 +47,10 @@ Autonomous decisions made during this rebuild. All small enough to fit the brief
 ## Legal pages
 - `/terms-and-condition/` and `/privacy-policy/` written as clean, standard, service-business templates and clearly labeled `TODO(client): confirm and, if needed, replace this template with your reviewed legal copy.`
 
-## Two flagged data conflicts (surfaced, not silently chosen)
-1. **Hours (`site.json > hours`)** — defaulted to **Open 24/7** to match Google Business Profile and the after-hours evidence in the reviews. The old website's Mon–Sat 7am–8pm hours are NOT used anywhere. Please confirm before launch.
-2. **Public street address (`site.json > address`)** — treating the business as a **Service Area Business**: the street address (`3700 NW 104th Ave, Coral Springs, FL 33065`) is **included in LocalBusiness JSON-LD** so it matches GBP, but is **NOT displayed publicly in the footer**. Please confirm this is what you want, or tell us to display it.
+## Previously flagged data conflicts — both now resolved
+1. **Hours (`site.json > hours`)** — **CONFIRMED: Open 24/7.** Matches Google Business Profile and the after-hours evidence in the reviews. The old website's Mon–Sat 7am–8pm hours are not used anywhere on the site or in schema.
+2. **Public street address (`site.json > address`)** — **CONFIRMED: display the full address publicly.** The site now shows **3700 NW 104th Ave, Coral Springs, FL 33065** in the footer NAP block and on the Contact page, matching the Google Business Profile.
+   - The exact same string is emitted by the LocalBusiness JSON-LD, the footer, the Contact page, and `/llms.txt`. All four are built from `site.json > address` via a single `formattedAddress` helper (`src/data/index.ts`), so any future change to the address updates everywhere at once and keeps NAP byte-for-byte consistent.
 
 ## Not built (out of scope for v1)
 - A CMS layer. Structured so it can be added later without rewriting page components.

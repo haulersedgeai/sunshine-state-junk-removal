@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getSite } from '@/data';
+import { getSite, formattedAddress } from '@/data';
 import { PhoneIcon, MessageIcon, MailIcon, ClockIcon, MapPinIcon } from './Icon';
 
 const footerNav = [
@@ -61,9 +61,13 @@ export function Footer() {
             <p className="inline-flex items-center gap-2 text-white/70">
               <ClockIcon className="h-4 w-4" /> {site.hours.display}
             </p>
-            <p className="inline-flex items-center gap-2 text-white/70">
-              <MapPinIcon className="h-4 w-4" /> Serving {site.primaryCounty}, FL
-            </p>
+            <address className="not-italic inline-flex items-start gap-2 text-white/70">
+              <MapPinIcon className="h-4 w-4 mt-0.5 shrink-0" />
+              <span>
+                {formattedAddress}
+                <span className="block text-white/50 text-xs mt-0.5">Serving {site.primaryCounty}, FL &amp; nearby</span>
+              </span>
+            </address>
           </div>
           <div className="mt-5 flex gap-3 text-xs">
             <a href={site.socials.google} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-sun-300 no-underline">Google</a>

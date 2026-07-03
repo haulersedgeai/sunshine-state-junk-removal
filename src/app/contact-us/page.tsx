@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getSite } from '@/data';
+import { getSite, formattedAddress } from '@/data';
 import { pageMetadata } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -60,8 +60,9 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <MapPinIcon className="h-4 w-4 mt-0.5 text-navy-700" />
                   <div>
-                    <p className="m-0 font-semibold text-navy-900">Service area</p>
-                    <p className="m-0 text-ink-soft">Broward County, FL — plus select Miami-Dade & Palm Beach service.</p>
+                    <p className="m-0 font-semibold text-navy-900">Address</p>
+                    <address className="not-italic m-0 text-ink-soft">{formattedAddress}</address>
+                    <p className="m-0 text-ink-soft mt-1">Serving Broward County, FL — plus select Miami-Dade &amp; Palm Beach.</p>
                     <Link href="/service-areas/" className="text-sm font-semibold text-navy-800 hover:text-sun-600 no-underline">See all cities →</Link>
                   </div>
                 </div>

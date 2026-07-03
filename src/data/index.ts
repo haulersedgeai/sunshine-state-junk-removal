@@ -32,6 +32,14 @@ export const absoluteUrl = (path: string) => {
 
 export const imageUrl = (localFilename: string) => `/images/${localFilename}`;
 
+// Single source of truth for the visible NAP address string.
+// This is built from the same site.json fields the LocalBusiness schema uses,
+// so the visible address and the schema's PostalAddress are always identical.
+export const formattedAddress = (() => {
+  const a = (site as Site).address;
+  return `${a.street}, ${a.city}, ${a.state} ${a.zip}`;
+})();
+
 export const findImage = (localFilename: string) => {
   const all = [
     ...(images.brand || []),
