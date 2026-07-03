@@ -3,18 +3,15 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { getSite } from '@/data';
-import { PhoneIcon, MessageIcon, MenuIcon, XIcon } from './Icon';
+import { PhoneIcon, MenuIcon, XIcon, MessageIcon } from './Icon';
 import { Wordmark } from './Wordmark';
 
 const nav = [
-  { label: 'Home', href: '/' },
   { label: 'About', href: '/about-us/' },
-  { label: 'What We Take', href: '/what-we-take/' },
+  { label: 'Junk Removal', href: '/what-we-take/' },
   { label: 'Dumpster Rentals', href: '/dumpster-rentals/' },
   { label: 'Pricing', href: '/pricing/' },
   { label: 'Service Areas', href: '/service-areas/' },
-  { label: 'FAQs', href: '/faqs/' },
-  { label: 'Contact', href: '/contact-us/' },
 ];
 
 export function Header() {
@@ -51,19 +48,20 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <a
-            href={`sms:${site.sms}`}
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-navy-50 px-4 py-2 text-sm font-semibold text-navy-900 no-underline hover:bg-navy-100"
-          >
-            <MessageIcon className="h-4 w-4" /> Text a photo
-          </a>
+        <div className="flex items-center gap-3 sm:gap-4">
           <a
             href={`tel:${site.phone}`}
+            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 no-underline hover:text-sun-600"
+          >
+            <PhoneIcon className="h-4 w-4" />
+            {site.phoneDisplay}
+          </a>
+          <Link
+            href="/contact-us/"
             className="inline-flex items-center gap-2 rounded-full bg-sun-500 px-4 py-2 text-sm font-semibold text-navy-900 no-underline shadow-cta hover:bg-sun-400"
           >
-            <PhoneIcon className="h-4 w-4" /> <span className="hidden xs:inline">Call</span> {site.phoneDisplay}
-          </a>
+            Get a Quote
+          </Link>
           <button
             className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-navy-900 hover:bg-navy-50"
             onClick={() => setOpen(true)}
@@ -99,6 +97,20 @@ export function Header() {
                   {n.label}
                 </Link>
               ))}
+              <Link
+                href="/faqs/"
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 text-navy-900 no-underline font-medium hover:bg-navy-50"
+              >
+                FAQs
+              </Link>
+              <Link
+                href="/contact-us/"
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 text-navy-900 no-underline font-medium hover:bg-navy-50"
+              >
+                Contact
+              </Link>
             </nav>
             <div className="mt-auto flex flex-col gap-2 pt-6">
               <a href={`tel:${site.phone}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-sun-500 px-4 py-3 text-sm font-semibold text-navy-900 no-underline">
@@ -107,6 +119,9 @@ export function Header() {
               <a href={`sms:${site.sms}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 px-4 py-3 text-sm font-semibold text-white no-underline">
                 <MessageIcon className="h-4 w-4" /> Text a photo
               </a>
+              <Link href="/contact-us/" onClick={() => setOpen(false)} className="inline-flex items-center justify-center gap-2 rounded-full bg-white ring-1 ring-navy-200 px-4 py-3 text-sm font-semibold text-navy-900 no-underline">
+                Get a Quote
+              </Link>
             </div>
           </div>
         </div>

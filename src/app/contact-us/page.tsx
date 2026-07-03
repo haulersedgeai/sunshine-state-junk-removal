@@ -5,6 +5,7 @@ import { pageMetadata } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { QuoteForm } from '@/components/QuoteForm';
+import { HousecallProButton } from '@/components/HousecallProButton';
 import { ServiceMapLoader } from '@/components/ServiceMapLoader';
 import { Button } from '@/components/Button';
 import { PhoneIcon, MessageIcon, MailIcon, ClockIcon, MapPinIcon, StarIcon } from '@/components/Icon';
@@ -32,7 +33,19 @@ export default function ContactPage() {
           />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
-            <QuoteForm />
+            <div className="space-y-6">
+              <QuoteForm />
+
+              <div className="rounded-2xl bg-sky-soft/70 ring-1 ring-navy-100 p-6 sm:p-7">
+                <h2 className="m-0 text-lg text-navy-900">Already know what you need? Book online.</h2>
+                <p className="mt-2 text-ink-soft text-sm">
+                  If you’ve done this before, you can request service directly through our Housecall Pro portal.
+                </p>
+                <div className="mt-4">
+                  <HousecallProButton />
+                </div>
+              </div>
+            </div>
 
             <aside className="space-y-4">
               <div className="rounded-2xl bg-navy-900 text-white p-6">
