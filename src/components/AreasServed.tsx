@@ -41,7 +41,7 @@ export function AreasServed({ highlight }: { highlight?: string }) {
       <div>
         <h3 className="text-navy-900 m-0">Broward County</h3>
         <p className="mt-2 text-ink-soft text-sm">
-          Our primary service area — same-day availability across the county. <span className="text-navy-900 font-semibold">Underlined pills have dedicated pages.</span>
+          Our primary service area — same-day availability across the county. <span className="text-navy-900 font-semibold">Cities with an arrow → have their own page.</span>
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {areas.browardCounty.map((c) => <CityChip key={c} city={c} />)}
