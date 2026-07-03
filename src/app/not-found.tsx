@@ -11,7 +11,7 @@ export default function NotFound() {
         <p className="eyebrow">404</p>
         <h1 className="mt-2">This page took a little vacation.</h1>
         <p className="mt-5 text-lg text-ink-soft">
-          We couldn&apos;t find what you were looking for — but we can still help. Head back home, or reach out and we&apos;ll take care of you.
+          We couldn't find what you were looking for — but we can still help. Head back home, or reach out and we'll take care of you.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button href="/" size="lg" variant="primary">Back to home</Button>

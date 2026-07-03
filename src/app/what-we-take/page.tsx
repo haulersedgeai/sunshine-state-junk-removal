@@ -56,7 +56,7 @@ export default function WhatWeTakePage() {
             <p className="eyebrow">What we take</p>
             <h1 className="mt-2">From single items to full property cleanouts — we take it all.</h1>
             <p className="speakable-answer mt-5 text-lg text-ink-soft max-w-xl">
-              We handle a wide range of residential, commercial, renovation, and cleanout items across Broward County. If it&apos;s taking up space, there&apos;s a good chance we can help. When in doubt, text a photo.
+              We handle a wide range of residential, commercial, renovation, and cleanout items across Broward County. If it's taking up space, there's a good chance we can help. When in doubt, text a photo.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`sms:${site.sms}`} size="lg" variant="primary"><MessageIcon className="h-4 w-4" /> Text a photo</Button>
@@ -90,7 +90,7 @@ export default function WhatWeTakePage() {
               <Image src="/images/bed-bug.png" alt="" width={44} height={44} />
               <h3 className="m-0 text-navy-900">A few things to be aware of</h3>
             </div>
-            <p className="mt-3 text-ink-soft">Some items need extra planning. We&apos;ll always walk through this before starting work, so nothing is a surprise:</p>
+            <p className="mt-3 text-ink-soft">Some items need extra planning. We'll always walk through this before starting work, so nothing is a surprise:</p>
             <ul className="mt-4 space-y-2">
               {site.specialHandling.map((s) => (
                 <li key={s} className="flex items-start gap-2 text-ink-soft"><CheckIcon className="h-4 w-4 text-sun-600 mt-1 shrink-0" /> {s}</li>
@@ -98,8 +98,8 @@ export default function WhatWeTakePage() {
             </ul>
           </div>
           <div className="rounded-2xl bg-navy-900 text-white p-8">
-            <h3 className="m-0 text-white">Items we don&apos;t accept</h3>
-            <p className="mt-3 text-white/80">For safety and disposal reasons, we can&apos;t take hazardous or restricted materials:</p>
+            <h3 className="m-0 text-white">Items we don't accept</h3>
+            <p className="mt-3 text-white/80">For safety and disposal reasons, we can't take hazardous or restricted materials:</p>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {site.doNotAccept.map((s) => (
                 <li key={s} className="text-white/90 text-sm flex items-start gap-2">
@@ -107,7 +107,7 @@ export default function WhatWeTakePage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-white/70 text-sm">Not sure about an item? Text us a photo and we&apos;ll let you know before booking.</p>
+            <p className="mt-4 text-white/70 text-sm">Not sure about an item? Text us a photo and we'll let you know before booking.</p>
           </div>
         </div>
       </section>

@@ -62,9 +62,9 @@ export default function AboutPage() {
           <div>
             <SectionHeading eyebrow="Our story" title="Why we started Sunshine State Junk Removal." />
             <div className="prose-basic mt-6">
-              <p>We built {site.shortName} because too many Florida homeowners were tired of the runaround — vague pricing, no-shows, and rotating crews who didn&apos;t care about the details. As a veteran-led, family-run team, we wanted to do the opposite: pick up the phone, communicate clearly, show up when we say, and leave a space cleaner than we found it.</p>
+              <p>We built {site.shortName} because too many Florida homeowners were tired of the runaround — vague pricing, no-shows, and rotating crews who didn't care about the details. As a veteran-led, family-run team, we wanted to do the opposite: pick up the phone, communicate clearly, show up when we say, and leave a space cleaner than we found it.</p>
               <p>Cesar served in the U.S. military and brought that same discipline and follow-through into the business. His wife Lynzee runs operations and keeps every job on track. What started as a small hauling operation has grown into a highly-rated, full-service junk removal & dump-trailer rental company across {site.primaryCounty}.</p>
-              <p>Today we&apos;re proud to hold a <strong>5.0 rating across 159+ Google reviews</strong>, plus a steady stream of repeat business from realtors, property managers, contractors, and homeowners who&apos;ve made us their go-to.</p>
+              <p>Today we're proud to hold a <strong>5.0 rating across 159+ Google reviews</strong>, plus a steady stream of repeat business from realtors, property managers, contractors, and homeowners who've made us their go-to.</p>
             </div>
           </div>
           <div>

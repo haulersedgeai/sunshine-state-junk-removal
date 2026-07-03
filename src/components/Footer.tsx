@@ -65,7 +65,7 @@ export function Footer() {
               <MapPinIcon className="h-4 w-4 mt-0.5 shrink-0" />
               <span>
                 {formattedAddress}
-                <span className="block text-white/50 text-xs mt-0.5">Serving {site.primaryCounty}, FL &amp; nearby</span>
+                <span className="block text-white/50 text-xs mt-0.5">Serving {site.primaryCounty}, FL & nearby</span>
               </span>
             </address>
           </div>

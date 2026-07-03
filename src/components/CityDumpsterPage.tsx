@@ -18,11 +18,11 @@ export function CityDumpsterPage({ content }: { content: CityContent }) {
   const useReviews = cityReviews.length >= 3 ? cityReviews : [...cityReviews, ...reviews.filter((r) => !r.city)].slice(0, 9);
 
   const localFaqs = [
-    { q: `How do dump trailer rentals work in ${content.city}?`, a: `We drop the trailer at your driveway, you load it at your pace over the rental window, and we haul it away when you&rsquo;re done. Pricing is transparent and includes disposal.` },
-    { q: `What size dump trailer do I need for a ${content.city} project?`, a: `Most homeowners aren&rsquo;t sure — that&rsquo;s okay. Tell us the project (kitchen remodel, garage cleanout, roofing, yard debris, etc.) and we&rsquo;ll recommend the right size so you&rsquo;re not overpaying or running out of space.` },
+    { q: `How do dump trailer rentals work in ${content.city}?`, a: `We drop the trailer at your driveway, you load it at your pace over the rental window, and we haul it away when you’re done. Pricing is transparent and includes disposal.` },
+    { q: `What size dump trailer do I need for a ${content.city} project?`, a: `Most homeowners aren’t sure — that’s okay. Tell us the project (kitchen remodel, garage cleanout, roofing, yard debris, etc.) and we’ll recommend the right size so you’re not overpaying or running out of space.` },
     { q: `Are your dump trailers safe for driveways in ${content.city}?`, a: `Yes. Our trailers are designed to be driveway-safe, and we place them carefully — especially on pavers, tile driveways, and coated surfaces common in ${content.city}.` },
-    { q: `How fast can you deliver a dump trailer in ${content.city}?`, a: `Same-day and next-day deliveries are common in ${content.city}. Confirm your address and the drop location and we&rsquo;ll book the earliest window available.` },
-    { q: `What can I put in the dump trailer?`, a: `Household clutter, renovation debris, furniture, yard waste, and most bulky items. We can&rsquo;t take hazardous materials (chemicals, paints, propane tanks, oil, batteries, pesticides, asbestos, biohazards). Ask if you&rsquo;re unsure.` },
+    { q: `How fast can you deliver a dump trailer in ${content.city}?`, a: `Same-day and next-day deliveries are common in ${content.city}. Confirm your address and the drop location and we’ll book the earliest window available.` },
+    { q: `What can I put in the dump trailer?`, a: `Household clutter, renovation debris, furniture, yard waste, and most bulky items. We can’t take hazardous materials (chemicals, paints, propane tanks, oil, batteries, pesticides, asbestos, biohazards). Ask if you’re unsure.` },
     { q: `How is dump trailer rental priced?`, a: `Pricing depends on trailer size, rental duration, and project type. Everything is clearly quoted up front — no confusion, no hidden fees.` },
   ];
 
@@ -107,7 +107,7 @@ export function CityDumpsterPage({ content }: { content: CityContent }) {
             <SectionHeading eyebrow="Why locals rent from us" title={`Made for ${content.city} projects.`} />
             <div className="mt-6 space-y-4 text-ink-soft">
               <p>{content.serviceFocus}</p>
-              <p>We&rsquo;ve delivered trailers to {content.neighborhoods.slice(0, 3).join(', ')} and beyond. That local familiarity means fewer surprises on delivery day.</p>
+              <p>We’ve delivered trailers to {content.neighborhoods.slice(0, 3).join(', ')} and beyond. That local familiarity means fewer surprises on delivery day.</p>
               <ul className="mt-4 space-y-2 text-sm">
                 {[
                   'Driveway-safe equipment — protects pavers, tile, and coated surfaces',
@@ -145,8 +145,8 @@ export function CityDumpsterPage({ content }: { content: CityContent }) {
           <div>
             <SectionHeading eyebrow="Sizing help" title="Not sure what you need? Just ask." />
             <div className="mt-6 space-y-4 text-ink-soft">
-              <p>Guessing dump trailer size is the fastest way to overspend or come up short. We ask a few questions about your project — what you&rsquo;re removing, how many rooms or square feet, whether it&rsquo;s dense (dirt, tile) or bulky (furniture, drywall) — and recommend the right size the first time.</p>
-              <p>All rentals include labor-free drop-off, disposal at approved facilities, and clear pricing so you&rsquo;re not blindsided.</p>
+              <p>Guessing dump trailer size is the fastest way to overspend or come up short. We ask a few questions about your project — what you’re removing, how many rooms or square feet, whether it’s dense (dirt, tile) or bulky (furniture, drywall) — and recommend the right size the first time.</p>
+              <p>All rentals include labor-free drop-off, disposal at approved facilities, and clear pricing so you’re not blindsided.</p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <Button href="/pricing/" variant="secondary">See pricing details</Button>
                 <Button href={`tel:${site.phone}`} variant="outline"><PhoneIcon className="h-4 w-4" /> Talk to us</Button>

@@ -33,7 +33,7 @@ export const serviceCityContent: Record<string, CityContent> = {
     closer:
       "Whether you're clearing out a Weston Hills garage before a move, staging a home for sale in Savanna, or wrapping a Bonaventure kitchen remodel, we'll move fast, keep things clean, and give you a fair price up front.",
     faqExtra: [
-      { q: 'Can you work around a Weston HOA?', a: 'Yes — most of our Weston jobs involve gated communities and HOAs. Let us know the requirements when you book and we&rsquo;ll plan trailer placement, delivery timing, and cleanup accordingly.' },
+      { q: 'Can you work around a Weston HOA?', a: 'Yes — most of our Weston jobs involve gated communities and HOAs. Let us know the requirements when you book and we’ll plan trailer placement, delivery timing, and cleanup accordingly.' },
     ],
   },
   '/coral-springs-florida/': {
@@ -59,7 +59,7 @@ export const serviceCityContent: Record<string, CityContent> = {
     landmarks: ['Cooper City Sports Complex', 'Flamingo Road corridor'],
     nearby: ['Davie', 'Pembroke Pines', 'Southwest Ranches'],
     intro:
-      'Cooper City has some of the most well-kept homes in Broward, and our job is to make cleanup feel just as tidy. Whether it&rsquo;s an Embassy Lakes garage overhaul or a Rock Creek estate cleanout, we work fast and leave things spotless.',
+      'Cooper City has some of the most well-kept homes in Broward, and our job is to make cleanup feel just as tidy. Whether it’s an Embassy Lakes garage overhaul or a Rock Creek estate cleanout, we work fast and leave things spotless.',
     vibe: 'quiet, upscale suburban',
     serviceFocus:
       'Homeowner remodels, estate cleanouts, and yard debris from big lots are the majority of what we haul from Cooper City. HOA-friendly trailer placement is standard.',
@@ -94,7 +94,7 @@ export const serviceCityContent: Record<string, CityContent> = {
     serviceFocus:
       "Condo cleanouts, storage-unit haul-offs near Young Circle, tenant turnovers along the Broadwalk area, and heavy Hollywood Lakes renovation debris.",
     closer:
-      "Whether it&rsquo;s a Hollywood Beach studio or an Emerald Hills full-property cleanout, we&rsquo;ll make it easy and stay flexible on parking and access.",
+      "Whether it’s a Hollywood Beach studio or an Emerald Hills full-property cleanout, we’ll make it easy and stay flexible on parking and access.",
   },
   '/miramar/': {
     slug: '/miramar/',
@@ -109,7 +109,7 @@ export const serviceCityContent: Record<string, CityContent> = {
     serviceFocus:
       "New-home cleanups, mixed household + construction debris, and residential dump-trailer rentals for weekend projects across Silver Lakes and Riviera Isles.",
     closer:
-      "From a single mattress in Historic Miramar to a full renovation load in Riviera Isles, we&rsquo;ll show up when we say and price it clearly.",
+      "From a single mattress in Historic Miramar to a full renovation load in Riviera Isles, we’ll show up when we say and price it clearly.",
   },
   '/pembroke-pines/': {
     slug: '/pembroke-pines/',
@@ -124,7 +124,7 @@ export const serviceCityContent: Record<string, CityContent> = {
     serviceFocus:
       "Garage cleanouts, yard debris from big lots, appliance swap-outs, and DIY renovation projects that call for a dump trailer.",
     closer:
-      "Text a couple of photos from Pembroke Falls or SilverLakes and we&rsquo;ll usually have pricing back to you within the hour.",
+      "Text a couple of photos from Pembroke Falls or SilverLakes and we’ll usually have pricing back to you within the hour.",
   },
   '/plantation/': {
     slug: '/plantation/',
@@ -134,12 +134,12 @@ export const serviceCityContent: Record<string, CityContent> = {
     landmarks: ['Plantation Central Park', 'Broward Mall', 'University Hospital'],
     nearby: ['Sunrise', 'Davie', 'Fort Lauderdale', 'Lauderhill'],
     intro:
-      "Plantation is a mix of established mid-century homes and newer developments — with a lot of long-term homeowners finally tackling deferred projects. That&rsquo;s where our dump trailers and full-service crews shine.",
+      "Plantation is a mix of established mid-century homes and newer developments — with a lot of long-term homeowners finally tackling deferred projects. That’s where our dump trailers and full-service crews shine.",
     vibe: 'established, tree-lined, mid-century to modern',
     serviceFocus:
       "Kitchen and bath remodels, decades-of-accumulation garage cleanouts, and full estate cleanouts across Jacaranda and Plantation Acres.",
     closer:
-      "If you&rsquo;ve been putting off a Plantation cleanout, this is the sign. One text and we&rsquo;ll handle it end to end.",
+      "If you’ve been putting off a Plantation cleanout, this is the sign. One text and we’ll handle it end to end.",
   },
   '/sunrise/': {
     slug: '/sunrise/',
@@ -149,12 +149,12 @@ export const serviceCityContent: Record<string, CityContent> = {
     landmarks: ['Sawgrass Mills', 'Amerant Bank Arena', 'Markham Park'],
     nearby: ['Plantation', 'Tamarac', 'Weston', 'Lauderhill'],
     intro:
-      "Sunrise is a busy, working city with tons of turnover — condos, single-family homes, and commercial spaces near Sawgrass Mills. That means constant demand for fast, respectful cleanouts, and we&rsquo;re usually just minutes away.",
+      "Sunrise is a busy, working city with tons of turnover — condos, single-family homes, and commercial spaces near Sawgrass Mills. That means constant demand for fast, respectful cleanouts, and we’re usually just minutes away.",
     vibe: 'active, commercial and residential mix',
     serviceFocus:
       "Condo and rental turnovers, office cleanouts near the arena, and residential dump-trailer rentals for weekend projects.",
     closer:
-      "Sunrise homeowners and property managers rely on us for quick turnarounds. Send a photo and let&rsquo;s make it easy.",
+      "Sunrise homeowners and property managers rely on us for quick turnarounds. Send a photo and let’s make it easy.",
   },
   '/tamarac-florida/': {
     slug: '/tamarac-florida/',
@@ -169,7 +169,7 @@ export const serviceCityContent: Record<string, CityContent> = {
     serviceFocus:
       "Downsizing and estate cleanouts in Kings Point and Mainlands, appliance removal, and driveway-safe dump-trailer rentals for family-run projects.",
     closer:
-      "Whether you&rsquo;re helping a parent downsize in Woodlands or clearing a Kings Point unit, we&rsquo;ll be respectful, careful, and quick.",
+      "Whether you’re helping a parent downsize in Woodlands or clearing a Kings Point unit, we’ll be respectful, careful, and quick.",
   },
 };
 
@@ -187,7 +187,7 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     serviceFocus:
       "Kitchen remodels, garage cleanouts, and yard debris from mature landscaping — trailers sized to match the project, not overkill.",
     closer:
-      "Book a Cooper City dump trailer rental and load at your own pace. We&rsquo;ll drop it, you fill it, we haul it away.",
+      "Book a Cooper City dump trailer rental and load at your own pace. We’ll drop it, you fill it, we haul it away.",
   },
   '/dumpster-rentals-in-coral-spring-florida/': {
     slug: '/dumpster-rentals-in-coral-spring-florida/',
@@ -197,12 +197,12 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     landmarks: ['Sawgrass Expressway'],
     nearby: ['Parkland', 'Coconut Creek', 'Tamarac'],
     intro:
-      "Coral Springs is our home turf, so dump-trailer delivery here is fast, flexible, and priced right. Weekend renovations, storm cleanup, or a long-overdue garage clear-out — we&rsquo;ll match the trailer to the job.",
+      "Coral Springs is our home turf, so dump-trailer delivery here is fast, flexible, and priced right. Weekend renovations, storm cleanup, or a long-overdue garage clear-out — we’ll match the trailer to the job.",
     vibe: 'family suburban',
     serviceFocus:
       "Home renovation debris, hurricane prep and yard cleanup, and multi-day cleanouts.",
     closer:
-      "Need a Coral Springs dump trailer this weekend? Text us — we&rsquo;ll confirm delivery quickly.",
+      "Need a Coral Springs dump trailer this weekend? Text us — we’ll confirm delivery quickly.",
   },
   '/dumpster-rentals-in-davie-florida/': {
     slug: '/dumpster-rentals-in-davie-florida/',
@@ -212,12 +212,12 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     landmarks: ['Nova Southeastern University'],
     nearby: ['Cooper City', 'Plantation', 'Weston'],
     intro:
-      "Davie&rsquo;s bigger lots and equestrian properties mean bigger projects — and often, bigger piles. Our dump trailers handle everything from brush and fencing to full-scale renovation debris.",
+      "Davie’s bigger lots and equestrian properties mean bigger projects — and often, bigger piles. Our dump trailers handle everything from brush and fencing to full-scale renovation debris.",
     vibe: 'ranch, town-and-country',
     serviceFocus:
       "Barn and shed cleanouts, fence and landscaping tear-outs, and multi-day construction projects.",
     closer:
-      "For Davie dump trailer rentals with fair pricing and no fuss, we&rsquo;re your local option.",
+      "For Davie dump trailer rentals with fair pricing and no fuss, we’re your local option.",
   },
   '/dumpster-rentals-in-ft-lauderdale-florida/': {
     slug: '/dumpster-rentals-in-ft-lauderdale-florida/',
@@ -242,7 +242,7 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     landmarks: ['Hollywood Broadwalk'],
     nearby: ['Dania Beach', 'Hallandale Beach'],
     intro:
-      "Hollywood ranges from vintage bungalows to modern rebuilds, and dump-trailer rentals here need to be sized right for tight driveways and narrow streets. We&rsquo;re used to it.",
+      "Hollywood ranges from vintage bungalows to modern rebuilds, and dump-trailer rentals here need to be sized right for tight driveways and narrow streets. We’re used to it.",
     vibe: 'coastal-vintage mix',
     serviceFocus:
       "Vintage home renovations, condo turnovers, and multi-day cleanouts near the Broadwalk.",
@@ -257,12 +257,12 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     landmarks: ['Miramar Regional Park'],
     nearby: ['Pembroke Pines', 'Hollywood', 'Miami Gardens'],
     intro:
-      "Miramar&rsquo;s newer master-planned neighborhoods are great candidates for weekend projects — and our dump trailers make it easy to knock them out in a single stretch.",
+      "Miramar’s newer master-planned neighborhoods are great candidates for weekend projects — and our dump trailers make it easy to knock them out in a single stretch.",
     vibe: 'master-planned, family',
     serviceFocus:
       "Move-in cleanups, renovations, and yard-work projects on newer builds.",
     closer:
-      "Miramar dump trailer rentals with same-day and next-day availability — text a photo of the site and we&rsquo;ll take it from there.",
+      "Miramar dump trailer rentals with same-day and next-day availability — text a photo of the site and we’ll take it from there.",
   },
   '/dumpster-rentals-in-pembroke-pines-florida/': {
     slug: '/dumpster-rentals-in-pembroke-pines-florida/',
@@ -277,7 +277,7 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     serviceFocus:
       "Kitchen and bath remodels, garage cleanouts, and yard debris from big-lot properties.",
     closer:
-      "Pembroke Pines dump trailer rental? We&rsquo;ll drop it, you fill it, we&rsquo;ll haul it. Simple.",
+      "Pembroke Pines dump trailer rental? We’ll drop it, you fill it, we’ll haul it. Simple.",
   },
   '/dumpster-rentals-in-plantation-florida/': {
     slug: '/dumpster-rentals-in-plantation-florida/',
@@ -302,12 +302,12 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     landmarks: ['Frontier Trails', 'Griffin Road corridor'],
     nearby: ['Cooper City', 'Davie', 'Weston'],
     intro:
-      "Southwest Ranches has some of Broward&rsquo;s biggest lots — barns, workshops, guest houses, and horse property. Our dump trailers are built to keep up with those bigger jobs.",
+      "Southwest Ranches has some of Broward’s biggest lots — barns, workshops, guest houses, and horse property. Our dump trailers are built to keep up with those bigger jobs.",
     vibe: 'ranch, semi-rural',
     serviceFocus:
       "Barn cleanouts, land-clearing brush and debris, and multi-week renovation projects.",
     closer:
-      "Southwest Ranches dump trailer rental with careful placement on gravel or unpaved driveways — we&rsquo;re used to it.",
+      "Southwest Ranches dump trailer rental with careful placement on gravel or unpaved driveways — we’re used to it.",
   },
   '/dumpster-rentals-in-sunrise-florida/': {
     slug: '/dumpster-rentals-in-sunrise-florida/',
@@ -322,7 +322,7 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     serviceFocus:
       "Rental turnovers, condo cleanouts, and mid-scale renovations.",
     closer:
-      "Sunrise dump trailer rentals delivered fast, priced fair. Text a photo of the drop site — that&rsquo;s all we usually need.",
+      "Sunrise dump trailer rentals delivered fast, priced fair. Text a photo of the drop site — that’s all we usually need.",
   },
   '/dumpster-rentals-in-tamarac-florida/': {
     slug: '/dumpster-rentals-in-tamarac-florida/',
@@ -347,7 +347,7 @@ export const dumpsterCityContent: Record<string, CityContent> = {
     landmarks: ['Weston Town Center', 'Cleveland Clinic Florida'],
     nearby: ['Southwest Ranches', 'Davie', 'Sunrise'],
     intro:
-      "Weston&rsquo;s HOAs and premium landscaping mean dump-trailer placement matters. We work carefully around pavers, tile, and irrigation — and we schedule delivery/pickup to keep the trailer off the street.",
+      "Weston’s HOAs and premium landscaping mean dump-trailer placement matters. We work carefully around pavers, tile, and irrigation — and we schedule delivery/pickup to keep the trailer off the street.",
     vibe: 'upscale, HOA-governed',
     serviceFocus:
       "Renovation projects, master-bath tear-outs, garage overhauls, and post-storm cleanup.",

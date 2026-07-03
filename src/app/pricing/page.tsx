@@ -34,7 +34,7 @@ export default function PricingPage() {
             <p className="eyebrow">Pricing</p>
             <h1 className="mt-2">Fair, volume-based pricing — no hidden fees.</h1>
             <p className="speakable-answer mt-5 text-lg text-ink-soft max-w-xl">
-              {p.model} You&apos;ll know the price and what&apos;s included before we remove anything.
+              {p.model} You'll know the price and what's included before we remove anything.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`sms:${site.sms}`} size="lg" variant="primary"><MessageIcon className="h-4 w-4" /> Text a photo for a quote</Button>
@@ -50,7 +50,7 @@ export default function PricingPage() {
       <section className="section bg-sky-soft/60">
         <div className="container-p grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl bg-white ring-1 ring-navy-100 p-6 shadow-card">
-            <h3 className="text-navy-900 m-0">What&apos;s included</h3>
+            <h3 className="text-navy-900 m-0">What's included</h3>
             <ul className="mt-4 space-y-2 text-ink-soft text-sm">
               {p.quoteIncludes.map((it) => (
                 <li key={it} className="flex items-start gap-2"><CheckIcon className="h-4 w-4 text-sun-500 mt-1 shrink-0" /> {it}</li>
@@ -88,7 +88,7 @@ export default function PricingPage() {
           <div>
             <SectionHeading eyebrow="Dump trailer rentals" title="Trailer pricing tailored to your project." />
             <p className="mt-4 text-ink-soft">{p.trailerPricing}</p>
-            <p className="mt-3 text-ink-soft">Not sure what size you need? We ask a few quick questions about your project and help you choose — so you&apos;re not overpaying for space you won&apos;t use, or running out of room mid-project.</p>
+            <p className="mt-3 text-ink-soft">Not sure what size you need? We ask a few quick questions about your project and help you choose — so you're not overpaying for space you won't use, or running out of room mid-project.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/dumpster-rentals/" variant="secondary">See dump trailer info</Button>
               <Button href={`tel:${site.phone}`} variant="outline"><PhoneIcon className="h-4 w-4" /> Ask us your questions</Button>
@@ -104,7 +104,7 @@ export default function PricingPage() {
               <p className="eyebrow">Discounts</p>
               <h2 className="mt-2">Discounts for the community we serve.</h2>
               <p className="mt-3 text-ink-soft max-w-2xl">
-                We offer discounts for <strong>military members, veterans, seniors, and first responders</strong>. Mention it when you request your quote and we&apos;ll apply it upfront — no coupon codes, no hoops.
+                We offer discounts for <strong>military members, veterans, seniors, and first responders</strong>. Mention it when you request your quote and we'll apply it upfront — no coupon codes, no hoops.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

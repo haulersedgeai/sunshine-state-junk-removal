@@ -69,9 +69,9 @@ export default function DumpsterHubPage() {
           <div>
             <SectionHeading eyebrow="Rental vs. removal" title="Not sure which service you need?" />
             <div className="mt-6 space-y-4 text-ink-soft">
-              <p><strong>Choose a dump trailer rental</strong> when you want to load at your own pace, when a project runs over multiple days, or when you have a lot of debris and don&apos;t need us on-site.</p>
+              <p><strong>Choose a dump trailer rental</strong> when you want to load at your own pace, when a project runs over multiple days, or when you have a lot of debris and don't need us on-site.</p>
               <p><strong>Choose full-service junk removal</strong> when you want us to do the heavy lifting, when the job is one-and-done, or when access is tight and you just want it handled.</p>
-              <p>Not sure? Send us a photo or a few sentences about the project — we&apos;ll recommend the option that saves you the most time and money.</p>
+              <p>Not sure? Send us a photo or a few sentences about the project — we'll recommend the option that saves you the most time and money.</p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button href="/what-we-take/" variant="secondary">See junk removal →</Button>
                 <Button href="/pricing/" variant="outline">See pricing</Button>

@@ -30,7 +30,7 @@ async function sendViaResend(payload: QuotePayload) {
     ${payload.service ? `<p><strong>Service:</strong> ${escapeHtml(payload.service)}</p>` : ''}
     ${payload.location ? `<p><strong>Location:</strong> ${escapeHtml(payload.location)}</p>` : ''}
     ${payload.message ? `<p><strong>Message:</strong><br/>${escapeHtml(payload.message).replace(/\n/g, '<br/>')}</p>` : ''}
-    ${payload.photoNames?.length ? `<p><strong>Attached photos (received):</strong> ${payload.photoNames.map(escapeHtml).join(', ')}</p><p><em>Note: photos are attached to the request; if you didn&rsquo;t receive them, ask the customer to text them to (954) 247-1399.</em></p>` : ''}
+    ${payload.photoNames?.length ? `<p><strong>Attached photos (received):</strong> ${payload.photoNames.map(escapeHtml).join(', ')}</p><p><em>Note: photos are attached to the request; if you didn’t receive them, ask the customer to text them to (954) 247-1399.</em></p>` : ''}
   `;
 
   const res = await fetch('https://api.resend.com/emails', {
@@ -102,7 +102,7 @@ export async function POST(req: Request) {
     }
 
     console.error('[quote] Send failed:', result);
-    return NextResponse.json({ error: 'Message received but email delivery failed. We&rsquo;ll follow up shortly — or call (954) 247-1399.' }, { status: 200 });
+    return NextResponse.json({ error: 'Message received but email delivery failed. We’ll follow up shortly — or call (954) 247-1399.' }, { status: 200 });
   } catch (err) {
     console.error('[quote] Unhandled error:', err);
     return NextResponse.json({ error: 'Something went wrong. Please call or text (954) 247-1399.' }, { status: 500 });

@@ -23,12 +23,12 @@ export function CityServicePage({ content }: { content: CityContent }) {
   const useReviews = cityReviews.length >= 3 ? cityReviews : [...cityReviews, ...reviews.filter((r) => !r.city)].slice(0, 9);
 
   const localFaqs = [
-    { q: `Do you serve all of ${content.city}, FL?`, a: `Yes — we cover every neighborhood in ${content.city}, including ${content.neighborhoods.slice(0, 3).join(', ')}, plus surrounding communities. If we can&rsquo;t reach you, we&rsquo;ll tell you honestly and recommend someone who can.` },
-    { q: `How fast can you get to ${content.city}?`, a: `Same-day service is common in ${content.city}. Text a couple of clear photos and we&rsquo;ll respond quickly with pricing and the soonest arrival window.` },
-    { q: `What&rsquo;s the fastest way to get a ${content.city} junk removal quote?`, a: `Text photos to ${site.phoneDisplay}. Photo quotes are typically the quickest and most accurate for household, garage, and cleanout jobs.` },
-    { q: `Do you handle HOA and gated communities in ${content.city}?`, a: `Yes. Many of the neighborhoods we serve in ${content.city} are HOA or gated. Let us know when you book and we&rsquo;ll follow all requirements — timing, placement, and cleanup.` },
+    { q: `Do you serve all of ${content.city}, FL?`, a: `Yes — we cover every neighborhood in ${content.city}, including ${content.neighborhoods.slice(0, 3).join(', ')}, plus surrounding communities. If we can’t reach you, we’ll tell you honestly and recommend someone who can.` },
+    { q: `How fast can you get to ${content.city}?`, a: `Same-day service is common in ${content.city}. Text a couple of clear photos and we’ll respond quickly with pricing and the soonest arrival window.` },
+    { q: `What’s the fastest way to get a ${content.city} junk removal quote?`, a: `Text photos to ${site.phoneDisplay}. Photo quotes are typically the quickest and most accurate for household, garage, and cleanout jobs.` },
+    { q: `Do you handle HOA and gated communities in ${content.city}?`, a: `Yes. Many of the neighborhoods we serve in ${content.city} are HOA or gated. Let us know when you book and we’ll follow all requirements — timing, placement, and cleanup.` },
     ...(content.faqExtra || []),
-    { q: `What items do you take in ${content.city}?`, a: `Furniture, appliances, mattresses, yard debris, renovation and construction debris, hot tubs, sheds, and everything in between. We can&rsquo;t take hazardous materials — everything else is fair game.` },
+    { q: `What items do you take in ${content.city}?`, a: `Furniture, appliances, mattresses, yard debris, renovation and construction debris, hot tubs, sheds, and everything in between. We can’t take hazardous materials — everything else is fair game.` },
   ];
 
   const localBusinessNode = {
@@ -114,9 +114,9 @@ export function CityServicePage({ content }: { content: CityContent }) {
           <div>
             <SectionHeading eyebrow="Local reality" title={`When space works against you in ${content.city}.`} />
             <div className="mt-6 space-y-4 text-ink-soft">
-              <p>Every city has its quirks. In {content.city}, it&rsquo;s usually {content.vibe} — and that shapes the kind of removal we do.</p>
+              <p>Every city has its quirks. In {content.city}, it’s usually {content.vibe} — and that shapes the kind of removal we do.</p>
               <p>{content.serviceFocus}</p>
-              <p>We&rsquo;ve worked in {content.neighborhoods.slice(0, 3).map((n) => n).join(', ')} and everywhere in between. Whatever your setup, we&rsquo;ve seen it before.</p>
+              <p>We’ve worked in {content.neighborhoods.slice(0, 3).map((n) => n).join(', ')} and everywhere in between. Whatever your setup, we’ve seen it before.</p>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -199,7 +199,7 @@ export function CityServicePage({ content }: { content: CityContent }) {
         <div className="container-p grid gap-10 lg:grid-cols-[1fr_1.6fr]">
           <div>
             <SectionHeading eyebrow="Local FAQ" title={`${content.city} junk removal questions.`} />
-            <p className="mt-4 text-ink-soft text-sm">Don&rsquo;t see your question? <Link href="/faqs/" className="text-navy-800 font-semibold hover:text-sun-600">See all FAQs</Link> or just call us.</p>
+            <p className="mt-4 text-ink-soft text-sm">Don’t see your question? <Link href="/faqs/" className="text-navy-800 font-semibold hover:text-sun-600">See all FAQs</Link> or just call us.</p>
           </div>
           <FAQAccordion items={localFaqs} idPrefix={`city-${content.city.toLowerCase().replace(/\s+/g, '-')}`} />
         </div>

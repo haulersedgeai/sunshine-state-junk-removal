@@ -28,7 +28,7 @@ export default function ServiceAreasPage() {
           <SectionHeading
             eyebrow="Service areas"
             title="Junk removal & dumpster rentals across Broward County."
-            intro={site.serviceAreaSummary + ' Not sure if we cover your area? Ask when you get in touch — we&rsquo;re flexible on nearby jobs.'}
+            intro={site.serviceAreaSummary + ' Not sure if we cover your area? Ask when you get in touch — we’re flexible on nearby jobs.'}
           />
         </div>
       </section>
@@ -69,7 +69,7 @@ export default function ServiceAreasPage() {
 
       <section className="section bg-sky-soft/60">
         <div className="container-p">
-          <SectionHeading eyebrow="Full coverage" title="Every city we serve." intro="Full towns list — reach out if yours isn&rsquo;t here." />
+          <SectionHeading eyebrow="Full coverage" title="Every city we serve." intro="Full towns list — reach out if yours isn’t here." />
           <div className="mt-10">
             <AreasServed />
           </div>

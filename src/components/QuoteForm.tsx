@@ -36,7 +36,7 @@ export function QuoteForm() {
         </div>
         <h3 className="mt-4 text-navy-900">Thanks — we got your request.</h3>
         <p className="mt-2 text-ink-soft">
-          We&apos;ll reply shortly with a straightforward quote. If it&apos;s urgent, call or text us at{' '}
+          We'll reply shortly with a straightforward quote. If it's urgent, call or text us at{' '}
           <a href="tel:+19542471399" className="font-semibold text-navy-900">(954) 247-1399</a>.
         </p>
       </div>

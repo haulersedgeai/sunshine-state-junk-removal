@@ -59,7 +59,7 @@ export default function HomePage() {
               Junk removal & dump-trailer rentals in <span className="text-sun-500">Broward County</span>.
             </h1>
             <p className="speakable-answer mt-5 text-lg sm:text-xl text-ink-soft max-w-xl leading-relaxed">
-              Family- and veteran-owned. Text a few photos and we&apos;ll send a fast, honest quote — often same-day, with driveway-safe equipment and no runaround.
+              Family- and veteran-owned. Text a few photos and we'll send a fast, honest quote — often same-day, with driveway-safe equipment and no runaround.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`tel:${site.phone}`} size="lg" variant="primary">

@@ -26,7 +26,7 @@ export default function ContactPage() {
           <SectionHeading
             eyebrow="Get in touch"
             title="Get a fast, honest quote — usually within the hour."
-            intro="Text a few clear photos for the fastest reply. Prefer to talk? Call us any time — we&rsquo;re available around the clock for urgent jobs."
+            intro="Text a few clear photos for the fastest reply. Prefer to talk? Call us any time — we’re available around the clock for urgent jobs."
           />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
@@ -62,7 +62,7 @@ export default function ContactPage() {
                   <div>
                     <p className="m-0 font-semibold text-navy-900">Address</p>
                     <address className="not-italic m-0 text-ink-soft">{formattedAddress}</address>
-                    <p className="m-0 text-ink-soft mt-1">Serving Broward County, FL — plus select Miami-Dade &amp; Palm Beach.</p>
+                    <p className="m-0 text-ink-soft mt-1">Serving Broward County, FL — plus select Miami-Dade & Palm Beach.</p>
                     <Link href="/service-areas/" className="text-sm font-semibold text-navy-800 hover:text-sun-600 no-underline">See all cities →</Link>
                   </div>
                 </div>
