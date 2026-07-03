@@ -11,9 +11,23 @@ export type PageMetaOpts = {
 
 const DEFAULT_OG = '/images/Sunshine-About-Us.webp';
 
+// Pre-launch: the canonical domain (sunshineremoval.com) still points at the
+// old WordPress host, so OG/Twitter images resolved through that host will 404
+// in social preview cards. Route social-preview image URLs through the current
+// deployment host instead, while keeping canonicals on the production domain.
+//
+// TODO(launch): after DNS cutover to Vercel, unset NEXT_PUBLIC_OG_HOST in Vercel
+// project env so this falls back to SITE_URL — OG images will then resolve on
+// the production domain and this whole workaround becomes a no-op.
+const OG_HOST = (process.env.NEXT_PUBLIC_OG_HOST || '').replace(/\/$/, '') || SITE_URL;
+const ogAbsolute = (path: string) => {
+  const clean = path.startsWith('/') ? path : `/${path}`;
+  return `${OG_HOST}${clean}`;
+};
+
 export function pageMetadata(opts: PageMetaOpts): Metadata {
   const url = absoluteUrl(opts.path);
-  const ogImage = absoluteUrl(opts.ogImage || DEFAULT_OG);
+  const ogImage = ogAbsolute(opts.ogImage || DEFAULT_OG);
   return {
     metadataBase: new URL(SITE_URL),
     // Use `absolute` so the layout template ("%s | Sunshine State Junk Removal")

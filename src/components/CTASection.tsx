@@ -23,7 +23,7 @@ export function CTASection({
               <h2 className="mt-2 text-white">{title}</h2>
               <p className="mt-4 text-white/80 text-lg max-w-xl">
                 {intro ??
-                  'Text a few clear photos to get pricing fast — no runaround, no pressure. Same-day and next-day availability across Broward County.'}
+                  'Text a few clear photos to get pricing fast — no runaround, no pressure. Same-day & 24/7 across Broward County.'}
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">

@@ -43,7 +43,7 @@ export function Footer() {
       <div className="container-p py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <Link href="/" className="inline-flex items-center gap-2 no-underline" aria-label="Home">
-            <Image src="/images/Sunshine-Logo.svg" alt="Sunshine State Junk Removal" width={200} height={48} className="h-11 w-auto brightness-0 invert" />
+            <Image src="/images/Sunshine-Logo-White.svg" alt="Sunshine State Junk Removal" width={200} height={48} className="h-11 w-auto" unoptimized />
           </Link>
           <p className="mt-4 text-white/70 max-w-sm">
             Family- and veteran-owned junk removal and dump-trailer rentals across Broward County, with select service in Miami-Dade and Palm Beach.

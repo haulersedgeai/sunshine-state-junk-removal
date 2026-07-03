@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { Metadata } from 'next';
 import { getSite, getServices, getReviews, getFaqs } from '@/data';
 import { pageMetadata } from '@/lib/seo';
 import { Button } from '@/components/Button';
-import { PhoneIcon, MessageIcon, StarIcon, CheckIcon, ShieldIcon, ClockIcon, SunIcon, MapPinIcon } from '@/components/Icon';
+import { PhoneIcon, MessageIcon, CheckIcon, ShieldIcon, ClockIcon, SunIcon } from '@/components/Icon';
 import { TrustBar } from '@/components/TrustBar';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServiceCard } from '@/components/ServiceCard';
@@ -13,7 +12,6 @@ import { ReviewsSlider } from '@/components/ReviewsSlider';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { AreasServed } from '@/components/AreasServed';
 import { CTASection } from '@/components/CTASection';
-import { PhotoQuoteBadge } from '@/components/PhotoQuoteBadge';
 import { JsonLd, graph, faqPageSchema, speakableSchema, serviceSchema } from '@/lib/schema';
 
 export const metadata: Metadata = pageMetadata({
@@ -54,8 +52,7 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-cream/50" />
         <div className="container-p pt-12 sm:pt-16 lg:pt-24 pb-14 lg:pb-24 grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
           <div className="animate-fade-up">
-            <PhotoQuoteBadge />
-            <h1 className="mt-5">
+            <h1>
               Junk removal & dump-trailer rentals in <span className="text-sun-500">Broward County</span>.
             </h1>
             <p className="speakable-answer mt-5 text-lg sm:text-xl text-ink-soft max-w-xl leading-relaxed">
@@ -72,13 +69,6 @@ export default function HomePage() {
                 Get a fast quote
               </Button>
             </div>
-
-            <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-navy-800">
-              <li className="inline-flex items-center gap-2"><StarIcon className="h-4 w-4 text-sun-500" /> <strong>5.0</strong> from 159+ reviews</li>
-              <li className="inline-flex items-center gap-2"><ShieldIcon className="h-4 w-4 text-navy-700" /> Licensed & insured</li>
-              <li className="inline-flex items-center gap-2"><SunIcon className="h-4 w-4 text-sun-500" /> Veteran & family-owned</li>
-              <li className="inline-flex items-center gap-2"><ClockIcon className="h-4 w-4 text-navy-700" /> Same-day availability</li>
-            </ul>
           </div>
 
           <div className="relative">
@@ -91,15 +81,6 @@ export default function HomePage() {
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
               />
-            </div>
-            <div className="absolute -bottom-5 -left-5 sm:-left-8 rounded-2xl bg-white shadow-card ring-1 ring-navy-100 p-4 flex items-center gap-3">
-              <div className="flex -space-x-1 text-sun-500">
-                {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} className="h-5 w-5" />)}
-              </div>
-              <div>
-                <p className="m-0 text-navy-900 font-bold leading-none">5.0 · 159+ reviews</p>
-                <p className="m-0 text-xs text-ink-muted">on Google, Facebook & Yelp</p>
-              </div>
             </div>
           </div>
         </div>
@@ -150,7 +131,7 @@ export default function HomePage() {
                   { icon: <CheckIcon className="h-4 w-4" />, title: 'Photo-based quotes', desc: 'Text a few photos, get pricing fast — no in-person visit required for most jobs.' },
                   { icon: <ShieldIcon className="h-4 w-4" />, title: 'Licensed & insured', desc: 'Fully credentialed and careful with your property, driveway, and everything in between.' },
                   { icon: <SunIcon className="h-4 w-4" />, title: 'Veteran & family-owned', desc: 'Accountability, communication, and follow-through on every job.' },
-                  { icon: <ClockIcon className="h-4 w-4" />, title: 'Same-day & 24/7 availability', desc: 'We regularly move fast for last-minute cleanouts, hurricane prep, and after-hours pickups.' },
+                  { icon: <ClockIcon className="h-4 w-4" />, title: 'Same-day & 24/7', desc: 'We regularly move fast for last-minute cleanouts, hurricane prep, and after-hours pickups.' },
                 ].map((v) => (
                   <li key={v.title} className="flex gap-3">
                     <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sun-500 text-navy-900">{v.icon}</span>

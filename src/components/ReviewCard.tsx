@@ -18,12 +18,16 @@ export function ReviewCard({ review, compact = false }: { review: Review; compac
         ))}
       </div>
       <blockquote className="mt-3 text-ink-soft leading-relaxed text-[15px]">“{review.text}”</blockquote>
-      <figcaption className="mt-4 flex items-center justify-between text-sm">
+      <figcaption className="mt-4 flex flex-wrap items-center gap-x-1.5 text-sm">
         <span className="font-semibold text-navy-900">{review.name}</span>
-        <span className="text-ink-muted">
-          {review.source ?? 'Google'}
-          {review.when ? ` · ${review.when}` : ''}
-        </span>
+        <span aria-hidden="true" className="text-ink-muted/70">·</span>
+        <span className="text-ink-muted">{review.source ?? 'Google'}</span>
+        {review.when && (
+          <>
+            <span aria-hidden="true" className="text-ink-muted/70">·</span>
+            <span className="text-ink-muted">{review.when}</span>
+          </>
+        )}
       </figcaption>
     </figure>
   );

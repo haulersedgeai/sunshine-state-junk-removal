@@ -18,7 +18,7 @@ export function TrustBar() {
         </div>
         <div className="flex items-center gap-2 text-navy-900">
           <CheckIcon className="h-4 w-4 text-sun-500" />
-          <span className="font-semibold">Same-day & 24/7 available</span>
+          <span className="font-semibold">Same-day & 24/7</span>
         </div>
       </div>
     </div>

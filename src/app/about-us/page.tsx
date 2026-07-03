@@ -48,7 +48,7 @@ export default function AboutPage() {
               <li className="inline-flex items-center gap-2"><StarIcon className="h-4 w-4 text-sun-500" /> 5.0 · 159+ reviews</li>
               <li className="inline-flex items-center gap-2"><ShieldIcon className="h-4 w-4 text-navy-700" /> Licensed & insured</li>
               <li className="inline-flex items-center gap-2"><SunIcon className="h-4 w-4 text-sun-500" /> Veteran-owned</li>
-              <li className="inline-flex items-center gap-2"><ClockIcon className="h-4 w-4 text-navy-700" /> 24/7 availability</li>
+              <li className="inline-flex items-center gap-2"><ClockIcon className="h-4 w-4 text-navy-700" /> Same-day & 24/7</li>
             </ul>
           </div>
           <div className="relative aspect-[5/4] rounded-3xl overflow-hidden ring-1 ring-navy-100 shadow-card">
