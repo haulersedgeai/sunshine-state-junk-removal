@@ -1,0 +1,21 @@
+# BUILD_PLAN
+
+- [x] Scaffold Next.js 16 + TS + Tailwind (trailingSlash:true, legacy redirects, image + security headers).
+- [x] Import `/project-data/*.json` and expose typed helpers in `src/data`.
+- [x] Download all legacy images to `/public/images/` (32/32 ok).
+- [x] Design tokens (tailwind config) + component library:
+  - Header (sticky, click-to-call, text-a-photo, mobile drawer)
+  - Footer (NAP, hours, socials, quick links)
+  - Sticky mobile CTA bar (call + text)
+  - Button, Icon set, SectionHeading, CTASection, TrustBar, PhotoQuoteBadge
+  - ServiceCard, ProcessSteps, ReviewCard, ReviewsSlider, FAQAccordion
+  - AreasServed, Breadcrumbs, QuoteForm
+- [x] Core pages: Home, About, What We Take, Pricing, Dumpster Rentals hub, Service Areas hub, Contact, FAQs, Terms, Privacy, 404
+- [x] 10 city service pages (unique copy via `city-content.ts`)
+- [x] 12 city dumpster pages (unique copy via `city-content.ts`)
+- [x] SEO layer: per-page metadata (title/desc/canonical/OG/Twitter), sitemap.xml, robots.txt
+- [x] AEO layer: JSON-LD graph (LocalBusiness + Service + FAQPage + Breadcrumb + Speakable), `llms.txt`
+- [x] GSC verification tag + GTM container preserved
+- [x] Quote-form API route (Resend integration; no-op fallback when RESEND_API_KEY missing)
+- [ ] `next build` clean
+- [ ] Git init + GitHub repo + Vercel deploy

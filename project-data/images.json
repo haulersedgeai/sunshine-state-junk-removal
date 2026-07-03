@@ -1,0 +1,42 @@
+{
+  "instructions": "Download EVERY asset below from its sourceUrl into /public/images/ using the EXACT localFilename (filenames carry image-search equity — keep them). Then reference them via next/image. The download script is in CLAUDE.md. If any URL 404s at build time, log it and continue; do not block the build. Convert nothing — keep .webp/.svg/.png/.jpg as-is. Optimize with next/image at render.",
+  "brand": [
+    { "localFilename": "Sunshine-Logo.svg", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/Sunshine-Logo.svg", "alt": "Sunshine State Junk Removal logo", "usage": "header/footer logo" },
+    { "localFilename": "Sunshine-Favicon.svg", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/Sunshine-Favicon.svg", "alt": "Sunshine State favicon", "usage": "favicon" }
+  ],
+  "sections": [
+    { "localFilename": "Sunshine-About-Us.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/Sunshine-About-Us.webp", "alt": "Sunshine State Junk Removal team", "usage": "home OG image / about hero", "w": 1920, "h": 1000 },
+    { "localFilename": "Junk-Removal.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/Junk-Removal.webp", "alt": "Junk removal service in Broward County", "usage": "home services card" },
+    { "localFilename": "Dump-Trailer-Rentals.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/Dump-Trailer-Rentals.webp", "alt": "Dump trailer rentals", "usage": "home services card" },
+    { "localFilename": "commercial-dumpster-rental-florida-1024x768.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/commercial-dumpster-rental-florida-1024x768.webp", "alt": "Commercial dumpster rental Florida", "usage": "about/what-we-take OG", "w": 1024, "h": 768 },
+    { "localFilename": "sunshines-state-junk-removal-grills.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/sunshines-state-junk-removal-grills.webp", "alt": "Grills removed by Sunshine State Junk Removal", "usage": "pricing/what-we-take" },
+    { "localFilename": "bed-bug.png", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/bed-bug.png", "alt": "Bed bug special-handling notice", "usage": "what-we-take special handling" },
+    { "localFilename": "sunshine-state-residential-junk-removal.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/sunshine-state-residential-junk-removal.webp", "alt": "Residential junk removal", "usage": "what-we-take" },
+    { "localFilename": "estate-cleanout-sunshine-state-removal.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/estate-cleanout-sunshine-state-removal.webp", "alt": "Estate cleanout", "usage": "what-we-take cleanouts" },
+    { "localFilename": "sunshine-state-dumpsters.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/sunshine-state-dumpsters.webp", "alt": "Sunshine State dumpsters", "usage": "pricing" },
+    { "localFilename": "dumpster-sunshine-state-1.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/dumpster-sunshine-state-1.webp", "alt": "Dump trailer rental", "usage": "pricing" },
+    { "localFilename": "sunshine-state-owner.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/sunshine-state-owner.webp", "alt": "Cesar, owner of Sunshine State Junk Removal", "usage": "about owners" },
+    { "localFilename": "sunshine-state-hauling-dumpster-rentals-commercial.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/sunshine-state-hauling-dumpster-rentals-commercial.webp", "alt": "Commercial dumpster rental and hauling", "usage": "about / dumpster" },
+    { "localFilename": "dumpster-rental-residential.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/dumpster-rental-residential.webp", "alt": "Residential dumpster rental", "usage": "city pages" },
+    { "localFilename": "commercial-hauling-and-removal.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/02/commercial-hauling-and-removal.webp", "alt": "Commercial hauling and removal", "usage": "city pages" }
+  ],
+  "gallery": [
+    { "localFilename": "yellow-dumpster-sunshines-state2.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/yellow-dumpster-sunshines-state2.webp", "alt": "Yellow dump trailer on driveway" },
+    { "localFilename": "junk-removal-dumpster-black-truck.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/junk-removal-dumpster-black-truck.webp", "alt": "Junk removal truck and dumpster" },
+    { "localFilename": "residential-image-junk-removal-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/residential-image-junk-removal-sunshines-state.webp", "alt": "Residential junk removal job" },
+    { "localFilename": "construction-debris-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/construction-debris-sunshines-state.webp", "alt": "Construction debris hauled away" },
+    { "localFilename": "sunshines-state-junk-removal.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/sunshines-state-junk-removal.webp", "alt": "Sunshine State junk removal in action" },
+    { "localFilename": "construction-removal-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/construction-removal-sunshines-state.webp", "alt": "Construction removal" },
+    { "localFilename": "top-view-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/top-view-sunshines-state.webp", "alt": "Top view of loaded dump trailer" },
+    { "localFilename": "contruction-debris-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/contruction-debris-sunshines-state.webp", "alt": "Construction debris removal" },
+    { "localFilename": "yellow-dumpster-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/yellow-dumpster-sunshines-state.webp", "alt": "Yellow dump trailer" },
+    { "localFilename": "trash-bin-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/trash-bin-sunshines-state.webp", "alt": "Trash bin / dump trailer" },
+    { "localFilename": "rent-me-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/rent-me-sunshines-state.webp", "alt": "Rent-me dump trailer", "w": 720, "h": 720 },
+    { "localFilename": "sunshines-state-mattress.jpg", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/sunshines-state-mattress.jpg", "alt": "Mattress removal" },
+    { "localFilename": "hot-tub-removal-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/hot-tub-removal-sunshines-state.webp", "alt": "Hot tub removal" },
+    { "localFilename": "sunshines-state-junk-removal-cleanouts.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/sunshines-state-junk-removal-cleanouts.webp", "alt": "Full property cleanout" },
+    { "localFilename": "Garage-cleanouts-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/Garage-cleanouts-sunshines-state.webp", "alt": "Garage cleanout" },
+    { "localFilename": "residential-sunshines-state.webp", "sourceUrl": "https://sunshineremoval.com/wp-content/uploads/2026/01/residential-sunshines-state.webp", "alt": "Residential cleanup" }
+  ],
+  "additionalPhotoSources": "There are more real job photos on the Google Business Profile and the Instagram (@sunshine_state_junk_removal). If the client wants a richer gallery, pull additional images from those profiles with permission and add them to /public/images with descriptive, keyword-relevant filenames + alt text."
+}

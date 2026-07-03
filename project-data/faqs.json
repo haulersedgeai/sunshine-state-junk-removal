@@ -1,0 +1,34 @@
+{
+  "note": "These FAQs are lifted/condensed from the legacy site. Use them verbatim-ish for FAQPage schema AND visible accordions. Answer-first phrasing is intentional for AI/answer-engine extraction. Add localized variants on city pages.",
+  "general": [
+    { "q": "How do photo quotes work?", "a": "Text us a few clear photos of the items you want removed. We review them and send a straightforward quote, usually very quickly — the fastest way to get pricing without waiting for an in-person visit." },
+    { "q": "How accurate is a quote based on photos?", "a": "Photo quotes work well for most jobs. If anything changes once we arrive, we walk through it with you before starting, so pricing stays clear and upfront." },
+    { "q": "What size dump trailer do I need?", "a": "Most customers aren't sure at first, and that's okay. We ask a few quick questions about your project and help you choose the right trailer size so you're not overpaying or running out of space." },
+    { "q": "Is your equipment safe for driveways?", "a": "Yes. Our dump trailers are designed to be driveway-safe and placed carefully to avoid damage. If you have concerns about placement, let us know before delivery." },
+    { "q": "What items can you remove?", "a": "We handle a wide range of household, yard, and renovation items — furniture, mattresses, appliances, electronics, yard debris, bulk items, and construction/renovation debris. If it's taking up space, there's a good chance we can help. When in doubt, send a photo." },
+    { "q": "How soon can you come out or deliver a trailer?", "a": "In many cases we can schedule quickly, including same-day or next-day availability. Response time depends on the job and current schedule, but we always aim to move fast and communicate clearly." }
+  ],
+  "whatWeTake": [
+    { "q": "Can you remove items from inside my home or business?", "a": "Yes. We remove items from wherever they're located — garages, spare rooms, offices, storage units, and similar spaces — not just the curb. Photos ahead of time help us plan access." },
+    { "q": "Do you remove both residential and commercial items?", "a": "Yes. We handle household items, office furniture, shelving and storage, retail fixtures, and back-of-house materials. A quick description or photo usually clears up any questions." },
+    { "q": "Can you take renovation and construction debris?", "a": "Yes. We handle drywall, flooring, cabinets, scrap wood, and leftover fixtures after remodels, repairs, or cleanouts. A photo helps us confirm volume and any special handling." },
+    { "q": "Do you take large, awkward items like hot tubs or sheds?", "a": "Yes. We handle bulky removals and light-demolition items like hot tubs and sheds. These usually need extra planning for size or access, so photos are the fastest way to confirm." },
+    { "q": "What if I have a mixed pile of different items?", "a": "Very common during cleanouts and renovations. Mixed loads are quoted by overall volume and material type. A few photos from different angles give us enough context for a clear quote." },
+    { "q": "Are there items you don't accept?", "a": "For safety and disposal reasons we do not take hazardous or restricted materials — chemicals, paints, propane tanks, pool chemicals, used oil, batteries, pesticides, asbestos, or biohazard waste. Some items (like bed bug–infested furniture) need special handling, always explained before work begins." }
+  ],
+  "pricing": [
+    { "q": "How is junk removal pricing calculated?", "a": "Pricing is based on how much space your items take up in our trailer, not the number of individual items. You'll know the price and what it includes before anything is removed." },
+    { "q": "What's included in the price I'm quoted?", "a": "Your quote covers the full removal: labor for loading, transportation to approved disposal or recycling facilities, dump/processing fees, and time on-site. Anything requiring extra handling is discussed ahead of time." },
+    { "q": "Why can prices vary from one job to another?", "a": "Two piles that look similar can take up very different amounts of space once loaded. Weight, density, access, and preparation all affect pricing, which is why photos or an on-site look help." },
+    { "q": "Are there situations where additional charges may apply?", "a": "Yes — items that need bagging or breaking down, heavy or oversized items needing extra labor, and bed bug–infested furniture. Nothing is added without a clear explanation and your approval." },
+    { "q": "Do you offer any discounts?", "a": "Yes. Discounts are available for military members, veterans, seniors, and first responders. Mention it when requesting your quote so it can be applied upfront." },
+    { "q": "What's the fastest way to get an accurate price?", "a": "Sending photos from a few angles is usually quickest. For more complex jobs, an in-person estimate can also be scheduled." }
+  ],
+  "about": [
+    { "q": "What makes Sunshine State Junk Removal different?", "a": "Being family-owned and veteran-owned shapes how every job is approached — clear communication from first message to final pickup, respect for your time and property, accountability on every job, and a hands-on approach instead of rotating crews." },
+    { "q": "Why do you offer photo-based quotes?", "a": "Photo quotes let us respond faster and give a clear starting price without unnecessary delays." },
+    { "q": "Do you handle both small pickups and larger projects?", "a": "Yes — everything from single-item removals to larger cleanouts and ongoing projects, each with the same planning and attention." },
+    { "q": "What happens to the items after they're removed?", "a": "Items are sorted whenever possible. Scrap metal, appliances, and electronics are recycled when appropriate, and usable items may be donated to reduce landfill waste." },
+    { "q": "Who will I be working with during my project?", "a": "A local, family-run team led by Cesar and his wife Lynzee, for clear communication and consistent service start to finish." }
+  ]
+}

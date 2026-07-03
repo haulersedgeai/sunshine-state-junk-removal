@@ -1,0 +1,48 @@
+{
+  "SEO_RULE": "PRESERVE THE EXACT LEGACY SLUGS BELOW (including inconsistencies like some cities having a '-florida' suffix and the dumpster 'coral-spring' singular). These URLs have ranking history. Keep them identical, with trailingSlash:true. Do NOT 'clean up' slugs — that would require 301s and risk equity loss.",
+  "serviceAreaPages": [
+    { "city": "Cooper City", "state": "FL", "slug": "/cooper-city-florida/" },
+    { "city": "Coral Springs", "state": "FL", "slug": "/coral-springs-florida/" },
+    { "city": "Davie", "state": "FL", "slug": "/davie/" },
+    { "city": "Hollywood", "state": "FL", "slug": "/hollywood/" },
+    { "city": "Miramar", "state": "FL", "slug": "/miramar/" },
+    { "city": "Pembroke Pines", "state": "FL", "slug": "/pembroke-pines/" },
+    { "city": "Plantation", "state": "FL", "slug": "/plantation/" },
+    { "city": "Sunrise", "state": "FL", "slug": "/sunrise/" },
+    { "city": "Tamarac", "state": "FL", "slug": "/tamarac-florida/" },
+    { "city": "Weston", "state": "FL", "slug": "/weston/" }
+  ],
+  "dumpsterRentalPages": [
+    { "city": "Cooper City", "state": "FL", "slug": "/dumpster-rentals-in-cooper-city-florida/" },
+    { "city": "Coral Springs", "state": "FL", "slug": "/dumpster-rentals-in-coral-spring-florida/" },
+    { "city": "Davie", "state": "FL", "slug": "/dumpster-rentals-in-davie-florida/" },
+    { "city": "Ft. Lauderdale", "state": "FL", "slug": "/dumpster-rentals-in-ft-lauderdale-florida/" },
+    { "city": "Hollywood", "state": "FL", "slug": "/dumpster-rentals-in-hollywood-florida/" },
+    { "city": "Miramar", "state": "FL", "slug": "/dumpster-rentals-in-miramar-florida/" },
+    { "city": "Pembroke Pines", "state": "FL", "slug": "/dumpster-rentals-in-pembroke-pines-florida/" },
+    { "city": "Plantation", "state": "FL", "slug": "/dumpster-rentals-in-plantation-florida/" },
+    { "city": "Southwest Ranches", "state": "FL", "slug": "/dumpster-rentals-in-southwest-ranches-florida/" },
+    { "city": "Sunrise", "state": "FL", "slug": "/dumpster-rentals-in-sunrise-florida/" },
+    { "city": "Tamarac", "state": "FL", "slug": "/dumpster-rentals-in-tamarac-florida/" },
+    { "city": "Weston", "state": "FL", "slug": "/dumpster-rentals-in-weston-florida/" }
+  ],
+  "fullAreasServed": {
+    "browardCounty": [
+      "Coconut Creek", "Cooper City", "Coral Springs", "Dania Beach", "Davie", "Deerfield Beach",
+      "Fort Lauderdale", "Hallandale Beach", "Hillsboro Beach", "Hollywood", "Lauderdale Lakes",
+      "Lauderdale-By-The-Sea", "Lauderhill", "Lighthouse Point", "Margate", "Miramar",
+      "North Lauderdale", "Oakland Park", "Parkland", "Pembroke Park", "Pembroke Pines",
+      "Plantation", "Pompano Beach", "Sea Ranch Lakes", "Southwest Ranches", "Sunrise",
+      "Tamarac", "West Park", "Weston", "Wilton Manors"
+    ],
+    "miamiDade": [
+      "Coral Gables", "Miami Lakes", "Palm Springs North", "Bal Harbour", "Surfside", "Doral",
+      "Miami", "Sunny Isles Beach", "Aventura"
+    ],
+    "palmBeach": [
+      "Palm Beach", "Highland Beach", "Wellington", "Atlantis", "Boca Raton",
+      "Boynton Beach", "Delray Beach"
+    ]
+  },
+  "localPageContentGuidance": "Each city page should be UNIQUE (no duplicate content). Use the Weston page as the tone template but rewrite per city: localize the intro, reference real neighborhoods/landmarks where natural, adjust 'Areas Served Near {City}' to list genuinely adjacent towns, and vary the FAQ phrasing. Include the same section skeleton: answer-first H1, 'when space works against you', how we help, items commonly removed, local-service value, 3-step process, cleanouts available, areas served near {city}, closing CTA, 5–6 localized FAQs. Target 700–1100 words per page to match or exceed legacy depth."
+}

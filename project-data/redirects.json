@@ -1,0 +1,49 @@
+{
+  "strategy": "SAME DOMAIN, SAME SLUGS. The domain (sunshineremoval.com) is NOT changing, and we preserve every legacy path verbatim with trailingSlash:true. That means for the vast majority of pages NO redirect is needed — the URL stays identical, so link equity and rankings carry over cleanly. This map exists (a) to guarantee 1:1 path parity, and (b) to catch any path that must change. Only add a 301 when a path genuinely changes.",
+  "mustPreserveExactly": [
+    "/",
+    "/about-us/",
+    "/what-we-take/",
+    "/pricing/",
+    "/service-areas/",
+    "/dumpster-rentals/",
+    "/contact-us/",
+    "/faqs/",
+    "/terms-and-condition/",
+    "/privacy-policy/",
+    "/cooper-city-florida/",
+    "/coral-springs-florida/",
+    "/davie/",
+    "/hollywood/",
+    "/miramar/",
+    "/pembroke-pines/",
+    "/plantation/",
+    "/sunrise/",
+    "/tamarac-florida/",
+    "/weston/",
+    "/dumpster-rentals-in-cooper-city-florida/",
+    "/dumpster-rentals-in-coral-spring-florida/",
+    "/dumpster-rentals-in-davie-florida/",
+    "/dumpster-rentals-in-ft-lauderdale-florida/",
+    "/dumpster-rentals-in-hollywood-florida/",
+    "/dumpster-rentals-in-miramar-florida/",
+    "/dumpster-rentals-in-pembroke-pines-florida/",
+    "/dumpster-rentals-in-plantation-florida/",
+    "/dumpster-rentals-in-southwest-ranches-florida/",
+    "/dumpster-rentals-in-sunrise-florida/",
+    "/dumpster-rentals-in-tamarac-florida/",
+    "/dumpster-rentals-in-weston-florida/"
+  ],
+  "explicit301Redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": true }
+  ],
+  "preLaunchChecklist": [
+    "Run a full crawl of the LIVE site (Screaming Frog or `wget --spider`) and export every indexed URL, including any /wp-content/uploads/ image URLs and any blog/tag/category URLs not captured here. Add any missing path to mustPreserveExactly or map a 301.",
+    "Pull the top landing pages from Google Search Console (last 12 months) and confirm each still resolves 200 on the new build.",
+    "Keep the same XML sitemap path (/sitemap.xml) and resubmit in GSC after launch.",
+    "Preserve the google-site-verification meta tag (see site.json > tracking) so GSC ownership is retained.",
+    "301 any old WordPress system paths that had inbound links (e.g. /?p=ID, feed URLs) to their new equivalents or the homepage.",
+    "After DNS cutover, verify no redirect chains/loops and that http→https and non-www→(chosen host) are single-hop 301s."
+  ]
+}

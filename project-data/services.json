@@ -1,0 +1,82 @@
+{
+  "coreServices": [
+    {
+      "slug": "junk-removal",
+      "name": "Junk Removal",
+      "shortDesc": "Items gone without the hassle — as easy as sending a few photos.",
+      "image": "Junk-Removal.webp",
+      "commonRequests": [
+        "Furniture and appliance removal",
+        "Household item removal",
+        "Yard waste and debris",
+        "Curbside pickup"
+      ]
+    },
+    {
+      "slug": "dump-trailer-rentals",
+      "name": "Dump Trailer Rentals",
+      "aliasFor": "dumpster-rentals",
+      "shortDesc": "Load at your own pace with driveway-safe dump trailers, delivered and picked up fast.",
+      "image": "Dump-Trailer-Rentals.webp",
+      "sellingPoints": [
+        "Driveway-safe equipment",
+        "Help choosing the right size",
+        "Fast delivery and pickup",
+        "Clear pricing with no confusion"
+      ]
+    }
+  ],
+  "whatWeRemove": {
+    "commonItems": [
+      "Furniture and bulky household items",
+      "Appliances like refrigerators, washers, dryers, and ovens",
+      "Mattresses and box springs",
+      "Yard debris and outdoor clutter",
+      "Carpet and flooring materials",
+      "Bagged or boxed household items",
+      "Cardboard and moving boxes",
+      "Old tools and garage clutter",
+      "Christmas tree removal (seasonal)"
+    ],
+    "constructionDebris": [
+      "Drywall and scrap wood",
+      "Cabinets and fixtures",
+      "Flooring and carpet",
+      "Debris from small demolition or renovation work"
+    ],
+    "commercial": [
+      "Office furniture and cubicles",
+      "Shelving, displays, and fixtures",
+      "Electronics and equipment",
+      "Warehouse or backroom clutter",
+      "Retail and commercial cleanouts"
+    ],
+    "cleanouts": [
+      "Garage cleanouts",
+      "Estate cleanouts",
+      "Storage unit cleanouts",
+      "Property management cleanouts",
+      "Tenant or eviction cleanouts",
+      "Hoarder house cleanouts",
+      "Foreclosure cleanouts"
+    ],
+    "bulkySpecialty": [
+      "Hot tub removal",
+      "Shed removal / light demolition",
+      "Refrigerator & appliance removal"
+    ]
+  },
+  "process": [
+    { "step": 1, "title": "Get a Quote / Send a Photo", "desc": "Call or text a few clear photos of what you need removed. We respond quickly with a clear estimate." },
+    { "step": 2, "title": "Schedule", "desc": "Choose a time that works for you. We confirm and stay in touch before arrival." },
+    { "step": 3, "title": "Removal or Delivery", "desc": "We show up as planned, do the heavy lifting, and keep things easy start to finish." }
+  ],
+  "pricing": {
+    "model": "Volume-based — priced by how much space items take up in the 18-yard dump trailer, not per item.",
+    "quoteIncludes": ["Labor for loading", "Transportation to approved disposal/recycling", "Dump / disposal fees", "Time on-site to complete the job"],
+    "affectFactors": ["Bagging loose material", "Carrying items up or down stairs", "Light demolition or item breakdown", "Bed bug–infested furniture", "Items needing special handling or disposal"],
+    "trailerPricing": "Dump trailer rental pricing depends on trailer size, rental duration, and project type.",
+    "fastestQuote": "Text clear photos from a few angles for the fastest accurate quote.",
+    "noHiddenFees": true
+  }
+}

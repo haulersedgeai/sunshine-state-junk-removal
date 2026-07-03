@@ -1,0 +1,74 @@
+{
+  "businessName": "Sunshine State Junk Removal & Dumpster Rental",
+  "shortName": "Sunshine State Junk Removal",
+  "legacyName": "Sunshine State Removal & Hauling",
+  "tagline": "No pressure. No runaround. Just straightforward service.",
+  "domain": "https://sunshineremoval.com",
+  "owners": ["Cesar Hurtado", "Lynzee Hurtado"],
+  "ownerNote": "Owned and operated by Cesar and his wife Lynzee. Cesar is a U.S. military veteran.",
+  "positioning": [
+    "Family-owned",
+    "Veteran-owned",
+    "Licensed and insured",
+    "Highly reviewed (5.0 stars across 159+ Google reviews)",
+    "Fast photo-based quotes",
+    "Same-day and next-day availability",
+    "After-hours / emergency availability"
+  ],
+  "phone": "+19542471399",
+  "phoneDisplay": "(954) 247-1399",
+  "sms": "+19542471399",
+  "email": "info@sunshineremoval.com",
+  "address": {
+    "street": "3700 NW 104th Ave",
+    "city": "Coral Springs",
+    "state": "FL",
+    "zip": "33065",
+    "country": "US",
+    "CONFIRM_NOTE": "This street address comes from the Google Business Profile. The current website hides the street address and only shows 'Broward County, FL' (typical for a service-area business). Recommendation: keep it a Service Area Business — omit street from the public footer, but INCLUDE it in LocalBusiness schema so it matches GBP. Confirm with client before displaying publicly."
+  },
+  "geo": { "lat": 26.2712, "lng": -80.2706, "CONFIRM_NOTE": "Approx. coords for Coral Springs, FL 33065. Replace with exact GBP pin if available." },
+  "hours": {
+    "display": "Open 24/7",
+    "structured": "24/7",
+    "CONFIRM_NOTE": "DATA CONFLICT — resolve before launch. Google Business Profile says OPEN 24/7. The old website's About page says 'Monday–Saturday 7:00 AM – 8:00 PM'. For local-SEO NAP consistency, hours should MATCH the GBP. Reviews repeatedly praise late-night, after-hours, weekend, and hurricane-eve responses, which supports 24/7. Default this build to 24/7 to match GBP; flag for client confirmation."
+  },
+  "serviceAreaSummary": "Serving Broward County, Florida, with select service in Miami-Dade and Palm Beach Counties.",
+  "primaryCounty": "Broward County",
+  "secondaryCounties": ["Miami-Dade County", "Palm Beach County"],
+  "discounts": ["Military & veterans", "Senior citizens", "First responders"],
+  "equipmentNote": "Junk removal is priced by how much space items take up in an 18-yard dump trailer. Dump trailers are driveway-safe.",
+  "doNotAccept": [
+    "Hazardous or restricted materials",
+    "Chemicals and paints",
+    "Propane tanks and pool chemicals",
+    "Used oil, batteries, pesticides",
+    "Asbestos",
+    "Biohazard waste"
+  ],
+  "specialHandling": [
+    "Bed bug–infested furniture",
+    "Scrap-related pickups",
+    "Items requiring special disposal (explained clearly before work begins)"
+  ],
+  "rating": { "value": "5.0", "count": 159, "source": "Google Business Profile" },
+  "socials": {
+    "google": "https://maps.app.goo.gl/rgW6sZRqi1o2MFQPA",
+    "googleShare": "https://share.google/9SxTGsomaMiSdgB5c",
+    "facebook": "https://www.facebook.com/SunshineStateJunkRemoval/",
+    "instagram": "https://www.instagram.com/sunshine_state_junk_removal/",
+    "yelp": "https://www.yelp.com/biz/sunshine-state-junk-removal-coral-springs",
+    "nextdoor": "https://nextdoor.com/pages/sunshine-state-removal-hauling-sunrise-fl/"
+  },
+  "legacyDesigner": "Blue Crocus Solutions (previous site) — do NOT carry over credit unless client asks.",
+  "tracking": {
+    "gtmId": "GTM-MD7RMZGV",
+    "googleSiteVerification": "ajUPZbG0UaUl2IT7sfGSqb_zJfxw8zlGPnOBEulK8JY",
+    "CRITICAL": "Keep BOTH of these. The google-site-verification meta tag preserves Google Search Console ownership. The GTM container preserves analytics continuity. Losing either damages SEO/measurement history."
+  },
+  "primaryCTAs": [
+    { "label": "Text a photo for a quote", "type": "sms", "value": "+19542471399" },
+    { "label": "Call to schedule", "type": "tel", "value": "+19542471399" },
+    { "label": "Get a fast quote", "type": "link", "value": "/contact-us/" }
+  ]
+}
