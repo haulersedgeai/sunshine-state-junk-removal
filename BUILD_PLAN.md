@@ -17,5 +17,5 @@
 - [x] AEO layer: JSON-LD graph (LocalBusiness + Service + FAQPage + Breadcrumb + Speakable), `llms.txt`
 - [x] GSC verification tag + GTM container preserved
 - [x] Quote-form API route (Resend integration; no-op fallback when RESEND_API_KEY missing)
-- [ ] `next build` clean
-- [ ] Git init + GitHub repo + Vercel deploy
+- [x] `next build` clean — 34 static pages + sitemap.xml + robots.txt + /api/quote
+- [x] Git init + GitHub repo (`haulersedgeai/sunshine-state-junk-removal`) + Vercel deploy (`sunshine-state-junk-removal.vercel.app`)

@@ -16,7 +16,9 @@ export function pageMetadata(opts: PageMetaOpts): Metadata {
   const ogImage = absoluteUrl(opts.ogImage || DEFAULT_OG);
   return {
     metadataBase: new URL(SITE_URL),
-    title: opts.title,
+    // Use `absolute` so the layout template ("%s | Sunshine State Junk Removal")
+    // doesn't append the brand a second time — each page title already includes it.
+    title: { absolute: opts.title },
     description: opts.description,
     alternates: { canonical: url },
     robots: opts.noindex ? { index: false, follow: false } : { index: true, follow: true },
