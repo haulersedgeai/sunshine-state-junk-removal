@@ -24,6 +24,7 @@ export default function ContactPage() {
       <section className="section">
         <div className="container-p">
           <SectionHeading
+            as="h1"
             eyebrow="Get in touch"
             title="Get a fast, honest quote — usually within the hour."
             intro="Text a few clear photos for the fastest reply. Prefer to talk? Call us any time — we’re available around the clock for urgent jobs."

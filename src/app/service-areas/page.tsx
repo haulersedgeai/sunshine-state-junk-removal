@@ -26,6 +26,7 @@ export default function ServiceAreasPage() {
       <section className="section">
         <div className="container-p">
           <SectionHeading
+            as="h1"
             eyebrow="Service areas"
             title="Junk removal & dumpster rentals across Broward County."
             intro={site.serviceAreaSummary + ' Not sure if we cover your area? Ask when you get in touch — we’re flexible on nearby jobs.'}

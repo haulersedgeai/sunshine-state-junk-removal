@@ -32,6 +32,7 @@ export default function FAQPage() {
       <section className="section">
         <div className="container-p">
           <SectionHeading
+            as="h1"
             eyebrow="FAQs"
             title="Answers to the questions we hear most."
             intro="If you don't see your question, call or text — we're happy to help."
