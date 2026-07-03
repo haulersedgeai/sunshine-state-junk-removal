@@ -23,6 +23,17 @@ const CITY_COORDS: Record<string, [number, number]> = {
   'Southwest Ranches': [26.06, -80.35],
 };
 
+// Defensive: replace Leaflet's default icon (which resolves to relative PNG
+// paths that 404 under a bundler) with an inline divIcon. Every marker in
+// this map uses an explicit icon or CircleMarker, but this guarantees that
+// any future <Marker> added without an icon prop still renders.
+L.Marker.prototype.options.icon = L.divIcon({
+  className: 'ss-marker-default',
+  html: `<div style="width:14px;height:14px;border-radius:50%;background:#3D6BA8;border:2px solid #0F1F3A"></div>`,
+  iconSize: [14, 14],
+  iconAnchor: [7, 7],
+});
+
 // Custom sunshine-orange marker for the HQ pin so it stands out from the
 // dumpster / service circle markers.
 const hqIcon = L.divIcon({
