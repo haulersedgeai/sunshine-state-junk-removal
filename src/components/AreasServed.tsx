@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getServiceAreas } from '@/data';
+import { ChevronRightIcon } from './Icon';
 
 export function AreasServed({ highlight }: { highlight?: string }) {
   const areas = getServiceAreas().fullAreasServed;
@@ -9,17 +10,29 @@ export function AreasServed({ highlight }: { highlight?: string }) {
   const CityChip = ({ city }: { city: string }) => {
     const slug = slugFor(city);
     const isActive = highlight?.toLowerCase() === city.toLowerCase();
-    const cls = `text-sm no-underline rounded-full px-3 py-1.5 ring-1 ${
-      isActive
-        ? 'bg-sun-500 text-navy-900 ring-sun-500 font-semibold'
-        : slug
-        ? 'bg-white text-navy-900 ring-navy-200 hover:ring-navy-900 hover:bg-navy-50'
-        : 'bg-white text-ink-soft ring-navy-100'
-    }`;
-    return slug ? (
-      <Link href={slug} className={cls}>{city}</Link>
-    ) : (
-      <span className={cls}>{city}</span>
+
+    // Distinct visual treatment:
+    // - linked cities: white background, navy border, small right-arrow, hover state
+    // - plain (no page): pill with muted foreground, no border, no arrow
+    if (slug) {
+      return (
+        <Link
+          href={slug}
+          className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm no-underline transition-colors ${
+            isActive
+              ? 'bg-sun-500 text-navy-900 ring-1 ring-sun-500 font-semibold'
+              : 'bg-white text-navy-900 font-semibold ring-1 ring-navy-300 hover:ring-navy-900 hover:bg-navy-50'
+          }`}
+        >
+          <span>{city}</span>
+          <ChevronRightIcon className="h-3 w-3 text-sun-600" aria-hidden="true" />
+        </Link>
+      );
+    }
+    return (
+      <span className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-ink-soft bg-navy-50/60">
+        {city}
+      </span>
     );
   };
 
@@ -27,7 +40,9 @@ export function AreasServed({ highlight }: { highlight?: string }) {
     <div className="grid gap-8 lg:grid-cols-3">
       <div>
         <h3 className="text-navy-900 m-0">Broward County</h3>
-        <p className="mt-2 text-ink-soft text-sm">Our primary service area — same-day availability across the county.</p>
+        <p className="mt-2 text-ink-soft text-sm">
+          Our primary service area — same-day availability across the county. <span className="text-navy-900 font-semibold">Underlined pills have dedicated pages.</span>
+        </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {areas.browardCounty.map((c) => <CityChip key={c} city={c} />)}
         </div>

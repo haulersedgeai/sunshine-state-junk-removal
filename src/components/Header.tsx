@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { getSite } from '@/data';
-import { PhoneIcon, MessageIcon, MenuIcon, XIcon, StarIcon } from './Icon';
+import { PhoneIcon, MessageIcon, MenuIcon, XIcon } from './Icon';
+import { Wordmark } from './Wordmark';
 
 const nav = [
   { label: 'Home', href: '/' },
@@ -36,34 +36,12 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 backdrop-blur transition-all ${
-        scrolled ? 'bg-white/90 shadow-sm' : 'bg-white/70'
+      className={`sticky top-0 z-40 backdrop-blur transition-all border-b ${
+        scrolled ? 'bg-white/90 shadow-sm border-navy-100/60' : 'bg-white/70 border-transparent'
       }`}
     >
-      <div className="border-b border-navy-100/60 bg-navy-900 text-white">
-        <div className="container-p flex items-center justify-between py-1.5 text-[11.5px] sm:text-xs">
-          <div className="flex items-center gap-2 text-sun-300">
-            <StarIcon className="h-3.5 w-3.5" />
-            <span className="font-semibold">5.0 · 159+ Google reviews</span>
-            <span className="hidden sm:inline text-white/70">· Veteran & family-owned</span>
-          </div>
-          <a href={`tel:${site.phone}`} className="hidden sm:inline text-white no-underline hover:text-sun-300">
-            {site.phoneDisplay}
-          </a>
-        </div>
-      </div>
-
       <div className="container-p flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="flex items-center gap-2 no-underline shrink-0" aria-label="Sunshine State Junk Removal home">
-          <Image
-            src="/images/Sunshine-Logo.svg"
-            alt="Sunshine State Junk Removal"
-            width={180}
-            height={44}
-            priority
-            className="h-9 w-auto sm:h-10"
-          />
-        </Link>
+        <Wordmark />
 
         <nav className="hidden lg:flex items-center gap-6" aria-label="Primary">
           {nav.map((n) => (
@@ -101,7 +79,7 @@ export function Header() {
           <div className="absolute inset-0 bg-navy-900/60" onClick={() => setOpen(false)} />
           <div className="absolute right-0 top-0 h-full w-[86%] max-w-sm bg-white shadow-xl p-6 flex flex-col">
             <div className="flex items-center justify-between mb-6">
-              <Image src="/images/Sunshine-Logo.svg" alt="" width={140} height={36} className="h-9 w-auto" />
+              <Wordmark />
               <button
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full hover:bg-navy-50"
                 onClick={() => setOpen(false)}

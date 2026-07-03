@@ -174,13 +174,16 @@ function audit(route, html) {
   if (route.kind !== '404' && !napOK) issues.push('schema NAP fields off');
   if (route.kind !== '404' && !hasVisibleAddress) issues.push('visible address string missing');
 
-  // Chrome: footer white logo present, sticky CTA present, header nav present
+  // Chrome: text wordmark present (header + footer), sticky CTA present
   if (route.kind !== '404') {
-    if (!html.includes('Sunshine-Logo-White.svg')) issues.push('footer white logo not referenced');
-    if (!html.includes('Sunshine-Logo.svg')) issues.push('header logo not referenced');
+    // Wordmark is rendered as text, not an image. Check for the split brand markup.
+    const wordmarkCount = (html.match(/Sunshine State<\/span>\s*<span[^>]+>Junk Removal/g) || []).length;
+    if (wordmarkCount < 2) issues.push(`wordmark rendered only ${wordmarkCount}× (expected header+footer)`);
     if (!/Text a photo/.test(html)) issues.push('sticky/CTA "Text a photo" missing');
     if (!/tel:\+19542471399/.test(html)) issues.push('tel link missing');
     if (!/sms:\+19542471399/.test(html)) issues.push('sms link missing');
+    if (!/adimize\.com/.test(html)) issues.push('Adimize footer credit missing');
+    if (/maps\/d\/embed/.test(html)) issues.push('legacy Google My Map iframe still present');
   }
 
   // Trust signal duplication — the "5.0 · 159+ reviews" claim string

@@ -6,6 +6,7 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CTASection } from '@/components/CTASection';
 import { AreasServed } from '@/components/AreasServed';
+import { ServiceMapLoader } from '@/components/ServiceMapLoader';
 import { ChevronRightIcon } from '@/components/Icon';
 
 export const metadata: Metadata = pageMetadata({
@@ -79,13 +80,7 @@ export default function ServiceAreasPage() {
 
       <section className="section">
         <div className="container-p overflow-hidden rounded-3xl ring-1 ring-navy-100 shadow-card">
-          <iframe
-            title="Sunshine State Junk Removal service area map"
-            src="https://www.google.com/maps/d/embed?mid=1w206hNLnoiuCFsSI2okpRZHAOnx_Vhw"
-            className="h-[520px] w-full"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <ServiceMapLoader height={520} />
         </div>
       </section>
 

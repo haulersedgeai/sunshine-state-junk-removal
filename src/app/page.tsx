@@ -12,6 +12,7 @@ import { ReviewsSlider } from '@/components/ReviewsSlider';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { AreasServed } from '@/components/AreasServed';
 import { CTASection } from '@/components/CTASection';
+import { ServiceMapLoader } from '@/components/ServiceMapLoader';
 import { JsonLd, graph, faqPageSchema, speakableSchema, serviceSchema } from '@/lib/schema';
 
 export const metadata: Metadata = pageMetadata({
@@ -204,13 +205,7 @@ export default function HomePage() {
             <AreasServed />
           </div>
           <div className="mt-10 overflow-hidden rounded-3xl ring-1 ring-navy-100 shadow-card">
-            <iframe
-              title="Sunshine State Junk Removal service area map"
-              src="https://www.google.com/maps/d/embed?mid=1w206hNLnoiuCFsSI2okpRZHAOnx_Vhw"
-              className="h-[420px] w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <ServiceMapLoader height={420} />
           </div>
         </div>
       </section>

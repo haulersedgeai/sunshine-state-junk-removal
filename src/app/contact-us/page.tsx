@@ -5,6 +5,7 @@ import { pageMetadata } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { QuoteForm } from '@/components/QuoteForm';
+import { ServiceMapLoader } from '@/components/ServiceMapLoader';
 import { Button } from '@/components/Button';
 import { PhoneIcon, MessageIcon, MailIcon, ClockIcon, MapPinIcon, StarIcon } from '@/components/Icon';
 
@@ -77,13 +78,7 @@ export default function ContactPage() {
               </div>
 
               <div className="overflow-hidden rounded-2xl ring-1 ring-navy-100 shadow-card">
-                <iframe
-                  title="Service area map"
-                  src="https://www.google.com/maps/d/embed?mid=1w206hNLnoiuCFsSI2okpRZHAOnx_Vhw"
-                  className="h-64 w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+                <ServiceMapLoader height={260} />
               </div>
             </aside>
           </div>
