@@ -15,10 +15,8 @@ const DEFAULT_OG = '/images/Sunshine-About-Us.webp';
 // old WordPress host, so OG/Twitter images resolved through that host will 404
 // in social preview cards. Route social-preview image URLs through the current
 // deployment host instead, while keeping canonicals on the production domain.
-//
-// TODO(launch): after DNS cutover to Vercel, unset NEXT_PUBLIC_OG_HOST in Vercel
-// project env so this falls back to SITE_URL — OG images will then resolve on
-// the production domain and this whole workaround becomes a no-op.
+// After DNS cutover to Vercel, unset NEXT_PUBLIC_OG_HOST so this falls back to
+// SITE_URL and the workaround becomes a no-op.
 const OG_HOST = (process.env.NEXT_PUBLIC_OG_HOST || '').replace(/\/$/, '') || SITE_URL;
 const ogAbsolute = (path: string) => {
   const clean = path.startsWith('/') ? path : `/${path}`;

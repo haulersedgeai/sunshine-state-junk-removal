@@ -24,14 +24,12 @@
     "city": "Coral Springs",
     "state": "FL",
     "zip": "33065",
-    "country": "US",
-    "CONFIRM_NOTE": "This street address comes from the Google Business Profile. The current website hides the street address and only shows 'Broward County, FL' (typical for a service-area business). Recommendation: keep it a Service Area Business — omit street from the public footer, but INCLUDE it in LocalBusiness schema so it matches GBP. Confirm with client before displaying publicly."
+    "country": "US"
   },
-  "geo": { "lat": 26.2712, "lng": -80.2706, "CONFIRM_NOTE": "Approx. coords for Coral Springs, FL 33065. Replace with exact GBP pin if available." },
+  "geo": { "lat": 26.2712, "lng": -80.2706 },
   "hours": {
     "display": "Open 24/7",
-    "structured": "24/7",
-    "CONFIRM_NOTE": "DATA CONFLICT — resolve before launch. Google Business Profile says OPEN 24/7. The old website's About page says 'Monday–Saturday 7:00 AM – 8:00 PM'. For local-SEO NAP consistency, hours should MATCH the GBP. Reviews repeatedly praise late-night, after-hours, weekend, and hurricane-eve responses, which supports 24/7. Default this build to 24/7 to match GBP; flag for client confirmation."
+    "structured": "24/7"
   },
   "serviceAreaSummary": "Serving Broward County, Florida, with select service in Miami-Dade and Palm Beach Counties.",
   "primaryCounty": "Broward County",

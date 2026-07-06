@@ -45,7 +45,7 @@ Autonomous decisions made during this rebuild. All small enough to fit the brief
 - Resend integration ready — reads `RESEND_API_KEY` / `QUOTE_TO_EMAIL` from env; if `RESEND_API_KEY` is missing, the endpoint logs the lead and returns success (so the UX still works pre-launch). `TODO(client): add RESEND_API_KEY` in Vercel to enable email delivery.
 
 ## Legal pages
-- `/terms-and-condition/` and `/privacy-policy/` written as clean, standard, service-business templates and clearly labeled `TODO(client): confirm and, if needed, replace this template with your reviewed legal copy.`
+- `/terms-and-condition/` and `/privacy-policy/` written as clean, standard, service-business templates. Client should review and swap in attorney-reviewed copy if/when available.
 
 ## Previously flagged data conflicts — both now resolved
 1. **Hours (`site.json > hours`)** — **CONFIRMED: Open 24/7.** Matches Google Business Profile and the after-hours evidence in the reviews. The old website's Mon–Sat 7am–8pm hours are not used anywhere on the site or in schema.

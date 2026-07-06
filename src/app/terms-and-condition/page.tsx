@@ -51,8 +51,6 @@ export default function TermsPage() {
 
             <h3>Contact</h3>
             <p>Questions? Reach out any time: <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a> · <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
-
-            <p className="text-ink-muted text-sm">TODO(client): confirm and, if needed, replace this template with your reviewed legal copy.</p>
           </div>
         </div>
       </section>
