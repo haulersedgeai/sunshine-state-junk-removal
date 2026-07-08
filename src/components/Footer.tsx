@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getSite, formattedAddress } from '@/data';
 import { PhoneIcon, MessageIcon, MailIcon, ClockIcon, MapPinIcon } from './Icon';
 import { Wordmark } from './Wordmark';
@@ -40,9 +41,21 @@ export function Footer() {
   const site = getSite();
   return (
     <footer className="bg-navy-900 text-white">
-      <div className="container-p py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+      <div className="container-p py-12 sm:py-14 grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <Wordmark variant="footer" />
+          <div className="flex items-center gap-3">
+            <span className="inline-flex items-center justify-center rounded-lg bg-white/95 p-1.5 shadow-sm">
+              <Image
+                src="/images/Sunshine-Logo.svg"
+                alt="Sunshine State Junk Removal"
+                width={180}
+                height={168}
+                className="h-12 w-auto"
+                priority={false}
+              />
+            </span>
+            <Wordmark variant="footer" />
+          </div>
           <p className="mt-4 text-white/90 max-w-sm">
             Family- and veteran-owned junk removal and dump-trailer rentals across Broward County, with select service in Miami-Dade and Palm Beach.
           </p>
@@ -93,18 +106,19 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/15">
-        <div className="container-p py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/80">
-          <p className="m-0">© {new Date().getFullYear()} {site.businessName}. Licensed &amp; insured. Veteran &amp; family-owned.</p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <Link href="/terms-and-condition/" className="text-white/80 no-underline hover:text-sun-300">Terms</Link>
-            <Link href="/privacy-policy/" className="text-white/80 no-underline hover:text-sun-300">Privacy</Link>
-            <Link href="/faqs/" className="text-white/80 no-underline hover:text-sun-300">FAQs</Link>
-            <span aria-hidden="true" className="text-white/50">·</span>
+        <div className="container-p py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-slate-200">
+          <p className="m-0 leading-relaxed">
+            © {new Date().getFullYear()} {site.businessName}. Licensed &amp; insured. Veteran &amp; family-owned.
+          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-200">
+            <Link href="/terms-and-condition/" className="text-slate-200 no-underline hover:text-sun-300">Terms</Link>
+            <Link href="/privacy-policy/" className="text-slate-200 no-underline hover:text-sun-300">Privacy</Link>
+            <Link href="/faqs/" className="text-slate-200 no-underline hover:text-sun-300">FAQs</Link>
             <a
               href="https://adimize.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/80 no-underline hover:text-sun-300"
+              className="text-slate-200 no-underline hover:text-sun-300"
             >
               Powered by Adimize — Local Service Digital Marketing
             </a>
