@@ -75,8 +75,65 @@
     "model": "Volume-based — priced by how much space items take up in the 18-yard dump trailer, not per item.",
     "quoteIncludes": ["Labor for loading", "Transportation to approved disposal/recycling", "Dump / disposal fees", "Time on-site to complete the job"],
     "affectFactors": ["Bagging loose material", "Carrying items up or down stairs", "Light demolition or item breakdown", "Bed bug–infested furniture", "Items needing special handling or disposal"],
-    "trailerPricing": "Dump trailer rental pricing depends on trailer size, rental duration, and project type.",
+    "trailerPricing": "Dump trailer rental pricing is based on trailer size and rental duration, plus dump fees at $140 per ton.",
     "fastestQuote": "Text clear photos from a few angles for the fastest accurate quote.",
-    "noHiddenFees": true
+    "noHiddenFees": true,
+    "currency": "USD",
+    "junkRemoval": {
+      "trailerSizeYards": 18,
+      "includesLaborAndDisposal": true,
+      "priceFrom": 99,
+      "priceTo": 795,
+      "tiers": [
+        { "label": "Minimum load", "price": 99, "visual": "A few items — single-piece pickups." },
+        { "label": "1/4 load", "price": 289, "visual": "Roughly a quarter of the 18-yard trailer." },
+        { "label": "1/2 load", "price": 479, "visual": "Half the trailer — a garage or small cleanout." },
+        { "label": "3/4 load", "price": 659, "visual": "Three-quarters full — a large cleanout or renovation." },
+        { "label": "Full load", "price": 795, "visual": "The full 18-yard trailer." }
+      ],
+      "notes": [
+        "Construction Debris rates are subject to change for the amount of labor and disposal fees required.",
+        "An additional surcharge may apply for stairs, long-distance hauling, bagging items, or item disassembly."
+      ]
+    },
+    "dumpsterRental": {
+      "dumpFeePerTon": 140,
+      "priceFrom": 300,
+      "priceTo": 450,
+      "sizes": [
+        {
+          "size": "18 Yard",
+          "dimensions": {
+            "lengthFt": 14,
+            "widthFt": 7,
+            "heightFt": 5,
+            "volumeYd": 18
+          },
+          "description": "A strong fit for garage cleanouts, furniture removal, and renovation debris.",
+          "durations": [
+            { "duration": "24 hr", "price": 300 },
+            { "duration": "24–72 hr", "price": 350 }
+          ]
+        },
+        {
+          "size": "21 Yard",
+          "dimensions": {
+            "lengthFt": 16,
+            "widthFt": 7,
+            "heightFt": 5,
+            "volumeYd": 21
+          },
+          "description": "Designed for larger projects such as estate cleanouts, full-property cleanups, and heavier debris loads.",
+          "durations": [
+            { "duration": "24 hr", "price": 400 },
+            { "duration": "24–72 hr", "price": 450 }
+          ]
+        }
+      ],
+      "notes": [
+        "A $50 daily surcharge applies if the rental exceeds 72 hours.",
+        "Clean fill concrete, tile, dirt, pavers, rocks will be billed at $625 per load, cannot go over half height on trailer."
+      ]
+    }
   }
 }

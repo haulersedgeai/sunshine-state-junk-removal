@@ -9,7 +9,9 @@ import { CTASection } from '@/components/CTASection';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { Button } from '@/components/Button';
 import { CheckIcon, PhoneIcon, MessageIcon, ChevronRightIcon } from '@/components/Icon';
-import { JsonLd, graph, faqPageSchema, serviceSchema } from '@/lib/schema';
+import { JsonLd, graph, faqPageSchema, dumpsterRentalOfferSchema, dumpsterSizeItemListSchema } from '@/lib/schema';
+import { DumpsterRentalPricingTable } from '@/components/PricingTables';
+import { DumpsterSpecs } from '@/components/DumpsterSpecs';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Dump Trailer Rentals in Broward County | Sunshine State',
@@ -29,11 +31,8 @@ export default function DumpsterHubPage() {
     <>
       <JsonLd
         data={graph([
-          serviceSchema({
-            name: 'Dump Trailer Rental',
-            description: 'Driveway-safe dump trailer rentals with delivery, pickup, and transparent pricing across Broward County, FL.',
-            slug: '/dumpster-rentals/',
-          }),
+          dumpsterRentalOfferSchema(),
+          dumpsterSizeItemListSchema(),
           faqPageSchema(generalFaqs),
         ])}
       />
@@ -50,7 +49,7 @@ export default function DumpsterHubPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`tel:${site.phone}`} size="lg" variant="primary"><PhoneIcon className="h-4 w-4" /> Call {site.phoneDisplay}</Button>
               <Button href={`sms:${site.sms}`} size="lg" variant="secondary"><MessageIcon className="h-4 w-4" /> Text a photo</Button>
-              <Button href="/contact-us/" size="lg" variant="outline">Reserve a trailer</Button>
+              <Button href="/contact-us/#quote" size="lg" variant="outline">Reserve a trailer</Button>
             </div>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {dumpster.sellingPoints!.map((s) => (
@@ -63,6 +62,8 @@ export default function DumpsterHubPage() {
           </div>
         </div>
       </section>
+
+      <DumpsterSpecs />
 
       <section className="section bg-sky-soft/60">
         <div className="container-p grid gap-8 lg:grid-cols-2 items-start">
@@ -94,7 +95,25 @@ export default function DumpsterHubPage() {
         </div>
       </section>
 
+      {/* PRICING TABLE */}
       <section className="section">
+        <div className="container-p">
+          <SectionHeading
+            eyebrow="Rental pricing"
+            title="Flat rental rates. Public pricing."
+            intro="Two trailer sizes, two rental windows. Base price plus dump fees at the scale."
+          />
+          <div className="mt-10">
+            <DumpsterRentalPricingTable />
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button href="/pricing/" variant="secondary">See full pricing details →</Button>
+            <Button href={`sms:${site.sms}`} variant="outline"><MessageIcon className="h-4 w-4" /> Text for a quote</Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-sky-soft/60">
         <div className="container-p">
           <SectionHeading
             eyebrow="Dumpster rentals by city"
@@ -116,7 +135,7 @@ export default function DumpsterHubPage() {
         </div>
       </section>
 
-      <section className="section bg-sky-soft/60">
+      <section className="section">
         <div className="container-p grid gap-10 lg:grid-cols-[1fr_1.6fr]">
           <div>
             <SectionHeading eyebrow="Trailer rental FAQ" title="Common questions." />
