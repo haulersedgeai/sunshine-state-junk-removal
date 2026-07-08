@@ -13,7 +13,7 @@ import { FAQAccordion } from '@/components/FAQAccordion';
 import { AreasServed } from '@/components/AreasServed';
 import { CTASection } from '@/components/CTASection';
 import { ServiceMapLoader } from '@/components/ServiceMapLoader';
-import { JsonLd, graph, faqPageSchema, speakableSchema, serviceSchema } from '@/lib/schema';
+import { JsonLd, graph, faqPageSchema, speakableSchema, junkRemovalOfferSchema, dumpsterRentalOfferSchema } from '@/lib/schema';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Sunshine State Junk Removal | Fast Junk Removal',
@@ -33,16 +33,8 @@ export default function HomePage() {
       <JsonLd
         data={graph([
           faqPageSchema(faqs),
-          serviceSchema({
-            name: 'Junk Removal',
-            description: 'Full-service junk removal across Broward County, FL. Photo-based quotes, same-day availability.',
-            slug: '/what-we-take/',
-          }),
-          serviceSchema({
-            name: 'Dump Trailer Rental',
-            description: 'Driveway-safe dump trailer rentals with delivery, pickup, and clear pricing.',
-            slug: '/dumpster-rentals/',
-          }),
+          junkRemovalOfferSchema(),
+          dumpsterRentalOfferSchema(),
           { '@type': 'WebPage', '@id': `${site.domain}#webpage`, url: site.domain, name: 'Home', speakable: speakableSchema() },
         ])}
       />
@@ -66,7 +58,7 @@ export default function HomePage() {
               <Button href={`sms:${site.sms}`} size="lg" variant="secondary">
                 <MessageIcon className="h-4 w-4" /> Text a photo
               </Button>
-              <Button href="/contact-us/" size="lg" variant="outline">
+              <Button href="/contact-us/#quote" size="lg" variant="outline">
                 Get a fast quote
               </Button>
             </div>
