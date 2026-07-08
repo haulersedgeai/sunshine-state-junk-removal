@@ -8,7 +8,7 @@ Total issues found: **0**
 ## Cross-route issues
 - Titles unique across routes ✓
 - Descriptions unique across routes ✓
-- All 25 referenced local images resolve 200 ✓
+- All 24 referenced local images resolve 200 ✓
 
 ## Per-route findings
 
@@ -40,9 +40,9 @@ Total issues found: **0**
 - **Title:** Junk Removal Pricing | Sunshine State Junk Removal
 - **Canonical:** https://sunshineremoval.com/pricing/
 - **OG image:** https://sunshine-state-junk-removal.vercel.app/images/Sunshine-About-Us.webp
-- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness
-- **<details> FAQ blocks:** 6
-- _note: refs 2 local images_
+- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service
+- **<details> FAQ blocks:** 8
+- _note: refs 1 local images_
 
 ### ✅ `/dumpster-rentals/` (core, HTTP 200)
 - **Title:** Dump Trailer Rentals in Broward County | Sunshine State
@@ -73,7 +73,7 @@ Total issues found: **0**
 - **Canonical:** https://sunshineremoval.com/faqs/
 - **OG image:** https://sunshine-state-junk-removal.vercel.app/images/Sunshine-About-Us.webp
 - **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness
-- **<details> FAQ blocks:** 23
+- **<details> FAQ blocks:** 25
 - _note: refs 0 local images_
 
 ### ✅ `/terms-and-condition/` (legal, HTTP 200)
