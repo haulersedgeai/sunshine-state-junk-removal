@@ -10,6 +10,7 @@ import { ReviewsSlider } from './ReviewsSlider';
 import { Button } from './Button';
 import { JsonLd, graph, faqPageSchema, speakableSchema } from '@/lib/schema';
 import { CheckIcon, PhoneIcon, MessageIcon, StarIcon, ShieldIcon, ClockIcon } from './Icon';
+import { PricingHookStrip } from './PricingTables';
 import { CityContent } from '@/data/city-content';
 
 export function CityServicePage({ content }: { content: CityContent }) {
@@ -94,7 +95,7 @@ export function CityServicePage({ content }: { content: CityContent }) {
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`tel:${site.phone}`} size="lg" variant="primary"><PhoneIcon className="h-4 w-4" /> Call {site.phoneDisplay}</Button>
               <Button href={`sms:${site.sms}`} size="lg" variant="secondary"><MessageIcon className="h-4 w-4" /> Text a photo</Button>
-              <Button href="/contact-us/" size="lg" variant="outline">Get a fast quote</Button>
+              <Button href="/contact-us/#quote" size="lg" variant="outline">Get a fast quote</Button>
             </div>
             <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-navy-800">
               <li className="inline-flex items-center gap-2"><StarIcon className="h-4 w-4 text-sun-500" /> <strong>5.0</strong> · 159+ reviews</li>
@@ -105,6 +106,13 @@ export function CityServicePage({ content }: { content: CityContent }) {
           <div className="relative aspect-[5/4] rounded-3xl overflow-hidden ring-1 ring-navy-100 shadow-card">
             <Image src="/images/sunshine-state-residential-junk-removal.webp" alt={`Junk removal in ${content.city}, FL`} fill priority sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
           </div>
+        </div>
+      </section>
+
+      {/* PRICING HOOK */}
+      <section className="pt-2 pb-0">
+        <div className="container-p">
+          <PricingHookStrip variant="junk" />
         </div>
       </section>
 
