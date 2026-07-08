@@ -4,8 +4,7 @@ import { getSite, formattedAddress } from '@/data';
 import { pageMetadata } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { QuoteForm } from '@/components/QuoteForm';
-import { HousecallProButton } from '@/components/HousecallProButton';
+import { LeadForm } from '@/components/LeadForm';
 import { ServiceMapLoader } from '@/components/ServiceMapLoader';
 import { Button } from '@/components/Button';
 import { PhoneIcon, MessageIcon, MailIcon, ClockIcon, MapPinIcon, StarIcon } from '@/components/Icon';
@@ -23,39 +22,36 @@ export default function ContactPage() {
     <>
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact', href: '/contact-us/' }]} />
 
-      <section className="section">
+      <section id="quote" className="section scroll-mt-24">
         <div className="container-p">
           <SectionHeading
             as="h1"
             eyebrow="Get in touch"
-            title="Get a fast, honest quote — usually within the hour."
-            intro="Text a few clear photos for the fastest reply. Prefer to talk? Call us any time — we’re available around the clock for urgent jobs."
+            title="Get a fast quote — usually within the hour."
+            intro="Fill out the quick form below and we’ll reach out with a straightforward price. Prefer to talk or text a photo? Use the buttons on the right — we’re available around the clock for urgent jobs."
           />
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
             <div className="space-y-6">
-              <QuoteForm />
-
-              <div className="rounded-2xl bg-sky-soft/70 ring-1 ring-navy-100 p-6 sm:p-7">
-                <h2 className="m-0 text-lg text-navy-900">Already know what you need? Book online.</h2>
-                <p className="mt-2 text-ink-soft text-sm">
-                  If you’ve done this before, you can request service directly through our Housecall Pro portal.
-                </p>
-                <div className="mt-4">
-                  <HousecallProButton />
-                </div>
-              </div>
+              <LeadForm />
+              <p className="text-sm text-ink-muted">
+                Prefer a photo quote? Text a few clear pics of the pile to{' '}
+                <a href={`sms:${site.sms}`} className="font-semibold text-navy-800 hover:text-sun-600 no-underline">
+                  {site.phoneDisplay}
+                </a>{' '}
+                — we’ll reply with pricing fast.
+              </p>
             </div>
 
             <aside className="space-y-4">
               <div className="rounded-2xl bg-navy-900 text-white p-6">
-                <h3 className="m-0 text-white">Fastest ways to reach us</h3>
+                <h2 className="m-0 text-white text-lg">Fastest ways to reach us</h2>
                 <p className="mt-2 text-white/80 text-sm">Real humans, quick replies — no phone trees.</p>
                 <div className="mt-5 space-y-3">
                   <Button href={`tel:${site.phone}`} variant="primary" size="md" className="w-full">
                     <PhoneIcon className="h-4 w-4" /> Call {site.phoneDisplay}
                   </Button>
-                  <Button href={`sms:${site.sms}`} variant="outline" size="md" className="w-full bg-transparent text-white ring-white/30 hover:bg-white/10">
+                  <Button href={`sms:${site.sms}`} variant="outline-inverse" size="md" className="w-full">
                     <MessageIcon className="h-4 w-4" /> Text a photo
                   </Button>
                   <a href={`mailto:${site.email}`} className="flex items-center justify-center gap-2 text-white/90 hover:text-sun-300 no-underline text-sm">
