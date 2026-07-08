@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { ComponentProps, ReactNode } from 'react';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'outline';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'outline-inverse';
 type Size = 'sm' | 'md' | 'lg';
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full font-semibold no-underline transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun-500';
+  'inline-flex items-center justify-center gap-2 rounded-full font-semibold no-underline transition-all duration-200 min-h-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun-500';
 
 const variants: Record<Variant, string> = {
   primary:
@@ -14,6 +14,8 @@ const variants: Record<Variant, string> = {
     'bg-navy-900 text-white hover:bg-navy-800 shadow-md hover:-translate-y-0.5',
   outline:
     'bg-white text-navy-900 ring-1 ring-navy-200 hover:ring-navy-900 hover:bg-navy-50',
+  'outline-inverse':
+    'bg-white/10 text-white ring-1 ring-white/40 hover:bg-white/20 hover:ring-white',
   ghost:
     'bg-transparent text-navy-900 hover:bg-navy-50',
 };

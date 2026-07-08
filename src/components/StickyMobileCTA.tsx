@@ -8,15 +8,15 @@ export function StickyMobileCTA() {
       <div className="grid grid-cols-2 gap-2 p-2">
         <a
           href={`tel:${site.phone}`}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-sun-500 py-3 text-sm font-semibold text-navy-900 no-underline"
-          aria-label="Call now"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-sun-500 min-h-[44px] py-3 text-sm font-semibold text-navy-900 no-underline"
+          aria-label={`Call ${site.phoneDisplay}`}
         >
           <PhoneIcon className="h-4 w-4" /> Call now
         </a>
         <a
           href={`sms:${site.sms}`}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 py-3 text-sm font-semibold text-white no-underline"
-          aria-label="Text a photo"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 min-h-[44px] py-3 text-sm font-semibold text-white no-underline"
+          aria-label="Text a photo for a quote"
         >
           <MessageIcon className="h-4 w-4" /> Text a photo
         </a>

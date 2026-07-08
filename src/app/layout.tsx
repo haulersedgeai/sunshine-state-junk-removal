@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </Script>
         )}
       </head>
-      <body>
+      <body className="pb-[calc(4.5rem+env(safe-area-inset-bottom))] lg:pb-0">
         {GTM && (
           <noscript>
             <iframe
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-2 focus:left-2 focus:bg-navy-900 focus:text-white focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
         <Header />
-        <main id="main" className="pb-24 lg:pb-0">{children}</main>
+        <main id="main">{children}</main>
         <Footer />
         <StickyMobileCTA />
       </body>

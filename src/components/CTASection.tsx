@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getSite } from '@/data';
 import { Button } from './Button';
 import { PhoneIcon, MessageIcon } from './Icon';
@@ -30,12 +31,12 @@ export function CTASection({
               <Button href={`tel:${site.phone}`} size="lg" variant="primary" className="w-full">
                 <PhoneIcon className="h-4 w-4" /> Call {site.phoneDisplay}
               </Button>
-              <Button href={`sms:${site.sms}`} size="lg" variant="outline" className="w-full">
+              <Button href={`sms:${site.sms}`} size="lg" variant="outline-inverse" className="w-full">
                 <MessageIcon className="h-4 w-4" /> Text a photo
               </Button>
-              <Button href="/contact-us/" size="lg" variant="ghost" className="w-full text-white hover:bg-white/10">
+              <Link href="/contact-us/#quote" className="inline-flex items-center justify-center gap-2 rounded-full min-h-[44px] px-6 py-3.5 text-base font-semibold text-white no-underline hover:bg-white/10 transition-colors">
                 Get a fast quote →
-              </Button>
+              </Link>
             </div>
           </div>
         </div>
