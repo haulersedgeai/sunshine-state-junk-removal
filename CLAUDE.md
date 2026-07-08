@@ -2,9 +2,31 @@
 
 You are building a complete, production-ready website for **Sunshine State Junk Removal & Dumpster Rental**, a family- and veteran-owned junk removal + dump-trailer rental company serving Broward County, FL (with select Miami-Dade / Palm Beach service). This is a **rebuild** of their existing WordPress site (`sunshineremoval.com`) — better UX, better design, stronger local + AI/answer-engine search, and **zero loss of SEO history**.
 
+## ⚠️ Deploy policy — READ FIRST
+
+**This is a LIVE CLIENT SITE on a real public domain: `https://www.sunshineremoval.com`.** Real visitors hit it. Any bad deploy is visible to the client and to the world immediately.
+
+**Rules (non-negotiable):**
+
+1. **Never deploy to production.** Production promotion is a human decision, performed manually by the operator. Full stop.
+2. **Never run `vercel --prod`, `vercel deploy --prod`, `vercel promote`, or `vercel deploy` from the CLI at all** while on the `main` branch or in a linked directory whose Production Branch is `main`. The CLI happily ships to prod from a linked project — treat `vercel deploy` as a production command and do not use it.
+3. **For every change, use the git-branch preview flow:**
+   - `git checkout -b <feature-branch>` (never work directly on `main`)
+   - commit
+   - `git push -u origin <feature-branch>`
+   - Vercel's GitHub integration automatically builds a **Preview** deployment with its own preview URL
+   - report that preview URL back to the operator
+4. **Do not merge to `main`.** Opening a PR is fine (it also produces a preview). Merging is the operator's call, and merging = production deploy.
+5. **Any earlier language in this file that says "deploy to Vercel," "print the live URL," or otherwise implies autonomous production deploys is superseded by this section.** That language was written before the site went live.
+6. **Rollback (operator use, for reference)**: `vercel rollback <deployment-url>` — or use the Vercel dashboard's "Instant Rollback" on the previous production deployment. Do not run rollback yourself unless explicitly told to.
+
+**How to know you're safe:** if the deployment URL you're about to report contains a random hash slug like `sunshine-state-junk-removal-abc123xyz.vercel.app` AND `vercel inspect` shows `target: preview` AND `www.sunshineremoval.com` is NOT in its Aliases list, you're on a preview. If any of those aren't true, stop and flag it.
+
+---
+
 ## How to work (autonomy directive)
 
-Build the entire site end-to-end and deploy it before handing back. Do not stop to ask small questions — make reasonable decisions, note them inline in a `DECISIONS.md`, and keep moving. Only surface **blockers** (missing credentials, or the two flagged data conflicts in `site.json`). Work in this order and check off `BUILD_PLAN` as you go. When finished: push to GitHub, deploy to Vercel, and print the live preview URL + a short "what I built / what needs your input" summary.
+Build the entire site end-to-end. Do not stop to ask small questions — make reasonable decisions, note them inline in a `DECISIONS.md`, and keep moving. Only surface **blockers** (missing credentials, or the two flagged data conflicts in `site.json`). Work in this order and check off `BUILD_PLAN` as you go. When finished: push to a feature branch, let Vercel build the **preview** deployment, and print the preview URL + a short "what I built / what needs your input" summary. **Do not deploy to production** — see Deploy policy above.
 
 Everything factual about the business lives in `/project-data/*.json`. **Treat those files as the source of truth. Do not invent NAP, hours, services, prices, or reviews.** If it's not in the data and you need it, add a clearly-labeled `TODO(client)` rather than guessing.
 
@@ -161,11 +183,13 @@ QUOTE_TO_EMAIL=info@sunshineremoval.com
 
 ## Deploy (do this yourself)
 
-1. `git init`, sensible `.gitignore`, initial commit.
-2. Create a GitHub repo (use `gh repo create sunshine-state-junk-removal --public --source=. --push` if `gh` is authed; otherwise print exact manual steps and the remote-add commands).
-3. Deploy to Vercel (`vercel --prod` if the CLI is authed, or connect the GitHub repo in Vercel). Set the env vars above in Vercel.
-4. Keep the production **domain unchanged** (`sunshineremoval.com`). Do NOT cut over DNS automatically — output clear DNS instructions for the client to switch when they've reviewed the Vercel preview. Losing the domain would be the one thing that actually breaks SEO.
-5. Print: live Vercel URL, GitHub URL, and a short summary + the open `TODO(client)` items.
+> **⚠️ SUPERSEDED by the "Deploy policy" at the top of this file.** The site is now live. Do not run `vercel --prod`, `vercel promote`, or `vercel deploy` from the CLI. The steps below described the initial launch and are kept for historical context only. For any further work: create a feature branch, push, and report the preview URL — production is not yours to promote.
+
+1. ~~`git init`, sensible `.gitignore`, initial commit.~~ (done — repo exists at `github.com/haulersedgeai/sunshine-state-junk-removal`)
+2. ~~Create a GitHub repo.~~ (done)
+3. ~~Deploy to Vercel (`vercel --prod` if the CLI is authed, or connect the GitHub repo in Vercel). Set the env vars above in Vercel.~~ (done — Vercel is git-linked; Production Branch = `main`. **Do NOT run `vercel --prod`.**)
+4. ~~Keep the production **domain unchanged** (`sunshineremoval.com`).~~ (done — DNS is live on the production Vercel deployment)
+5. Ongoing: push feature branches → report **preview** URLs. Production promotion is manual/human-only.
 
 ---
 
