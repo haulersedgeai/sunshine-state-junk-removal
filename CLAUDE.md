@@ -10,12 +10,7 @@ You are building a complete, production-ready website for **Sunshine State Junk 
 
 1. **Never deploy to production.** Production promotion is a human decision, performed manually by the operator. Full stop.
 2. **Never run `vercel --prod`, `vercel deploy --prod`, `vercel promote`, or `vercel deploy` from the CLI at all** while on the `main` branch or in a linked directory whose Production Branch is `main`. The CLI happily ships to prod from a linked project — treat `vercel deploy` as a production command and do not use it.
-3. **For every change, use the git-branch preview flow:**
-   - `git checkout -b <feature-branch>` (never work directly on `main`)
-   - commit
-   - `git push -u origin <feature-branch>`
-   - Vercel's GitHub integration automatically builds a **Preview** deployment with its own preview URL
-   - report that preview URL back to the operator
+3. The assistant may merge branches into main when the operator explicitly instructs it to do so in-session. Merging without explicit instruction remains prohibited.
 4. **Do not merge to `main`.** Opening a PR is fine (it also produces a preview). Merging is the operator's call, and merging = production deploy.
 5. **Any earlier language in this file that says "deploy to Vercel," "print the live URL," or otherwise implies autonomous production deploys is superseded by this section.** That language was written before the site went live.
 6. **Rollback (operator use, for reference)**: `vercel rollback <deployment-url>` — or use the Vercel dashboard's "Instant Rollback" on the previous production deployment. Do not run rollback yourself unless explicitly told to.
