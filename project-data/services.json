@@ -111,8 +111,8 @@
           },
           "description": "A strong fit for garage cleanouts, furniture removal, and renovation debris.",
           "durations": [
-            { "duration": "24 hr", "price": 300 },
-            { "duration": "24–72 hr", "price": 350 }
+            { "duration": "1 day", "price": 300 },
+            { "duration": "2–3 days", "price": 350 }
           ]
         },
         {
@@ -125,13 +125,13 @@
           },
           "description": "Designed for larger projects such as estate cleanouts, full-property cleanups, and heavier debris loads.",
           "durations": [
-            { "duration": "24 hr", "price": 400 },
-            { "duration": "24–72 hr", "price": 450 }
+            { "duration": "1 day", "price": 400 },
+            { "duration": "2–3 days", "price": 450 }
           ]
         }
       ],
       "notes": [
-        "A $50 daily surcharge applies if the rental exceeds 72 hours.",
+        "A $50 daily surcharge applies after day 3.",
         "Clean fill concrete, tile, dirt, pavers, rocks will be billed at $625 per load, cannot go over half height on trailer."
       ]
     }

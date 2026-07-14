@@ -96,8 +96,8 @@ export function DumpsterRentalPricingTable() {
           <thead className="bg-sky-soft/60 text-navy-900 text-xs uppercase tracking-widest">
             <tr>
               <th scope="col" className="px-6 py-3 font-semibold">Trailer size</th>
-              <th scope="col" className="px-6 py-3 font-semibold text-right">24 hours</th>
-              <th scope="col" className="px-6 py-3 font-semibold text-right">24–72 hours</th>
+              <th scope="col" className="px-6 py-3 font-semibold text-right">1 day</th>
+              <th scope="col" className="px-6 py-3 font-semibold text-right">2–3 days</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-navy-100">
@@ -106,8 +106,8 @@ export function DumpsterRentalPricingTable() {
               return (
                 <tr key={s.size}>
                   <th scope="row" className="px-6 py-4 font-semibold text-navy-900 whitespace-nowrap">{s.size}</th>
-                  <td className="px-6 py-4 text-right font-semibold text-navy-900 tabular-nums">{usd(map['24 hr'])}</td>
-                  <td className="px-6 py-4 text-right font-semibold text-navy-900 tabular-nums">{usd(map['24–72 hr'])}</td>
+                  <td className="px-6 py-4 text-right font-semibold text-navy-900 tabular-nums">{usd(map['1 day'])}</td>
+                  <td className="px-6 py-4 text-right font-semibold text-navy-900 tabular-nums">{usd(map['2–3 days'])}</td>
                 </tr>
               );
             })}
