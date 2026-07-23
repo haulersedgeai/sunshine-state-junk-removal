@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { getSite, getServices, getReviews, getFaqs } from '@/data';
 import { pageMetadata } from '@/lib/seo';
 import { Button } from '@/components/Button';
-import { PhoneIcon, MessageIcon, CheckIcon, ShieldIcon, ClockIcon, SunIcon } from '@/components/Icon';
+import { PhoneIcon, MessageIcon, CheckIcon, ShieldIcon, ClockIcon, SunIcon, MapPinIcon } from '@/components/Icon';
 import { TrustBar } from '@/components/TrustBar';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServiceCard } from '@/components/ServiceCard';
@@ -48,6 +48,10 @@ export default function HomePage() {
             <h1>
               Junk removal & dump-trailer rentals in <span className="text-sun-500">Broward County</span>.
             </h1>
+            <p className="mt-3 flex items-center gap-1.5 text-sm sm:text-base font-semibold text-navy-700">
+              <MapPinIcon className="h-4 w-4 text-sun-600" aria-hidden="true" />
+              Also serving Palm Beach &amp; Miami-Dade Counties.
+            </p>
             <p className="speakable-answer mt-5 text-lg sm:text-xl text-ink-soft max-w-xl leading-relaxed">
               Family- and veteran-owned. Text a few photos and we'll send a fast, honest quote — often same-day, with driveway-safe equipment and no runaround.
             </p>
