@@ -12,14 +12,11 @@
     "/terms-and-condition/",
     "/privacy-policy/",
     "/cooper-city-florida/",
-    "/coral-springs-florida/",
     "/davie/",
     "/hollywood/",
     "/miramar/",
     "/pembroke-pines/",
     "/plantation/",
-    "/sunrise/",
-    "/tamarac-florida/",
     "/weston/",
     "/dumpster-rentals-in-cooper-city-florida/",
     "/dumpster-rentals-in-coral-spring-florida/",
@@ -36,7 +33,25 @@
   ],
   "explicit301Redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/index.php", "destination": "/", "permanent": true }
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    {
+      "source": "/coral-springs-florida/",
+      "destination": "/junk-removal/coral-springs/",
+      "permanent": true,
+      "note": "Operator-approved consolidation (2026-07-23): retired the legacy CityServicePage in favor of the data-driven /junk-removal/[city]/ system, first-wave build. Superseded its former mustPreserveExactly entry. Trailing slashes on both sides are required here to avoid a double-hop redirect chain under trailingSlash:true."
+    },
+    {
+      "source": "/sunrise/",
+      "destination": "/junk-removal/sunrise/",
+      "permanent": true,
+      "note": "Operator-approved consolidation (2026-07-23) — see /coral-springs-florida/ note above."
+    },
+    {
+      "source": "/tamarac-florida/",
+      "destination": "/junk-removal/tamarac/",
+      "permanent": true,
+      "note": "Operator-approved consolidation (2026-07-23) — see /coral-springs-florida/ note above."
+    }
   ],
   "preLaunchChecklist": [
     "Run a full crawl of the LIVE site (Screaming Frog or `wget --spider`) and export every indexed URL, including any /wp-content/uploads/ image URLs and any blog/tag/category URLs not captured here. Add any missing path to mustPreserveExactly or map a 301.",

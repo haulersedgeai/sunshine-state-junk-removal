@@ -1,0 +1,184 @@
+{
+  "note": "First-wave data-driven junk-removal city pages at /junk-removal/[city]/. HQ is Coral Springs; the other cities in this wave are the closest cities north/west of HQ, plus Sunrise and Tamarac (ported from the legacy /sunrise/, /tamarac-florida/, /coral-springs-florida/ pages, now redirected here — see redirects.json). Distinctness lives here in the data: each city has its own angle, scenarios, and FAQs rather than templated copy with the city name swapped. Do not invent neighborhood names, HOA names, or landmarks beyond what's already verified elsewhere in the codebase or genuinely common knowledge — leave descriptions general where unverified.",
+  "junkRemovalCities": [
+    {
+      "slug": "coral-springs",
+      "city": "Coral Springs",
+      "county": "Broward County",
+      "isHQ": true,
+      "eyebrow": "HQ city",
+      "distinctIntro": "Coral Springs is our home base — not just a city we service, but the one we operate out of every day. We know the driveway layouts in Eagle Trace, the gate procedures at the HOA communities, and which streets back up at pickup time. That familiarity is why response times here are usually the fastest in our whole service area.",
+      "commonScenarios": [
+        "Garage cleanouts that finally got out of hand after years of accumulation",
+        "Estate cleanouts following a move, downsizing, or family transition",
+        "HOA-compliant removal timed to community rules on placement and pickup hours",
+        "Dump-trailer drop-offs for weekend renovation projects in single-family neighborhoods"
+      ],
+      "serviceNote": "Since Coral Springs is our home base, most requests here are same-day, and many are same-morning if photos come in early.",
+      "neighborhoods": ["Eagle Trace", "Whispering Woods", "Coral Creek", "Ramblewood"],
+      "landmarks": ["Sawgrass Expressway", "Coral Springs Center for the Arts", "Mullins Park"],
+      "nearby": [
+        { "label": "Parkland", "href": "/junk-removal/parkland/" },
+        { "label": "Coconut Creek", "href": "/junk-removal/coconut-creek/" },
+        { "label": "Tamarac", "href": "/junk-removal/tamarac/" }
+      ],
+      "cityFaqs": [
+        { "q": "Since you're based in Coral Springs, is service here faster?", "a": "Usually, yes. Coral Springs is our home base, so we can often turn around a same-morning pickup if you send photos early in the day." },
+        { "q": "Can you work around Coral Springs HOA rules?", "a": "Yes — many of our Coral Springs jobs are in HOA-governed communities. Tell us the placement and timing rules when you book and we'll follow them." },
+        { "q": "What's the most common job you run in Coral Springs?", "a": "Garage cleanouts and estate cleanouts make up most of our Coral Springs work, along with dump-trailer drop-offs for weekend renovation projects." }
+      ],
+      "title": "Junk Removal in Coral Springs, FL | Sunshine State",
+      "metaDescription": "Fast junk removal in Coral Springs, FL from the team based right here. Same-day service, photo quotes, and 5.0-star reviews. Call today!",
+      "closer": "As the city we call home, Coral Springs gets our fastest response and our most familiar service. Text a photo and we'll take it from there."
+    },
+    {
+      "slug": "coconut-creek",
+      "city": "Coconut Creek",
+      "county": "Broward County",
+      "isHQ": false,
+      "eyebrow": "Condo & 55+ downsizing",
+      "distinctIntro": "A lot of the calls we get from Coconut Creek start the same way: an adult child helping a parent downsize out of a condo or townhome, or a family clearing out a unit after a move. Coconut Creek has a heavy mix of condos, townhomes, and 55+ communities, and that shapes the kind of removal work we do here — careful, unit-by-unit, and mindful of building access and elevator schedules.",
+      "commonScenarios": [
+        "Downsizing moves out of condos and townhomes",
+        "Senior move-out and estate cleanouts in 55+ communities",
+        "Furniture and appliance removal from multi-story buildings with elevator access",
+        "Light renovation debris from unit updates and flooring replacements"
+      ],
+      "serviceNote": "Coconut Creek sits just northeast of our Coral Springs base, so crews are typically on-site the same day.",
+      "neighborhoods": [],
+      "landmarks": ["Butterfly World", "Tradewinds Park"],
+      "nearby": [
+        { "label": "Coral Springs", "href": "/junk-removal/coral-springs/" },
+        { "label": "Margate", "href": "/junk-removal/margate/" },
+        { "label": "Tamarac", "href": "/junk-removal/tamarac/" }
+      ],
+      "cityFaqs": [
+        { "q": "Do you handle condo and 55+ community cleanouts in Coconut Creek?", "a": "Yes — this is a big part of our Coconut Creek work. We coordinate with building rules on elevator use, loading dock access, and pickup timing." },
+        { "q": "Can you manage a full downsizing move, not just a few leftover items?", "a": "Yes. We regularly handle full-unit downsizing jobs in Coconut Creek — furniture, appliances, closets, everything." },
+        { "q": "How fast can you get to a Coconut Creek condo or townhome?", "a": "Same-day service is common. Text photos of what needs to go and we'll confirm a pickup window quickly." }
+      ],
+      "title": "Junk Removal in Coconut Creek, FL | Sunshine State",
+      "metaDescription": "Junk removal in Coconut Creek, FL — condo, townhome, and 55+ community cleanouts. Same-day quotes from a family-owned local team. Call now!",
+      "closer": "Whether it's a condo downsizing move or a full unit cleanout, we'll work carefully around your building's rules and get it done without hassle."
+    },
+    {
+      "slug": "margate",
+      "city": "Margate",
+      "county": "Broward County",
+      "isHQ": false,
+      "eyebrow": "Rental & turnover cleanouts",
+      "distinctIntro": "Margate has an older, mixed housing stock with a lot of rental turnover, and that means our work here looks a little different than in newer master-planned cities nearby. We spend a good chunk of our Margate time helping landlords and property managers get a unit cleared out fast between tenants, plus straightforward household cleanouts for owners who just want a fair, no-frills price.",
+      "commonScenarios": [
+        "Landlord and property-manager cleanouts between tenants",
+        "Full house or apartment clear-outs left behind by a previous occupant",
+        "Budget-conscious single-item and small-load pickups",
+        "Appliance and furniture removal from older single-family homes and duplexes"
+      ],
+      "serviceNote": "Margate sits just south of our Coral Springs base — one of our quickest same-day response areas.",
+      "neighborhoods": [],
+      "landmarks": [],
+      "nearby": [
+        { "label": "Coconut Creek", "href": "/junk-removal/coconut-creek/" },
+        { "label": "Coral Springs", "href": "/junk-removal/coral-springs/" },
+        { "label": "Tamarac", "href": "/junk-removal/tamarac/" }
+      ],
+      "cityFaqs": [
+        { "q": "Do you work with landlords and property managers in Margate?", "a": "Yes — turnover cleanouts between tenants are a regular part of our Margate work. We can move fast to help you get a unit ready to re-list." },
+        { "q": "What if a tenant left a unit full of belongings?", "a": "We handle full-unit clear-outs regularly. Send photos of what's left behind and we'll price it out and schedule a pickup." },
+        { "q": "Is there a budget option for smaller Margate pickups?", "a": "Yes — pricing is based on how much space items take up, so a single item or small load costs less than a full cleanout. Text a photo and we'll give you a straight number." }
+      ],
+      "title": "Junk Removal in Margate, FL | Sunshine State",
+      "metaDescription": "Junk removal in Margate, FL for homeowners, landlords, and property managers. Fast turnover cleanouts, fair pricing, same-day quotes. Call today!",
+      "closer": "From single-item pickups to full turnover cleanouts, we keep Margate jobs simple, fast, and fairly priced."
+    },
+    {
+      "slug": "parkland",
+      "city": "Parkland",
+      "county": "Broward County",
+      "isHQ": false,
+      "eyebrow": "Estate & large-property removal",
+      "distinctIntro": "Parkland homes tend to run bigger — larger lots, larger houses, and larger projects — and that's exactly the kind of job our dump trailers are built for. Whether it's a full-estate cleanout, a whole-house renovation generating pallet after pallet of debris, or a gated community with strict access rules, Parkland jobs usually call for more capacity and more coordination than a typical single-room cleanout.",
+      "commonScenarios": [
+        "Large-volume estate cleanouts across bigger homes and lots",
+        "Whole-home renovation and remodeling debris removal",
+        "Multi-trailer projects for major cleanouts or new-construction cleanup",
+        "Coordinated access and scheduling for gated communities"
+      ],
+      "serviceNote": "Parkland borders our Coral Springs base to the north, so proximity keeps response times quick even for larger, multi-trailer jobs.",
+      "neighborhoods": [],
+      "landmarks": [],
+      "nearby": [
+        { "label": "Coral Springs", "href": "/junk-removal/coral-springs/" },
+        { "label": "Coconut Creek", "href": "/junk-removal/coconut-creek/" }
+      ],
+      "cityFaqs": [
+        { "q": "Can you handle large-volume removals from bigger Parkland properties?", "a": "Yes — our trailers and crews are built for higher-volume jobs. For very large properties we can bring multiple loads to get everything cleared in one visit." },
+        { "q": "Do you remove renovation and construction debris from estate homes?", "a": "Yes, this is common Parkland work — drywall, cabinetry, flooring, and general remodel debris, all included in volume-based pricing." },
+        { "q": "Can you work within gated community access rules in Parkland?", "a": "Yes. Let us know your community's guest and delivery procedures when you book and we'll plan around them." }
+      ],
+      "title": "Junk Removal in Parkland, FL | Sunshine State",
+      "metaDescription": "Junk removal in Parkland, FL for estate cleanouts, renovation debris, and large properties. Photo quotes, same-day service. Call now!",
+      "closer": "Big property, big project, or a gated community with rules to follow — we're equipped for Parkland-sized jobs. Text a photo and we'll size it right."
+    },
+    {
+      "slug": "tamarac",
+      "city": "Tamarac",
+      "county": "Broward County",
+      "isHQ": false,
+      "eyebrow": "55+ & estate downsizing",
+      "distinctIntro": "Tamarac has one of the strongest 55+ and condo communities in Broward, and estate cleanouts, downsizing, and gentle in-and-out removals make up a large share of what we do here. These jobs usually come with a family involved — helping a parent move to a smaller place, or clearing a unit after a loss — so we slow down, stay respectful, and work at whatever pace the family needs.",
+      "commonScenarios": [
+        "Downsizing and estate cleanouts in 55+ communities",
+        "Family-coordinated moves clearing an entire unit at once",
+        "Appliance and furniture removal with careful, respectful handling",
+        "Driveway-safe dump-trailer rentals for family-run cleanup projects"
+      ],
+      "serviceNote": "Tamarac is a short drive from our Coral Springs base, and same-day availability is the norm.",
+      "neighborhoods": ["Woodlands", "Kings Point", "Mainlands", "Westwood"],
+      "landmarks": ["Tamarac Sports Complex"],
+      "nearby": [
+        { "label": "Coral Springs", "href": "/junk-removal/coral-springs/" },
+        { "label": "Margate", "href": "/junk-removal/margate/" },
+        { "label": "Sunrise", "href": "/junk-removal/sunrise/" }
+      ],
+      "cityFaqs": [
+        { "q": "Do you help families downsize a parent's home in Tamarac?", "a": "Yes — this is one of the most common jobs we run in Tamarac, especially in Kings Point and the Mainlands. We work at a respectful, unhurried pace." },
+        { "q": "Can you work within Kings Point or other 55+ community HOA rules?", "a": "Yes. Tell us the community's rules on timing and placement when you book and we'll follow them." },
+        { "q": "How careful is the process for an estate cleanout?", "a": "We treat every estate cleanout with the same care — sorting what you want kept aside, and handling everything else discreetly and respectfully." }
+      ],
+      "title": "Junk Removal in Tamarac, FL | Sunshine State",
+      "metaDescription": "Junk removal in Tamarac, FL for downsizing, estate, and 55+ community cleanouts. Respectful, same-day service. Call for a free quote!",
+      "closer": "Whether you're helping a parent downsize in Kings Point or clearing an estate in Woodlands, we'll be careful, respectful, and quick."
+    },
+    {
+      "slug": "sunrise",
+      "city": "Sunrise",
+      "county": "Broward County",
+      "isHQ": false,
+      "eyebrow": "Commercial & residential mix",
+      "distinctIntro": "Sunrise is a busy, working city with a real mix of residential turnover and commercial activity near the Sawgrass Mills corridor. On any given week we're clearing out a rental home, hauling debris from an office or retail space, and dropping a dump trailer for a homeowner's weekend project — often all in the same day.",
+      "commonScenarios": [
+        "Retail and office cleanouts near the commercial corridor",
+        "Residential rental and condo turnovers",
+        "Storage unit and warehouse clear-outs for businesses",
+        "Weekend dump-trailer rentals for homeowner projects"
+      ],
+      "serviceNote": "Sunrise sits further south along our regular Broward routes, and we schedule pickups there daily — same-day and next-day slots are both realistic.",
+      "neighborhoods": ["Sawgrass Lakes", "Sunrise Lakes", "Sunrise Golf Village", "Springtree"],
+      "landmarks": ["Sawgrass Mills", "Amerant Bank Arena", "Markham Park"],
+      "nearby": [
+        { "label": "Tamarac", "href": "/junk-removal/tamarac/" },
+        { "label": "Plantation", "href": "/plantation/" },
+        { "label": "Weston", "href": "/weston/" }
+      ],
+      "cityFaqs": [
+        { "q": "Do you handle commercial or retail cleanouts in Sunrise?", "a": "Yes — office, retail, and storage cleanouts near the Sawgrass Mills corridor are a regular part of our Sunrise work." },
+        { "q": "Can you do office or storefront junk removal on a business timeline?", "a": "Yes, we can schedule around business hours or after-close pickups to minimize disruption." },
+        { "q": "Do you also do residential cleanouts in Sunrise?", "a": "Absolutely — rental turnovers, condo cleanouts, and homeowner dump-trailer rentals are just as common as our commercial work here." }
+      ],
+      "title": "Junk Removal in Sunrise, FL | Sunshine State",
+      "metaDescription": "Junk removal in Sunrise, FL for homes, offices, and retail spaces near Sawgrass Mills. Fast quotes, same-day service. Call today!",
+      "closer": "Home, office, or storefront — Sunrise homeowners and businesses rely on us for quick, dependable turnarounds. Send a photo and let's make it easy."
+    }
+  ]
+}

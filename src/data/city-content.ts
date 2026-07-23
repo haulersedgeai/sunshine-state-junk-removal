@@ -36,21 +36,6 @@ export const serviceCityContent: Record<string, CityContent> = {
       { q: 'Can you work around a Weston HOA?', a: 'Yes — most of our Weston jobs involve gated communities and HOAs. Let us know the requirements when you book and we’ll plan trailer placement, delivery timing, and cleanup accordingly.' },
     ],
   },
-  '/coral-springs-florida/': {
-    slug: '/coral-springs-florida/',
-    city: 'Coral Springs',
-    county: 'Broward County',
-    neighborhoods: ['Eagle Trace', 'Whispering Woods', 'Heron Bay (adjacent)', 'Coral Creek', 'Ramblewood'],
-    landmarks: ['Sawgrass Expressway', 'Coral Springs Center for the Arts', 'Mullins Park'],
-    nearby: ['Parkland', 'Coconut Creek', 'Tamarac', 'Margate'],
-    intro:
-      "Coral Springs is our home base. We know the neighborhoods, the traffic, the driveway layouts — and we can usually be on-site within hours of a photo quote request.",
-    vibe: 'family-suburban, mature neighborhoods, mix of estate and starter homes',
-    serviceFocus:
-      "Estate cleanouts, aging appliance swap-outs, storm cleanup, and dump-trailer rentals for renovation projects are the majority of what we handle here.",
-    closer:
-      "If you're in Coral Springs and need something gone today — or a trailer dropped tomorrow — we're probably the closest, fastest option in your area.",
-  },
   '/cooper-city-florida/': {
     slug: '/cooper-city-florida/',
     city: 'Cooper City',
@@ -140,36 +125,6 @@ export const serviceCityContent: Record<string, CityContent> = {
       "Kitchen and bath remodels, decades-of-accumulation garage cleanouts, and full estate cleanouts across Jacaranda and Plantation Acres.",
     closer:
       "If you’ve been putting off a Plantation cleanout, this is the sign. One text and we’ll handle it end to end.",
-  },
-  '/sunrise/': {
-    slug: '/sunrise/',
-    city: 'Sunrise',
-    county: 'Broward County',
-    neighborhoods: ['Sawgrass Lakes', 'Sunrise Lakes', 'Sunrise Golf Village', 'Springtree'],
-    landmarks: ['Sawgrass Mills', 'Amerant Bank Arena', 'Markham Park'],
-    nearby: ['Plantation', 'Tamarac', 'Weston', 'Lauderhill'],
-    intro:
-      "Sunrise is a busy, working city with tons of turnover — condos, single-family homes, and commercial spaces near Sawgrass Mills. That means constant demand for fast, respectful cleanouts, and we’re usually just minutes away.",
-    vibe: 'active, commercial and residential mix',
-    serviceFocus:
-      "Condo and rental turnovers, office cleanouts near the arena, and residential dump-trailer rentals for weekend projects.",
-    closer:
-      "Sunrise homeowners and property managers rely on us for quick turnarounds. Send a photo and let’s make it easy.",
-  },
-  '/tamarac-florida/': {
-    slug: '/tamarac-florida/',
-    city: 'Tamarac',
-    county: 'Broward County',
-    neighborhoods: ['Woodlands', 'Kings Point', 'Mainlands', 'Westwood'],
-    landmarks: ['Tamarac Sports Complex', 'Sawgrass Expressway access'],
-    nearby: ['Coral Springs', 'North Lauderdale', 'Sunrise', 'Margate'],
-    intro:
-      "Tamarac has one of the strongest senior communities in Broward, and estate cleanouts, downsizing, and gentle-in-and-out removals are a big part of what we do here.",
-    vibe: 'quiet, community-oriented, strong senior demographic',
-    serviceFocus:
-      "Downsizing and estate cleanouts in Kings Point and Mainlands, appliance removal, and driveway-safe dump-trailer rentals for family-run projects.",
-    closer:
-      "Whether you’re helping a parent downsize in Woodlands or clearing a Kings Point unit, we’ll be respectful, careful, and quick.",
   },
 };
 

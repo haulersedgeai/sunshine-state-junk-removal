@@ -2,14 +2,17 @@
   "SEO_RULE": "PRESERVE THE EXACT LEGACY SLUGS BELOW (including inconsistencies like some cities having a '-florida' suffix and the dumpster 'coral-spring' singular). These URLs have ranking history. Keep them identical, with trailingSlash:true. Do NOT 'clean up' slugs — that would require 301s and risk equity loss.",
   "serviceAreaPages": [
     { "city": "Cooper City", "state": "FL", "slug": "/cooper-city-florida/" },
-    { "city": "Coral Springs", "state": "FL", "slug": "/coral-springs-florida/" },
+    { "city": "Coral Springs", "state": "FL", "slug": "/junk-removal/coral-springs/" },
+    { "city": "Coconut Creek", "state": "FL", "slug": "/junk-removal/coconut-creek/" },
     { "city": "Davie", "state": "FL", "slug": "/davie/" },
     { "city": "Hollywood", "state": "FL", "slug": "/hollywood/" },
+    { "city": "Margate", "state": "FL", "slug": "/junk-removal/margate/" },
     { "city": "Miramar", "state": "FL", "slug": "/miramar/" },
+    { "city": "Parkland", "state": "FL", "slug": "/junk-removal/parkland/" },
     { "city": "Pembroke Pines", "state": "FL", "slug": "/pembroke-pines/" },
     { "city": "Plantation", "state": "FL", "slug": "/plantation/" },
-    { "city": "Sunrise", "state": "FL", "slug": "/sunrise/" },
-    { "city": "Tamarac", "state": "FL", "slug": "/tamarac-florida/" },
+    { "city": "Sunrise", "state": "FL", "slug": "/junk-removal/sunrise/" },
+    { "city": "Tamarac", "state": "FL", "slug": "/junk-removal/tamarac/" },
     { "city": "Weston", "state": "FL", "slug": "/weston/" }
   ],
   "dumpsterRentalPages": [

@@ -5,6 +5,7 @@ import faqs from '../../project-data/faqs.json';
 import reviews from '../../project-data/reviews.json';
 import images from '../../project-data/images.json';
 import redirects from '../../project-data/redirects.json';
+import cities from '../../project-data/cities.json';
 
 export type Site = typeof site;
 export type Services = typeof services;
@@ -20,6 +21,30 @@ export const getFaqs = (): Faqs => faqs as Faqs;
 export const getReviews = (): Reviews => reviews as Reviews;
 export const getImages = (): Images => images as Images;
 export const getRedirects = () => redirects;
+
+export type JunkRemovalCity = {
+  slug: string;
+  city: string;
+  county: string;
+  isHQ: boolean;
+  eyebrow: string;
+  distinctIntro: string;
+  commonScenarios: string[];
+  serviceNote: string;
+  neighborhoods: string[];
+  landmarks: string[];
+  nearby: { label: string; href: string }[];
+  cityFaqs: { q: string; a: string }[];
+  title: string;
+  metaDescription: string;
+  closer: string;
+};
+
+export const getCities = (): JunkRemovalCity[] =>
+  (cities as { junkRemovalCities: JunkRemovalCity[] }).junkRemovalCities;
+
+export const getCityBySlug = (slug: string): JunkRemovalCity | undefined =>
+  getCities().find((c) => c.slug === slug);
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||

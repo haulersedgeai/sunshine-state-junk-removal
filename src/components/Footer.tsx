@@ -28,9 +28,9 @@ const footerNav = [
     title: 'Popular Cities',
     links: [
       { label: 'Weston', href: '/weston/' },
-      { label: 'Coral Springs', href: '/coral-springs-florida/' },
+      { label: 'Coral Springs', href: '/junk-removal/coral-springs/' },
       { label: 'Pembroke Pines', href: '/pembroke-pines/' },
-      { label: 'Sunrise', href: '/sunrise/' },
+      { label: 'Sunrise', href: '/junk-removal/sunrise/' },
       { label: 'Davie', href: '/davie/' },
       { label: 'Hollywood', href: '/hollywood/' },
     ],
