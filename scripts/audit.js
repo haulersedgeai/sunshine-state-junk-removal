@@ -22,15 +22,24 @@ const routes = [
   { path: '/terms-and-condition/', kind: 'legal' },
   { path: '/privacy-policy/', kind: 'legal' },
   { path: '/cooper-city-florida/', kind: 'city-service' },
-  { path: '/coral-springs-florida/', kind: 'city-service' },
   { path: '/davie/', kind: 'city-service' },
   { path: '/hollywood/', kind: 'city-service' },
   { path: '/miramar/', kind: 'city-service' },
   { path: '/pembroke-pines/', kind: 'city-service' },
   { path: '/plantation/', kind: 'city-service' },
-  { path: '/sunrise/', kind: 'city-service' },
-  { path: '/tamarac-florida/', kind: 'city-service' },
   { path: '/weston/', kind: 'city-service' },
+  // First-wave data-driven junk-removal city pages (added 2026-07-23).
+  { path: '/junk-removal/coral-springs/', kind: 'city-service' },
+  { path: '/junk-removal/coconut-creek/', kind: 'city-service' },
+  { path: '/junk-removal/margate/', kind: 'city-service' },
+  { path: '/junk-removal/parkland/', kind: 'city-service' },
+  { path: '/junk-removal/tamarac/', kind: 'city-service' },
+  { path: '/junk-removal/sunrise/', kind: 'city-service' },
+  // Legacy slugs retired in favor of the pages above (operator-approved 301s, 2026-07-23).
+  // These must NOT resolve 200 — they must single-hop redirect to their /junk-removal/ destination.
+  { path: '/coral-springs-florida/', kind: 'redirect', expectDestination: '/junk-removal/coral-springs/' },
+  { path: '/sunrise/', kind: 'redirect', expectDestination: '/junk-removal/sunrise/' },
+  { path: '/tamarac-florida/', kind: 'redirect', expectDestination: '/junk-removal/tamarac/' },
   { path: '/dumpster-rentals-in-cooper-city-florida/', kind: 'city-dumpster' },
   { path: '/dumpster-rentals-in-coral-spring-florida/', kind: 'city-dumpster' },
   { path: '/dumpster-rentals-in-davie-florida/', kind: 'city-dumpster' },
@@ -245,6 +254,37 @@ function audit(route, html) {
 (async () => {
   const results = [];
   for (const r of routes) {
+    if (r.kind === 'redirect') {
+      const res1 = await get(`${HOST}${r.path}`);
+      const issues = [];
+      const loc = res1.headers.location || '';
+      let locPath = loc;
+      try {
+        if (/^https?:\/\//.test(loc)) locPath = new URL(loc).pathname;
+      } catch (e) {
+        issues.push(`unparseable Location header: "${loc}"`);
+      }
+      if (![301, 308].includes(res1.status)) issues.push(`expected 301/308, got HTTP ${res1.status}`);
+      if (!loc) issues.push('missing Location header');
+      else if (locPath !== r.expectDestination) issues.push(`redirected to "${locPath}", expected "${r.expectDestination}"`);
+      let finalStatus = null;
+      if (loc) {
+        const destUrl = /^https?:\/\//.test(loc) ? loc : `${HOST}${loc}`;
+        const res2 = await get(destUrl);
+        finalStatus = res2.status;
+        if (res2.status !== 200) issues.push(`destination is not a single-hop 200 — got HTTP ${res2.status} (possible chain or broken target)`);
+      }
+      results.push({
+        route: r,
+        http: res1.status,
+        issues,
+        jsonLdTypes: [],
+        localImgs: [],
+        detailsCount: 0,
+        notes: [`redirects to "${loc || '(none)'}" → destination resolved HTTP ${finalStatus}`],
+      });
+      continue;
+    }
     const url = `${HOST}${r.path}`;
     const res = await get(url);
     if (res.status !== 200 && r.kind !== '404') {
