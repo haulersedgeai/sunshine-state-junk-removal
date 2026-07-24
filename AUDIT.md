@@ -5,6 +5,12 @@ Canonical host: `https://sunshineremoval.com`
 Total routes audited: 33
 Total issues found: **0**
 
+## Migration note (2026-07-24)
+This audit predates two later sessions that changed routing:
+- `/coral-springs-florida/`, `/tamarac-florida/`, and `/sunrise/` were retired and now 301-redirect into the new `/junk-removal/[city]/` system (operator-approved, 2026-07-23). Their rows below are updated to reflect redirect status — they are **no longer live HTTP 200 pages**, so don't restore them.
+- 6 new pages now exist at `/junk-removal/coral-springs/`, `/junk-removal/coconut-creek/`, `/junk-removal/margate/`, `/junk-removal/parkland/`, `/junk-removal/tamarac/`, `/junk-removal/sunrise/`. Entries for these are appended at the end, verified against the current route/component code and local build, not a fresh production crawl — a full re-crawl (matching the rigor of the original audit) is still recommended before the next promotion.
+- The cross-route stats above (`33 routes`, `0 issues`) reflect the original crawl only and have not been recomputed; treat them as historical, not current.
+
 ## Cross-route issues
 - Titles unique across routes ✓
 - Descriptions unique across routes ✓
@@ -100,13 +106,8 @@ Total issues found: **0**
 - **<details> FAQ blocks:** 5
 - _note: refs 2 local images_
 
-### ✅ `/coral-springs-florida/` (city-service, HTTP 200)
-- **Title:** Junk Removal in Coral Springs FL | Sunshine State Junk Removal
-- **Canonical:** https://sunshineremoval.com/coral-springs-florida/
-- **OG image:** https://sunshine-state-junk-removal.vercel.app/images/Sunshine-About-Us.webp
-- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
-- **<details> FAQ blocks:** 5
-- _note: refs 2 local images_
+### ➡️ `/coral-springs-florida/` (retired, 301 → `/junk-removal/coral-springs/`)
+- **Status as of 2026-07-23:** No longer a live page. Permanently redirects to `/junk-removal/coral-springs/` (see `redirects.json > explicit301Redirects`). Single-hop, verified.
 
 ### ✅ `/davie/` (city-service, HTTP 200)
 - **Title:** Junk Removal in Davie FL | Sunshine State Junk Removal
@@ -148,21 +149,11 @@ Total issues found: **0**
 - **<details> FAQ blocks:** 5
 - _note: refs 2 local images_
 
-### ✅ `/sunrise/` (city-service, HTTP 200)
-- **Title:** Junk Removal in Sunrise FL | Sunshine State Junk Removal
-- **Canonical:** https://sunshineremoval.com/sunrise/
-- **OG image:** https://sunshine-state-junk-removal.vercel.app/images/Sunshine-About-Us.webp
-- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
-- **<details> FAQ blocks:** 5
-- _note: refs 2 local images_
+### ➡️ `/sunrise/` (retired, 301 → `/junk-removal/sunrise/`)
+- **Status as of 2026-07-23:** No longer a live page. Permanently redirects to `/junk-removal/sunrise/` (see `redirects.json > explicit301Redirects`). Single-hop, verified.
 
-### ✅ `/tamarac-florida/` (city-service, HTTP 200)
-- **Title:** Junk Removal in Tamarac FL | Sunshine State Junk Removal
-- **Canonical:** https://sunshineremoval.com/tamarac-florida/
-- **OG image:** https://sunshine-state-junk-removal.vercel.app/images/Sunshine-About-Us.webp
-- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
-- **<details> FAQ blocks:** 5
-- _note: refs 2 local images_
+### ➡️ `/tamarac-florida/` (retired, 301 → `/junk-removal/tamarac/`)
+- **Status as of 2026-07-23:** No longer a live page. Permanently redirects to `/junk-removal/tamarac/` (see `redirects.json > explicit301Redirects`). Single-hop, verified.
 
 ### ✅ `/weston/` (city-service, HTTP 200)
 - **Title:** Junk Removal in Weston FL | Sunshine State Junk Removal
@@ -264,6 +255,51 @@ Total issues found: **0**
 - **Title:** Dumpster Rental in Weston FL | Sunshine State Junk Removal
 - **Canonical:** https://sunshineremoval.com/dumpster-rentals-in-weston-florida/
 - **OG image:** https://sunshine-state-junk-removal.vercel.app/images/Sunshine-About-Us.webp
+- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
+- **<details> FAQ blocks:** 6
+- _note: refs 2 local images_
+
+## New routes: `/junk-removal/[city]/` first wave (added 2026-07-23, content refreshed 2026-07-24)
+Verified against route/component code (`src/app/junk-removal/[city]/page.tsx`, `src/components/JunkRemovalCityPage.tsx`) and a local production build — all 6 prerender statically and returned HTTP 200 in local `next start` checks. Not yet re-crawled against the live production host; recommend a fresh pass alongside the rest of this audit before the next promotion.
+
+### ✅ `/junk-removal/coral-springs/` (city-service, HQ)
+- **Title:** Junk Removal in Coral Springs, FL | Sunshine State
+- **Canonical:** https://sunshineremoval.com/junk-removal/coral-springs/
+- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
+- **<details> FAQ blocks:** 6
+- _note: refs 2 local images_
+
+### ✅ `/junk-removal/coconut-creek/` (city-service)
+- **Title:** Junk Removal in Coconut Creek, FL | Sunshine State
+- **Canonical:** https://sunshineremoval.com/junk-removal/coconut-creek/
+- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
+- **<details> FAQ blocks:** 6
+- _note: refs 2 local images_
+
+### ✅ `/junk-removal/margate/` (city-service)
+- **Title:** Junk Removal in Margate, FL | Sunshine State
+- **Canonical:** https://sunshineremoval.com/junk-removal/margate/
+- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
+- **<details> FAQ blocks:** 6
+- _note: refs 2 local images_
+
+### ✅ `/junk-removal/parkland/` (city-service)
+- **Title:** Junk Removal in Parkland, FL | Sunshine State
+- **Canonical:** https://sunshineremoval.com/junk-removal/parkland/
+- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
+- **<details> FAQ blocks:** 6
+- _note: refs 2 local images_
+
+### ✅ `/junk-removal/tamarac/` (city-service)
+- **Title:** Junk Removal in Tamarac, FL | Sunshine State
+- **Canonical:** https://sunshineremoval.com/junk-removal/tamarac/
+- **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
+- **<details> FAQ blocks:** 6
+- _note: refs 2 local images_
+
+### ✅ `/junk-removal/sunrise/` (city-service)
+- **Title:** Junk Removal in Sunrise, FL | Sunshine State
+- **Canonical:** https://sunshineremoval.com/junk-removal/sunrise/
 - **JSON-LD types:** BreadcrumbList, FAQPage, HomeAndConstructionBusiness, Service, WebPage
 - **<details> FAQ blocks:** 6
 - _note: refs 2 local images_

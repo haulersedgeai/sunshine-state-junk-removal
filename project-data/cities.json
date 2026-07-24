@@ -37,15 +37,15 @@
       "county": "Broward County",
       "isHQ": false,
       "eyebrow": "Condo & 55+ downsizing",
-      "distinctIntro": "A lot of the calls we get from Coconut Creek start the same way: an adult child helping a parent downsize out of a condo or townhome, or a family clearing out a unit after a move. Coconut Creek has a heavy mix of condos, townhomes, and 55+ communities, and that shapes the kind of removal work we do here — careful, unit-by-unit, and mindful of building access and elevator schedules.",
+      "distinctIntro": "Coconut Creek has one of Broward's largest concentrations of condo, townhome, and 55+ housing — anchored by communities like Wynmoor, one of the area's largest gated 55+ communities, and Regency Lakes, a gated HOA that spans nine subdivisions under one master association. Add in townhome communities like Winston Park, Banyan Trails, and Paloma Lakes — Winston Park's butterfly-themed streets nod to the city's identity as home to Butterfly World at Tradewinds Park — and it's easy to see why careful, unit-by-unit removal, mindful of building rules, elevators, and gate access, is the norm for us here, not the exception.",
       "commonScenarios": [
-        "Downsizing moves out of condos and townhomes",
-        "Senior move-out and estate cleanouts in 55+ communities",
-        "Furniture and appliance removal from multi-story buildings with elevator access",
-        "Light renovation debris from unit updates and flooring replacements"
+        "Downsizing moves out of condos and 55+ communities across Coconut Creek",
+        "Estate and unit cleanouts in gated HOA communities",
+        "Furniture and appliance removal from buildings with elevator or gate access",
+        "Light renovation debris from unit updates in Coconut Creek's townhome communities"
       ],
-      "serviceNote": "Coconut Creek sits just northeast of our Coral Springs base, so crews are typically on-site the same day.",
-      "neighborhoods": [],
+      "serviceNote": "Coconut Creek sits just northeast of our Coral Springs base, so crews are typically on-site the same day — whether that's a high-rise condo or a townhome community.",
+      "neighborhoods": ["Wynmoor", "Regency Lakes", "Winston Park", "Banyan Trails", "Victoria Isles", "Paloma Lakes", "Coral Gate", "South Creek"],
       "landmarks": ["Butterfly World", "Tradewinds Park"],
       "nearby": [
         { "label": "Coral Springs", "href": "/junk-removal/coral-springs/" },
@@ -53,13 +53,13 @@
         { "label": "Tamarac", "href": "/junk-removal/tamarac/" }
       ],
       "cityFaqs": [
-        { "q": "Do you handle condo and 55+ community cleanouts in Coconut Creek?", "a": "Yes — this is a big part of our Coconut Creek work. We coordinate with building rules on elevator use, loading dock access, and pickup timing." },
-        { "q": "Can you manage a full downsizing move, not just a few leftover items?", "a": "Yes. We regularly handle full-unit downsizing jobs in Coconut Creek — furniture, appliances, closets, everything." },
-        { "q": "How fast can you get to a Coconut Creek condo or townhome?", "a": "Same-day service is common. Text photos of what needs to go and we'll confirm a pickup window quickly." }
+        { "q": "Do you handle downsizing moves in Wynmoor or other 55+ communities?", "a": "Yes — Wynmoor and Coconut Creek's other 55+ communities are within our regular service area. We coordinate with building and gate access to make the move as smooth as possible." },
+        { "q": "Can you work within gated HOA communities like Regency Lakes?", "a": "Yes. Communities like Regency Lakes just require advance notice of your gate code or guest list — let us know when you book." },
+        { "q": "How fast can you get to a condo or townhome in Coconut Creek?", "a": "Same-day service is common across Coconut Creek's condo and townhome communities. Text photos of what needs to go and we'll confirm a pickup window quickly." }
       ],
       "title": "Junk Removal in Coconut Creek, FL | Sunshine State",
       "metaDescription": "Junk removal in Coconut Creek, FL — condo, townhome, and 55+ community cleanouts. Same-day quotes from a family-owned local team. Call now!",
-      "closer": "Whether it's a condo downsizing move or a full unit cleanout, we'll work carefully around your building's rules and get it done without hassle."
+      "closer": "Whether it's a downsizing move in Wynmoor or a full unit cleanout in Winston Park or Paloma Lakes, we'll work carefully around your building's rules and get it done without hassle."
     },
     {
       "slug": "margate",
@@ -67,29 +67,29 @@
       "county": "Broward County",
       "isHQ": false,
       "eyebrow": "Rental & turnover cleanouts",
-      "distinctIntro": "Margate has an older, mixed housing stock with a lot of rental turnover, and that means our work here looks a little different than in newer master-planned cities nearby. We spend a good chunk of our Margate time helping landlords and property managers get a unit cleared out fast between tenants, plus straightforward household cleanouts for owners who just want a fair, no-frills price.",
+      "distinctIntro": "Margate's housing stock skews older and more varied than the newer planned cities nearby — many North Margate and Margate Gardens homes are non-HOA, concrete-block construction from the 1950s through the '70s, which means fewer restrictions but often more deferred maintenance when a property changes hands. Add in large 55+ communities like Paradise Gardens — roughly 1,800 single-story homes across four subdivisions — and it's easy to see why our Margate work leans toward landlord turnovers, estate cleanouts, and straightforward, budget-conscious pickups.",
       "commonScenarios": [
-        "Landlord and property-manager cleanouts between tenants",
-        "Full house or apartment clear-outs left behind by a previous occupant",
+        "Landlord and property-manager turnover cleanouts in older, non-HOA neighborhoods",
+        "Downsizing and estate cleanouts in 55+ communities like Paradise Gardens",
         "Budget-conscious single-item and small-load pickups",
         "Appliance and furniture removal from older single-family homes and duplexes"
       ],
-      "serviceNote": "Margate sits just south of our Coral Springs base — one of our quickest same-day response areas.",
-      "neighborhoods": [],
-      "landmarks": [],
+      "serviceNote": "Margate sits just south of our Coral Springs base — one of our quickest same-day response areas, covering everywhere from Coral Bay to Holiday Springs.",
+      "neighborhoods": ["Paradise Gardens", "Margate Gardens", "North Margate", "Coral Bay", "Holiday Springs", "Coral Lake", "Margate Estates"],
+      "landmarks": ["Oriole Golf Club", "Legacy Park"],
       "nearby": [
         { "label": "Coconut Creek", "href": "/junk-removal/coconut-creek/" },
         { "label": "Coral Springs", "href": "/junk-removal/coral-springs/" },
         { "label": "Tamarac", "href": "/junk-removal/tamarac/" }
       ],
       "cityFaqs": [
-        { "q": "Do you work with landlords and property managers in Margate?", "a": "Yes — turnover cleanouts between tenants are a regular part of our Margate work. We can move fast to help you get a unit ready to re-list." },
-        { "q": "What if a tenant left a unit full of belongings?", "a": "We handle full-unit clear-outs regularly. Send photos of what's left behind and we'll price it out and schedule a pickup." },
+        { "q": "Do you work with landlords and property managers in North Margate or Margate Gardens?", "a": "Yes — turnover cleanouts in these older, non-HOA neighborhoods are within our regular Margate service area. We can move fast to help you get a unit ready to re-list." },
+        { "q": "Do you help with downsizing in Paradise Gardens or other 55+ communities?", "a": "Yes. Paradise Gardens and Margate's other 55+ communities are common stops for us — we work at a respectful pace for downsizing and estate cleanouts." },
         { "q": "Is there a budget option for smaller Margate pickups?", "a": "Yes — pricing is based on how much space items take up, so a single item or small load costs less than a full cleanout. Text a photo and we'll give you a straight number." }
       ],
       "title": "Junk Removal in Margate, FL | Sunshine State",
       "metaDescription": "Junk removal in Margate, FL for homeowners, landlords, and property managers. Fast turnover cleanouts, fair pricing, same-day quotes. Call today!",
-      "closer": "From single-item pickups to full turnover cleanouts, we keep Margate jobs simple, fast, and fairly priced."
+      "closer": "From a North Margate turnover to a Paradise Gardens downsizing move, we keep Margate jobs simple, fast, and fairly priced."
     },
     {
       "slug": "parkland",
@@ -97,28 +97,28 @@
       "county": "Broward County",
       "isHQ": false,
       "eyebrow": "Estate & large-property removal",
-      "distinctIntro": "Parkland homes tend to run bigger — larger lots, larger houses, and larger projects — and that's exactly the kind of job our dump trailers are built for. Whether it's a full-estate cleanout, a whole-house renovation generating pallet after pallet of debris, or a gated community with strict access rules, Parkland jobs usually call for more capacity and more coordination than a typical single-room cleanout.",
+      "distinctIntro": "Parkland is home to some of Broward's largest and most exclusive addresses — the guard-gated estates of Parkland Golf & Country Club, the 1,000-plus-acre master-planned community of Heron Bay, and newer developments like MiraLago and Watercrest. Older, established neighborhoods like Cypress Head — Parkland's first community, dating to the late 1980s — sit alongside these newer estates. Bigger lots and bigger homes mean bigger projects, and that's exactly the kind of job our dump trailers and crews are built for.",
       "commonScenarios": [
-        "Large-volume estate cleanouts across bigger homes and lots",
+        "Large-volume estate cleanouts across Parkland's bigger homes and lots",
         "Whole-home renovation and remodeling debris removal",
         "Multi-trailer projects for major cleanouts or new-construction cleanup",
-        "Coordinated access and scheduling for gated communities"
+        "Coordinated access and scheduling across Parkland's gated communities, from Heron Bay to Parkland Golf & Country Club"
       ],
-      "serviceNote": "Parkland borders our Coral Springs base to the north, so proximity keeps response times quick even for larger, multi-trailer jobs.",
-      "neighborhoods": [],
-      "landmarks": [],
+      "serviceNote": "Parkland borders our Coral Springs base to the north, so proximity keeps response times quick even for larger, multi-trailer jobs — across the city's gated communities and larger-lot neighborhoods alike.",
+      "neighborhoods": ["Heron Bay", "Parkland Golf & Country Club", "Parkland Isles", "MiraLago at Parkland", "Parkland Bay", "Cypress Head", "Fox Ridge Estates", "Watercrest at Parkland", "Pine Tree Estates"],
+      "landmarks": ["Pine Trails Park"],
       "nearby": [
         { "label": "Coral Springs", "href": "/junk-removal/coral-springs/" },
         { "label": "Coconut Creek", "href": "/junk-removal/coconut-creek/" }
       ],
       "cityFaqs": [
-        { "q": "Can you handle large-volume removals from bigger Parkland properties?", "a": "Yes — our trailers and crews are built for higher-volume jobs. For very large properties we can bring multiple loads to get everything cleared in one visit." },
-        { "q": "Do you remove renovation and construction debris from estate homes?", "a": "Yes, this is common Parkland work — drywall, cabinetry, flooring, and general remodel debris, all included in volume-based pricing." },
-        { "q": "Can you work within gated community access rules in Parkland?", "a": "Yes. Let us know your community's guest and delivery procedures when you book and we'll plan around them." }
+        { "q": "Do you serve gated communities like Heron Bay and Parkland Golf & Country Club?", "a": "Yes — Heron Bay, Parkland Golf & Country Club, MiraLago, and Parkland Isles are all within our Parkland service area. Share your community's guest and delivery procedures when you book and we'll follow them." },
+        { "q": "Can you handle large-volume removals from bigger Parkland properties?", "a": "Yes — our trailers and crews are built for higher-volume jobs common across Parkland's larger homes and lots. For very large properties we can bring multiple loads to clear everything in one visit." },
+        { "q": "Do you remove renovation and construction debris from older Parkland homes?", "a": "Yes — from long-established neighborhoods like Cypress Head to newer construction, renovation debris removal is common work for us throughout Parkland." }
       ],
       "title": "Junk Removal in Parkland, FL | Sunshine State",
       "metaDescription": "Junk removal in Parkland, FL for estate cleanouts, renovation debris, and large properties. Photo quotes, same-day service. Call now!",
-      "closer": "Big property, big project, or a gated community with rules to follow — we're equipped for Parkland-sized jobs. Text a photo and we'll size it right."
+      "closer": "Big property, big project, or a guard-gated community with rules to follow — we're equipped for Parkland-sized jobs, from Heron Bay to Cypress Head. Text a photo and we'll size it right."
     },
     {
       "slug": "tamarac",

@@ -11,7 +11,8 @@ Autonomous decisions made during this rebuild. All small enough to fit the brief
 
 ## URL / SEO
 - `trailingSlash: true` — mandatory to match the legacy WordPress URLs.
-- Every legacy path in `redirects.json > mustPreserveExactly` is preserved verbatim (including the intentional inconsistencies: `tamarac-florida`, `coral-spring` singular, `ft-lauderdale`).
+- Every legacy path in `redirects.json > mustPreserveExactly` is preserved verbatim (including the intentional inconsistency: `coral-spring` singular on the dumpster page, and `ft-lauderdale`).
+- **2026-07-24 update:** `/coral-springs-florida/`, `/tamarac-florida/`, and `/sunrise/` are no longer in `mustPreserveExactly` — they were operator-approved 301 redirects (2026-07-23) into the new data-driven `/junk-removal/[city]/` system (`/junk-removal/coral-springs/`, `/junk-removal/tamarac/`, `/junk-removal/sunrise/`). This is an intentional exception to "preserve every legacy path verbatim": the 3 old routes were retired rather than kept live, so future audits should expect a 301 at those slugs, not a 200. See `redirects.json > explicit301Redirects` for the notes on each. No redirect chains exist — nothing else in the codebase points at the old slugs as a destination.
 - Explicit 301s from `explicit301Redirects` are wired in `next.config.js` (`/home`, `/index.php` → `/`).
 - Google Search Console verification meta tag and GTM container are kept in the root layout, exactly as instructed.
 - `metadataBase` derived from `NEXT_PUBLIC_SITE_URL` (defaults to the domain in `site.json`).
