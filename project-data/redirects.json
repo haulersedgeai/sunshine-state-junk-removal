@@ -51,6 +51,54 @@
       "destination": "/junk-removal/tamarac/",
       "permanent": true,
       "note": "Operator-approved consolidation (2026-07-23) — see /coral-springs-florida/ note above."
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact-us/",
+      "permanent": true,
+      "note": "GSC 404 (crawled 2026-07-23) on the bare /contact. No internal link produces it — repo-wide grep found only /contact-us/ — so this is a legacy WordPress path or an external/GBP citation. Source is written with the trailing slash because trailingSlash:true normalizes /contact -> /contact/ BEFORE redirect matching; the bare form therefore resolves in two hops (/contact -> /contact/ -> /contact-us/), which is unavoidable without middleware and is fine for Google."
+    },
+    {
+      "source": "/home-2/",
+      "destination": "/",
+      "permanent": true,
+      "note": "Legacy WordPress duplicate-homepage path."
+    },
+    {
+      "source": "/2023/03/",
+      "destination": "/",
+      "permanent": true,
+      "note": "Legacy WordPress date archive. No blog on the new site, so no topical equivalent exists."
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": true,
+      "note": "No blog on the new site and no services index exists (/junk-removal/ and /services/ both 404 — coreServices in services.json are data labels, not routes). A blog index is a generic hub, so the homepage is the correct catch-all."
+    },
+    {
+      "source": "/home-junk-removal/",
+      "destination": "/what-we-take/",
+      "permanent": true,
+      "note": "No residential/household junk removal service page exists. /what-we-take/ is the closest topical match — it is the household/residential items page and explicitly covers residential, commercial, renovation, and cleanout items."
+    },
+    {
+      "source": "/southwest-ranches/",
+      "destination": "/dumpster-rentals-in-southwest-ranches-florida/",
+      "permanent": true,
+      "note": "Southwest Ranches has no junk-removal service-area page — the dumpster page is the only Southwest Ranches page on the site, so it is the only city-relevant target."
+    },
+    {
+      "source": "/cooper-city/",
+      "destination": "/cooper-city-florida/",
+      "permanent": true,
+      "note": "Confirmed against service-areas.json > serviceAreaPages — the live Cooper City service-area slug carries the legacy -florida suffix."
+    },
+    {
+      "source": "/efficient-construction-debris-removal-with-sunshine-state-junk-removal-in-weston-florida/",
+      "destination": "/weston/",
+      "permanent": true,
+      "note": "Legacy blog post. No dedicated construction-debris-removal service page exists, so per fallback rule this maps to the Weston service-area page, which preserves the post's local intent."
     }
   ],
   "preLaunchChecklist": [
