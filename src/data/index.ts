@@ -46,9 +46,21 @@ export const getCities = (): JunkRemovalCity[] =>
 export const getCityBySlug = (slug: string): JunkRemovalCity | undefined =>
   getCities().find((c) => c.slug === slug);
 
-export const SITE_URL =
+// Single source of truth for the canonical host. Every canonical tag, og:url,
+// sitemap entry, robots.txt reference, and JSON-LD url/@id derives from this.
+//
+// www.sunshineremoval.com is the production host; the apex 308-redirects to it.
+// Emitting the apex anywhere means pointing search engines at a redirect, so the
+// bare apex is normalized up to www even if it arrives that way from the
+// environment. This is deliberately narrow — it matches only our own apex and
+// leaves preview hosts (*.vercel.app) and localhost untouched.
+const toCanonicalHost = (raw: string) =>
+  raw.replace(/^https?:\/\/sunshineremoval\.com/i, 'https://www.sunshineremoval.com');
+
+export const SITE_URL = toCanonicalHost(
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ||
-  (site as Site).domain.replace(/\/$/, '');
+    (site as Site).domain.replace(/\/$/, '')
+);
 
 export const absoluteUrl = (path: string) => {
   const clean = path.startsWith('/') ? path : `/${path}`;

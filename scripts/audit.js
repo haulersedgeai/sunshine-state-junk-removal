@@ -8,7 +8,7 @@ const path = require('path');
 const https = require('https');
 
 const HOST = process.env.AUDIT_HOST || 'https://sunshine-state-junk-removal.vercel.app';
-const CANON_HOST = 'https://sunshineremoval.com';
+const CANON_HOST = 'https://www.sunshineremoval.com';
 
 const routes = [
   { path: '/', kind: 'home' },

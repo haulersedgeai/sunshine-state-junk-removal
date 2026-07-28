@@ -11,17 +11,13 @@ export type PageMetaOpts = {
 
 const DEFAULT_OG = '/images/Sunshine-About-Us.webp';
 
-// Pre-launch: the canonical domain (sunshineremoval.com) still points at the
-// old WordPress host, so OG/Twitter images resolved through that host will 404
-// in social preview cards. Route social-preview image URLs through the current
-// deployment host instead, while keeping canonicals on the production domain.
-// After DNS cutover to Vercel, unset NEXT_PUBLIC_OG_HOST so this falls back to
-// SITE_URL and the workaround becomes a no-op.
-const OG_HOST = (process.env.NEXT_PUBLIC_OG_HOST || '').replace(/\/$/, '') || SITE_URL;
-const ogAbsolute = (path: string) => {
-  const clean = path.startsWith('/') ? path : `/${path}`;
-  return `${OG_HOST}${clean}`;
-};
+// OG/Twitter images resolve through the canonical host, same as every other
+// absolute URL on the site. (A pre-cutover NEXT_PUBLIC_OG_HOST override used to
+// point these at the *.vercel.app deployment host so share cards wouldn't 404
+// while the domain still resolved to the old WordPress host. DNS has since cut
+// over, so that override is gone — it was pinning share images to a
+// non-canonical host.)
+const ogAbsolute = (path: string) => absoluteUrl(path);
 
 export function pageMetadata(opts: PageMetaOpts): Metadata {
   const url = absoluteUrl(opts.path);

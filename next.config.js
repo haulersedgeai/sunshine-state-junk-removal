@@ -8,6 +8,7 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
+      { protocol: 'https', hostname: 'www.sunshineremoval.com' },
       { protocol: 'https', hostname: 'sunshineremoval.com' },
     ],
   },
