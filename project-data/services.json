@@ -83,13 +83,13 @@
       "trailerSizeYards": 18,
       "includesLaborAndDisposal": true,
       "priceFrom": 99,
-      "priceTo": 795,
+      "priceTo": 895,
       "tiers": [
         { "label": "Minimum load", "price": 99, "visual": "A few items — single-piece pickups." },
-        { "label": "1/4 load", "price": 289, "visual": "Roughly a quarter of the 18-yard trailer." },
-        { "label": "1/2 load", "price": 479, "visual": "Half the trailer — a garage or small cleanout." },
-        { "label": "3/4 load", "price": 659, "visual": "Three-quarters full — a large cleanout or renovation." },
-        { "label": "Full load", "price": 795, "visual": "The full 18-yard trailer." }
+        { "label": "1/4 load", "price": 295, "visual": "Roughly a quarter of the 18-yard trailer." },
+        { "label": "1/2 load", "price": 495, "visual": "Half the trailer — a garage or small cleanout." },
+        { "label": "3/4 load", "price": 695, "visual": "Three-quarters full — a large cleanout or renovation." },
+        { "label": "Full load", "price": 895, "visual": "The full 18-yard trailer." }
       ],
       "notes": [
         "Construction Debris rates are subject to change for the amount of labor and disposal fees required.",

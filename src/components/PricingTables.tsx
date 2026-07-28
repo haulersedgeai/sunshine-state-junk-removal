@@ -33,7 +33,7 @@ export function JunkRemovalPricingTable() {
           <p className="eyebrow">Junk removal pricing</p>
           <h3 className="mt-2 text-navy-900">18-yard dump trailer — full-service haul-away.</h3>
           <p className="mt-2 text-ink-soft max-w-xl text-sm">
-            Priced by how much space your items fill in our 18-yard trailer. Photo quotes confirm the tier before we ever roll up.
+            Pricing is based on how much space your items take up in our 18-yard dump trailer. Photo quotes confirm the tier before we ever roll up.
           </p>
         </div>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-sun-500 text-navy-900 font-semibold text-xs px-3 py-1.5 whitespace-nowrap">
