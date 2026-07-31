@@ -99,7 +99,7 @@
     "dumpsterRental": {
       "dumpFeePerTon": 140,
       "priceFrom": 300,
-      "priceTo": 450,
+      "priceTo": 400,
       "sizes": [
         {
           "size": "18 Yard",
@@ -125,8 +125,8 @@
           },
           "description": "Designed for larger projects such as estate cleanouts, full-property cleanups, and heavier debris loads.",
           "durations": [
-            { "duration": "1 day", "price": 400 },
-            { "duration": "2–3 days", "price": 450 }
+            { "duration": "1 day", "price": 350 },
+            { "duration": "2–3 days", "price": 400 }
           ]
         }
       ],
