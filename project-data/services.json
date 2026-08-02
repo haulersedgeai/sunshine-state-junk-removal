@@ -75,7 +75,7 @@
     "model": "Volume-based — priced by how much space items take up in the 18-yard dump trailer, not per item.",
     "quoteIncludes": ["Labor for loading", "Transportation to approved disposal/recycling", "Dump / disposal fees", "Time on-site to complete the job"],
     "affectFactors": ["Bagging loose material", "Carrying items up or down stairs", "Light demolition or item breakdown", "Bed bug–infested furniture", "Items needing special handling or disposal"],
-    "trailerPricing": "Dump trailer rental pricing is based on trailer size and rental duration, plus dump fees at $140 per ton.",
+    "trailerPricing": "18 Yard Dump Trailer — $495 flat rate (includes 7 days and the first 2 tons). 21 Yard Dump Trailer — $525 flat rate (includes 7 days and the first 2 tons).",
     "fastestQuote": "Text clear photos from a few angles for the fastest accurate quote.",
     "noHiddenFees": true,
     "currency": "USD",
@@ -97,9 +97,12 @@
       ]
     },
     "dumpsterRental": {
-      "dumpFeePerTon": 140,
-      "priceFrom": 300,
-      "priceTo": 400,
+      "priceFrom": 495,
+      "priceTo": 525,
+      "includedDays": 7,
+      "includedTons": 2,
+      "overagePerTon": 120,
+      "included": "Includes 7 days and the first 2 tons",
       "sizes": [
         {
           "size": "18 Yard",
@@ -110,10 +113,7 @@
             "volumeYd": 18
           },
           "description": "A strong fit for garage cleanouts, furniture removal, and renovation debris.",
-          "durations": [
-            { "duration": "1 day", "price": 300 },
-            { "duration": "2–3 days", "price": 350 }
-          ]
+          "price": 495
         },
         {
           "size": "21 Yard",
@@ -124,16 +124,27 @@
             "volumeYd": 21
           },
           "description": "Designed for larger projects such as estate cleanouts, full-property cleanups, and heavier debris loads.",
-          "durations": [
-            { "duration": "1 day", "price": 350 },
-            { "duration": "2–3 days", "price": 400 }
-          ]
+          "price": 525
         }
       ],
       "notes": [
-        "A $50 daily surcharge applies after day 3.",
-        "Clean fill concrete, tile, dirt, pavers, rocks will be billed at $625 per load, cannot go over half height on trailer."
-      ]
+        "A 14-day rental period is available for all containers for an additional $125 added to the base rate, if requested at the time of booking.",
+        "Dump & Return service is charged at the same rate as the initial delivery.",
+        "Rentals that extend beyond the 14th day will accrue a $25 per day fee beginning on the 15th day after delivery.",
+        "Weight over the included tonnage is charged by weight at a rate of $120 per ton."
+      ],
+      "serviceArea": "Serving all of Broward and Palm Beach Counties. Miami-Dade available by appointment only — restrictions apply.",
+      "prohibitedItems": {
+        "intro": "The following items are not accepted in our dumpsters. If any of these materials are found in the bin, the load will be returned to your job site and a $100 surcharge will apply:",
+        "items": [
+          "Appliances containing refrigerant (air conditioners, refrigerators, freezers)",
+          "Tires and batteries",
+          "Paint and paint cans",
+          "Propane tanks",
+          "Ammunition",
+          "Hazardous materials"
+        ]
+      }
     }
   }
 }

@@ -81,13 +81,13 @@ export function DumpsterRentalPricingTable() {
       <div className="p-6 sm:p-8 border-b border-navy-100 flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="eyebrow">Dumpster rental pricing</p>
-          <h3 className="mt-2 text-navy-900">Load at your own pace — you pay the dump fees.</h3>
+          <h3 className="mt-2 text-navy-900">Load at your own pace.</h3>
           <p className="mt-2 text-ink-soft max-w-xl text-sm">
-            Driveway-safe dump trailers, delivered and picked up. Base rental plus disposal at <strong>${dr.dumpFeePerTon}/ton</strong> at scale-out.
+            Driveway-safe dump trailers, delivered and picked up.
           </p>
         </div>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-900 text-white font-semibold text-xs px-3 py-1.5 whitespace-nowrap">
-          + ${dr.dumpFeePerTon}/ton dump fees
+          {dr.included}
         </span>
       </div>
 
@@ -96,21 +96,18 @@ export function DumpsterRentalPricingTable() {
           <thead className="bg-sky-soft/60 text-navy-900 text-xs uppercase tracking-widest">
             <tr>
               <th scope="col" className="px-6 py-3 font-semibold">Trailer size</th>
-              <th scope="col" className="px-6 py-3 font-semibold text-right">1 day</th>
-              <th scope="col" className="px-6 py-3 font-semibold text-right">2–3 days</th>
+              <th scope="col" className="px-6 py-3 font-semibold">What&rsquo;s included</th>
+              <th scope="col" className="px-6 py-3 font-semibold text-right">Flat rate</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-navy-100">
-            {dr.sizes.map((s) => {
-              const map = Object.fromEntries(s.durations.map((d) => [d.duration, d.price]));
-              return (
-                <tr key={s.size}>
-                  <th scope="row" className="px-6 py-4 font-semibold text-navy-900 whitespace-nowrap">{s.size}</th>
-                  <td className="px-6 py-4 text-right font-semibold text-navy-900 tabular-nums">{usd(map['1 day'])}</td>
-                  <td className="px-6 py-4 text-right font-semibold text-navy-900 tabular-nums">{usd(map['2–3 days'])}</td>
-                </tr>
-              );
-            })}
+            {dr.sizes.map((s) => (
+              <tr key={s.size}>
+                <th scope="row" className="px-6 py-4 font-semibold text-navy-900 whitespace-nowrap">{s.size}</th>
+                <td className="px-6 py-4 text-ink-soft text-sm">{dr.included}</td>
+                <td className="px-6 py-4 text-right font-semibold text-navy-900 tabular-nums">{usd(s.price)}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

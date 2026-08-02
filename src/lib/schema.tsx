@@ -116,26 +116,24 @@ export const junkRemovalOfferSchema = () => {
 
 export const dumpsterRentalOfferSchema = () => {
   const dr = services.pricing.dumpsterRental;
-  const flat = dr.sizes.flatMap((s) =>
-    s.durations.map((d) => ({
-      '@type': 'Offer',
-      name: `${s.size} Dump Trailer Rental — ${d.duration}`,
+  const flat = dr.sizes.map((s) => ({
+    '@type': 'Offer',
+    name: `${s.size} Dump Trailer — flat rate`,
+    priceCurrency: 'USD',
+    price: s.price,
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      price: s.price,
       priceCurrency: 'USD',
-      price: d.price,
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        price: d.price,
-        priceCurrency: 'USD',
-        valueAddedTaxIncluded: false,
-        description: `Base rental price. Dump fees billed separately at $${dr.dumpFeePerTon} per ton.`,
-      },
-    })),
-  );
+      valueAddedTaxIncluded: false,
+      description: `${dr.included}. Weight over the included tonnage is charged by weight at a rate of $${dr.overagePerTon} per ton.`,
+    },
+  }));
   return {
     '@type': 'Service',
     name: 'Dump Trailer Rental',
     description:
-      'Driveway-safe 18-yard and 21-yard dump trailer rentals in Broward County, FL. Flat rental rates plus dump fees at $140/ton.',
+      'Driveway-safe 18-yard and 21-yard dump trailer rentals. Serving all of Broward and Palm Beach Counties. Miami-Dade available by appointment only — restrictions apply.',
     provider: { '@id': `${SITE_URL}/#localbusiness` },
     areaServed: allAreasServed,
     url: absoluteUrl('/dumpster-rentals/'),
@@ -160,7 +158,6 @@ export const dumpsterSizeItemListSchema = () => {
     numberOfItems: dr.sizes.length,
     itemListElement: dr.sizes.map((s, i) => {
       const d = s.dimensions;
-      const cheapest = Math.min(...s.durations.map((x) => x.price));
       return {
         '@type': 'ListItem',
         position: i + 1,
@@ -208,7 +205,7 @@ export const dumpsterSizeItemListSchema = () => {
           offers: {
             '@type': 'Offer',
             priceCurrency: 'USD',
-            price: cheapest,
+            price: s.price,
             availability: 'https://schema.org/InStock',
             areaServed: allAreasServed,
             seller: { '@id': `${SITE_URL}/#localbusiness` },

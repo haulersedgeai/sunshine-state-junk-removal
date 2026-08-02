@@ -16,7 +16,7 @@ import { DumpsterSpecs } from '@/components/DumpsterSpecs';
 export const metadata: Metadata = pageMetadata({
   title: 'Dump Trailer Rentals in Broward County | Sunshine State',
   description:
-    'Driveway-safe dump trailer rentals across Broward County, FL. Help choosing the right size, fast delivery and pickup, clear pricing. Get a quote today.',
+    'Driveway-safe dump trailer rentals serving all of Broward and Palm Beach Counties. Help choosing the right size, fast delivery and pickup, clear pricing. Get a quote today.',
   path: '/dumpster-rentals/',
 });
 
@@ -101,7 +101,7 @@ export default function DumpsterHubPage() {
           <SectionHeading
             eyebrow="Rental pricing"
             title="Flat rental rates. Public pricing."
-            intro="Two trailer sizes, two rental windows. Base price plus dump fees at the scale."
+            intro="Two trailer sizes. Flat rates include 7 days and the first 2 tons."
           />
           <div className="mt-10">
             <DumpsterRentalPricingTable />
@@ -113,12 +113,30 @@ export default function DumpsterHubPage() {
         </div>
       </section>
 
+      {/* PROHIBITED ITEMS */}
+      <section className="section">
+        <div className="container-p">
+          <div className="rounded-3xl bg-white ring-1 ring-navy-100 p-8 sm:p-10 shadow-card">
+            <p className="eyebrow">Prohibited items</p>
+            <p className="mt-3 text-ink-soft max-w-3xl">{services.pricing.dumpsterRental.prohibitedItems.intro}</p>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {services.pricing.dumpsterRental.prohibitedItems.items.map((it) => (
+                <li key={it} className="flex items-start gap-2 text-navy-800 text-sm">
+                  <span aria-hidden="true" className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-navy-400 shrink-0" />
+                  {it}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-sky-soft/60">
         <div className="container-p">
           <SectionHeading
             eyebrow="Dumpster rentals by city"
             title="City-specific dumpster rental pages."
-            intro="Local coverage across Broward — click your city for details and delivery info."
+            intro="Serving all of Broward and Palm Beach Counties. Miami-Dade available by appointment only — restrictions apply."
             align="center"
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

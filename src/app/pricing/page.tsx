@@ -35,7 +35,7 @@ export default function PricingPage() {
             <p className="eyebrow">Pricing</p>
             <h1 className="mt-2">Real prices, no guessing games. Junk removal starts at $99.</h1>
             <p className="speakable-answer mt-5 text-lg text-ink-soft max-w-xl">
-              {p.model} Full-service junk removal pricing includes labor and disposal, and dump trailer rentals are billed at a flat rental rate plus dump fees at ${p.dumpsterRental.dumpFeePerTon}/ton.
+              {p.model} Full-service junk removal pricing includes labor and disposal, and dump trailer rentals are billed at a flat rate that includes 7 days and the first 2 tons.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`sms:${site.sms}`} size="lg" variant="primary"><MessageIcon className="h-4 w-4" /> Text a photo for a quote</Button>
@@ -65,7 +65,7 @@ export default function PricingPage() {
       {/* DUMPSTER RENTAL TABLE */}
       <section className="section bg-sky-soft/60">
         <div className="container-p">
-          <SectionHeading eyebrow="Dumpster rentals" title="Flat rental rates + tonnage at the scale." intro="Best for multi-day loads where you want to work at your own pace. Choose the 18-yard for household and remodels, the 21-yard for bigger jobs." />
+          <SectionHeading eyebrow="Dumpster rentals" title="Flat rental rates." intro="Best for multi-day loads where you want to work at your own pace. Choose the 18-yard for household and remodels, the 21-yard for bigger jobs." />
           <div className="mt-10">
             <DumpsterRentalPricingTable />
           </div>
