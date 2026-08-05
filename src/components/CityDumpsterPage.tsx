@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getSite, getReviews, absoluteUrl, SITE_URL } from '@/data';
+import { getSite, getReviews, getServices, absoluteUrl, SITE_URL } from '@/data';
 import { SectionHeading } from './SectionHeading';
 import { Breadcrumbs } from './Breadcrumbs';
 import { CTASection } from './CTASection';
@@ -14,6 +14,7 @@ import { CityContent } from '@/data/city-content';
 
 export function CityDumpsterPage({ content }: { content: CityContent }) {
   const site = getSite();
+  const dr = getServices().pricing.dumpsterRental;
   const reviews = getReviews().reviews;
   const cityReviews = reviews.filter((r) => r.city?.toLowerCase() === content.city.toLowerCase());
   const useReviews = cityReviews.length >= 3 ? cityReviews : [...cityReviews, ...reviews.filter((r) => !r.city)].slice(0, 9);
@@ -24,7 +25,7 @@ export function CityDumpsterPage({ content }: { content: CityContent }) {
     { q: `Are your dump trailers safe for driveways in ${content.city}?`, a: `Yes. Our trailers are designed to be driveway-safe, and we place them carefully — especially on pavers, tile driveways, and coated surfaces common in ${content.city}.` },
     { q: `How fast can you deliver a dump trailer in ${content.city}?`, a: `Same-day and next-day deliveries are common in ${content.city}. Confirm your address and the drop location and we’ll book the earliest window available.` },
     { q: `What can I put in the dump trailer?`, a: `Household clutter, renovation debris, furniture, yard waste, and most bulky items. The following items are not accepted in our dumpsters — if any of these materials are found in the bin, the load will be returned to your job site and a $100 surcharge will apply: appliances containing refrigerant (air conditioners, refrigerators, freezers), tires and batteries, paint and paint cans, propane tanks, ammunition, and hazardous materials.` },
-    { q: `How is dump trailer rental priced?`, a: `18 Yard Dump Trailer — $495 flat rate (includes 7 days and the first 2 tons). 21 Yard Dump Trailer — $525 flat rate (includes 7 days and the first 2 tons). Weight over the included tonnage is charged by weight at a rate of $120 per ton.` },
+    { q: `How is dump trailer rental priced?`, a: `${dr.sizes.map((s) => `${s.size} Dump Trailer — $${s.price} flat rate (includes ${dr.includedDays} days and the first ${dr.includedTons} tons).`).join(' ')} Weight over the included tonnage is charged by weight at a rate of $${dr.overagePerTon} per ton.` },
   ];
 
   return (
