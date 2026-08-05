@@ -24,6 +24,7 @@ export default function DumpsterHubPage() {
   const site = getSite();
   const services = getServices();
   const dumpster = services.coreServices.find((s) => s.slug === 'dump-trailer-rentals')!;
+  const dr = services.pricing.dumpsterRental;
   const cities = getServiceAreas().dumpsterRentalPages;
   const generalFaqs = getFaqs().general.filter((f) => f.q.toLowerCase().includes('trailer') || f.q.toLowerCase().includes('driveway') || f.q.toLowerCase().includes('deliver'));
 
@@ -101,7 +102,7 @@ export default function DumpsterHubPage() {
           <SectionHeading
             eyebrow="Rental pricing"
             title="Flat rental rates. Public pricing."
-            intro="Two trailer sizes. Flat rates include 7 days and the first 2 tons."
+            intro={`Two trailer sizes. Flat rates include ${dr.includedDays} days and the first ${dr.includedTons} tons.`}
           />
           <div className="mt-10">
             <DumpsterRentalPricingTable />

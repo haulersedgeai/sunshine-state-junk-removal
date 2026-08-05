@@ -11,10 +11,11 @@ import { CheckIcon, PhoneIcon, MessageIcon } from '@/components/Icon';
 import { JsonLd, graph, faqPageSchema, junkRemovalOfferSchema, dumpsterRentalOfferSchema } from '@/lib/schema';
 import { JunkRemovalPricingTable, DumpsterRentalPricingTable } from '@/components/PricingTables';
 
+const pricing = getServices().pricing;
+
 export const metadata: Metadata = pageMetadata({
   title: 'Junk Removal Pricing | Sunshine State Junk Removal',
-  description:
-    'Transparent junk removal pricing in Broward County — from $99. See our 18-yard dump trailer load pricing, dumpster rental rates, and photo-quote process.',
+  description: `Transparent junk removal pricing in Broward County — from $${pricing.junkRemoval.priceFrom}. See our 18-yard dump trailer load pricing, dumpster rental rates, and photo-quote process.`,
   path: '/pricing/',
 });
 
@@ -33,9 +34,9 @@ export default function PricingPage() {
         <div className="container-p grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
           <div>
             <p className="eyebrow">Pricing</p>
-            <h1 className="mt-2">Real prices, no guessing games. Junk removal starts at $99.</h1>
+            <h1 className="mt-2">{`Real prices, no guessing games. Junk removal starts at $${p.junkRemoval.priceFrom}.`}</h1>
             <p className="speakable-answer mt-5 text-lg text-ink-soft max-w-xl">
-              {p.model} Full-service junk removal pricing includes labor and disposal, and dump trailer rentals are billed at a flat rate that includes 7 days and the first 2 tons.
+              {p.model}{` Full-service junk removal pricing includes labor and disposal, and dump trailer rentals are billed at a flat rate that includes ${p.dumpsterRental.includedDays} days and the first ${p.dumpsterRental.includedTons} tons.`}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`sms:${site.sms}`} size="lg" variant="primary"><MessageIcon className="h-4 w-4" /> Text a photo for a quote</Button>

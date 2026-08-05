@@ -53,6 +53,17 @@ Autonomous decisions made during this rebuild. All small enough to fit the brief
 2. **Public street address (`site.json > address`)** — **CONFIRMED: display the full address publicly.** The site now shows **3700 NW 104th Ave, Coral Springs, FL 33065** in the footer NAP block and on the Contact page, matching the Google Business Profile.
    - The exact same string is emitted by the LocalBusiness JSON-LD, the footer, the Contact page, and `/llms.txt`. All four are built from `site.json > address` via a single `formattedAddress` helper (`src/data/index.ts`), so any future change to the address updates everywhere at once and keeps NAP byte-for-byte consistent.
 
+## Pricing data — single source of truth
+- **Prices live in `project-data/services.json` only. Components read them; they never duplicate them.** Any price, included-days, included-tonnage, or per-ton overage value rendered anywhere on the site must be interpolated from `services.json` — never retyped as a literal in a component, page, metadata string, or JSON-LD generator.
+- Rationale: `src/components/CityDumpsterPage.tsx` (which drives all 12 city dumpster pages) had the 18yd/21yd flat rates, included days, included tonnage, and per-ton overage retyped as string literals. They happened to agree with `services.json`, but nothing enforced it — a price change in `services.json` would have silently left 12 live pages advertising stale prices. Same pattern in the `/pricing/` H1 + meta description and the `/dumpster-rentals/` pricing intro.
+- Now reading from `services.json`: `CityDumpsterPage.tsx` (rental pricing FAQ), `src/app/pricing/page.tsx` (meta description, H1, intro paragraph), `src/app/dumpster-rentals/page.tsx` (pricing section intro). `PricingTables.tsx` and both JSON-LD generators in `src/lib/schema.tsx` already did.
+- **Known remaining duplication, deliberately left alone** (each needs a schema change or a copy change, so neither belongs in a pure refactor):
+  - `services.json > pricing.trailerPricing` and the Dump & Return note in `pricing.dumpsterRental.notes[1]` restate `sizes[].price` as prose *inside the same file*.
+  - `project-data/faqs.json` restates the junk-removal tiers and the full dumpster rate card as prose.
+  - `public/llms.txt` is hand-maintained and restates every price; no generator exists.
+  - The `$100` prohibited-items surcharge in `CityDumpsterPage.tsx` is exposed only *inside* the `prohibitedItems.intro` prose string, not as a discrete numeric field.
+  - Practical rule until those are addressed: **a price change means editing `services.json`, `faqs.json`, and `llms.txt` together.**
+
 ## Not built (out of scope for v1)
 - A CMS layer. Structured so it can be added later without rewriting page components.
 - A blog. If posts need to migrate, add during preLaunchChecklist crawl.
