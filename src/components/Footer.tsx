@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getSite, formattedAddress } from '@/data';
+import { getSite } from '@/data';
+import { getLocations } from '@/data/locations';
 import { PhoneIcon, MessageIcon, MailIcon, ClockIcon, MapPinIcon } from './Icon';
 import { Wordmark } from './Wordmark';
 
@@ -72,14 +73,33 @@ export function Footer() {
             <p className="inline-flex items-center gap-2 text-white/90">
               <ClockIcon className="h-4 w-4" /> {site.hours.display}
             </p>
-            <address className="not-italic inline-flex items-start gap-2 text-white/90">
-              <MapPinIcon className="h-4 w-4 mt-0.5 shrink-0" />
-              <span>
-                {formattedAddress}
-                <span className="block text-white/80 text-xs mt-0.5">Serving {site.primaryCounty}, FL &amp; nearby</span>
-              </span>
-            </address>
           </div>
+          {/* Two-location NAP blocks — data from project-data/locations.json
+              (Coral Springs NAP merged from site.json). Phone renders only
+              when the location has one; no placeholders while pending. */}
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+            {getLocations().map((loc) => (
+              <div key={loc.id} className="text-sm">
+                <Link href={loc.slug} className="font-semibold text-white no-underline hover:text-sun-300">
+                  {loc.label}
+                </Link>
+                <address className="not-italic mt-1.5 flex items-start gap-2 text-white/90">
+                  <MapPinIcon className="h-4 w-4 mt-0.5 shrink-0" />
+                  <span>
+                    {site.businessName}
+                    <span className="block">{loc.address.street}</span>
+                    <span className="block">{loc.address.city}, {loc.address.state} {loc.address.zip}</span>
+                    {loc.phone && loc.phoneDisplay && (
+                      <a href={`tel:${loc.phone}`} className="mt-0.5 block w-fit text-white no-underline hover:text-sun-300">
+                        {loc.phoneDisplay}
+                      </a>
+                    )}
+                  </span>
+                </address>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-white/80 text-xs">Serving {site.primaryCounty}, FL &amp; nearby</p>
           <div className="mt-5 flex gap-4 text-xs">
             <a href={site.socials.google} target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-sun-300 no-underline">Google</a>
             <a href={site.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-sun-300 no-underline">Facebook</a>

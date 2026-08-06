@@ -1,0 +1,66 @@
+{
+  "_instructions": "SINGLE SOURCE OF TRUTH for the two physical locations. PENDING VALUES: the southwest-ranches 'phone', 'phoneDisplay', and 'hours' fields are null until the client provides them. While null, phone/hours are OMITTED everywhere they would appear (location page NAP, footer block, LocalBusiness schema, llms.txt) — no placeholder text renders anywhere. To activate them, edit ONLY this file: set phone to the E.164 form (e.g. +19545551234), phoneDisplay to the human form (e.g. (954) 555-1234), and hours to an object shaped like { \"display\": \"Monday–Friday 8:00 AM – 5:00 PM\", \"days\": [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\"], \"opens\": \"08:00\", \"closes\": \"17:00\" } — display drives visible text, days/opens/closes drive openingHoursSpecification schema. The coral-springs entry deliberately has no address/phone/hours/geo here: those are merged from site.json (the established single source for the original NAP) in src/data/locations.ts, keeping the Coral Springs NAP byte-identical everywhere.",
+  "_addressLock": "The Southwest Ranches street address '5011 SW 210 Terrace' is exact and locked. Do not abbreviate 'Terrace' or reformat it.",
+  "locations": [
+    {
+      "id": "coral-springs",
+      "label": "Coral Springs",
+      "slug": "/locations/coral-springs/",
+      "role": "primary",
+      "citiesServed": [
+        "Coral Springs",
+        "Parkland",
+        "Coconut Creek",
+        "Margate",
+        "Tamarac",
+        "North Lauderdale",
+        "Sunrise",
+        "Pompano Beach",
+        "Deerfield Beach",
+        "Lighthouse Point",
+        "Hillsboro Beach",
+        "Sea Ranch Lakes",
+        "Lauderdale-by-the-Sea",
+        "Boca Raton",
+        "Highland Beach",
+        "Delray Beach",
+        "Boynton Beach",
+        "Hypoluxo",
+        "Lake Worth Beach"
+      ]
+    },
+    {
+      "id": "southwest-ranches",
+      "label": "Southwest Ranches",
+      "slug": "/locations/southwest-ranches/",
+      "role": "branch",
+      "address": {
+        "street": "5011 SW 210 Terrace",
+        "city": "Southwest Ranches",
+        "state": "FL",
+        "zip": "33332"
+      },
+      "geo": { "lat": 26.057349, "lng": -80.429417 },
+      "phone": null,
+      "phoneDisplay": null,
+      "hours": null,
+      "citiesServed": [
+        "Southwest Ranches",
+        "Weston",
+        "Davie",
+        "Cooper City",
+        "Pembroke Pines",
+        "Miramar",
+        "Hollywood",
+        "Dania Beach",
+        "Hallandale Beach",
+        "Fort Lauderdale",
+        "Wilton Manors",
+        "Oakland Park",
+        "Lauderdale Lakes",
+        "Miami Lakes",
+        "Plantation"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getServiceAreas, SITE_URL } from '@/data';
+import { getLocations } from '@/data/locations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const areas = getServiceAreas();
@@ -30,10 +31,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
   }));
 
-  return [...staticPaths, ...cityService, ...cityDumpster].map((p) => ({
-    url: `${SITE_URL}${p.path}`,
+  // Location pages are pinned to the production www host (matching their
+  // hard-coded canonicals) rather than trusting NEXT_PUBLIC_SITE_URL.
+  const locationPages = getLocations().map((l) => ({
+    url: `https://www.sunshineremoval.com${l.slug}`,
     lastModified: now,
-    changeFrequency: p.changeFrequency,
-    priority: p.priority,
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
   }));
+
+  return [
+    ...[...staticPaths, ...cityService, ...cityDumpster].map((p) => ({
+      url: `${SITE_URL}${p.path}`,
+      lastModified: now,
+      changeFrequency: p.changeFrequency,
+      priority: p.priority,
+    })),
+    ...locationPages,
+  ];
 }
