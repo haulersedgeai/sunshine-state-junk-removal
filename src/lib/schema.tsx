@@ -1,4 +1,5 @@
 import { getSite, getServices, getServiceAreas, absoluteUrl, SITE_URL } from '@/data';
+import { getLocations, type BusinessLocation } from '@/data/locations';
 
 const site = getSite();
 const services = getServices();
@@ -10,60 +11,68 @@ const allAreasServed = [
   ...areas.fullAreasServed.palmBeach,
 ].map((c) => ({ '@type': 'City', name: `${c}, FL` }));
 
-export const orgSchema = () => ({
-  '@type': 'HomeAndConstructionBusiness',
-  '@id': `${SITE_URL}/#localbusiness`,
+// Hard-coded canonical host for the entity graph (@ids). The Organization and
+// location LocalBusiness nodes are cross-referenced from multiple pages and
+// support a second Google Business Profile, so their identity must never
+// follow NEXT_PUBLIC_SITE_URL onto a preview host.
+const CANONICAL_HOST = 'https://www.sunshineremoval.com';
+export const ORG_ID = `${CANONICAL_HOST}/#organization`;
+export const locationId = (loc: BusinessLocation) => `${CANONICAL_HOST}${loc.slug}#location`;
+
+// Sitewide Organization node (rendered from the root layout, so it appears on
+// the homepage and every other page). This replaced the former sitewide
+// HomeAndConstructionBusiness node with the Coral Springs NAP — that entity now
+// lives on /locations/coral-springs/ as a LocalBusiness (see locationSchema).
+export const organizationSchema = () => ({
+  '@type': 'Organization',
+  '@id': ORG_ID,
   name: site.businessName,
-  alternateName: site.shortName,
-  url: SITE_URL,
-  telephone: site.phone,
-  email: site.email,
-  image: absoluteUrl('/images/Sunshine-About-Us.webp'),
-  logo: absoluteUrl('/images/Sunshine-Logo.svg'),
-  priceRange: '$$',
-  description:
-    'Family- and veteran-owned junk removal and dump-trailer rentals serving Broward County, FL. Fast photo-based quotes, same-day availability, transparent volume-based pricing.',
+  url: `${CANONICAL_HOST}/`,
+  logo: `${CANONICAL_HOST}/images/Sunshine-Logo.svg`,
+  sameAs: Object.values(site.socials),
+  subOrganization: getLocations().map((loc) => ({ '@id': locationId(loc) })),
+});
+
+// One authoritative LocalBusiness node per physical location, emitted only on
+// that location's page. Phone / geo / hours are conditionally omitted while the
+// data file holds null — no placeholder values may ship.
+export const locationSchema = (loc: BusinessLocation) => ({
+  '@type': 'LocalBusiness',
+  '@id': locationId(loc),
+  name: site.businessName,
+  url: `${CANONICAL_HOST}${loc.slug}`,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: site.address.street,
-    addressLocality: site.address.city,
-    addressRegion: site.address.state,
-    postalCode: site.address.zip,
-    addressCountry: site.address.country,
+    streetAddress: loc.address.street,
+    addressLocality: loc.address.city,
+    addressRegion: loc.address.state,
+    postalCode: loc.address.zip,
+    ...(loc.address.country ? { addressCountry: loc.address.country } : {}),
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: site.geo.lat,
-    longitude: site.geo.lng,
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
-    },
-  ],
-  areaServed: allAreasServed,
-  sameAs: Object.values(site.socials),
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: site.rating.value,
-    reviewCount: site.rating.count,
-    bestRating: '5',
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Services',
-    itemListElement: services.coreServices.map((s) => ({
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: s.name,
-        description: s.shortDesc,
-      },
-    })),
-  },
+  ...(loc.phone ? { telephone: loc.phone } : {}),
+  ...(loc.geo
+    ? {
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: loc.geo.lat,
+          longitude: loc.geo.lng,
+        },
+      }
+    : {}),
+  ...(loc.hours
+    ? {
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: loc.hours.days,
+            opens: loc.hours.opens,
+            closes: loc.hours.closes,
+          },
+        ],
+      }
+    : {}),
+  areaServed: loc.citiesServed.map((c) => ({ '@type': 'City', name: `${c}, FL` })),
+  parentOrganization: { '@id': ORG_ID },
 });
 
 export const serviceSchema = (opts: {
@@ -75,7 +84,7 @@ export const serviceSchema = (opts: {
   '@type': 'Service',
   name: opts.name,
   description: opts.description,
-  provider: { '@id': `${SITE_URL}/#localbusiness` },
+  provider: { '@id': ORG_ID },
   areaServed: opts.areaCity
     ? { '@type': 'City', name: `${opts.areaCity}, FL` }
     : allAreasServed,
@@ -89,7 +98,7 @@ export const junkRemovalOfferSchema = () => {
     name: 'Junk Removal',
     description:
       'Full-service junk removal in Broward County, FL. Volume-based pricing in an 18-yard dump trailer — labor and disposal included.',
-    provider: { '@id': `${SITE_URL}/#localbusiness` },
+    provider: { '@id': ORG_ID },
     areaServed: allAreasServed,
     url: absoluteUrl('/pricing/'),
     offers: {
@@ -134,7 +143,7 @@ export const dumpsterRentalOfferSchema = () => {
     name: 'Dump Trailer Rental',
     description:
       'Driveway-safe 18-yard and 21-yard dump trailer rentals. Serving all of Broward and Palm Beach Counties. Miami-Dade available by appointment only — restrictions apply.',
-    provider: { '@id': `${SITE_URL}/#localbusiness` },
+    provider: { '@id': ORG_ID },
     areaServed: allAreasServed,
     url: absoluteUrl('/dumpster-rentals/'),
     offers: {
@@ -166,7 +175,7 @@ export const dumpsterSizeItemListSchema = () => {
           '@id': `${SITE_URL}/dumpster-rentals/#size-${d.volumeYd}yd`,
           name: `${d.volumeYd}-Yard Dump Trailer`,
           description: s.description,
-          brand: { '@id': `${SITE_URL}/#localbusiness` },
+          brand: { '@id': ORG_ID },
           category: 'Dump Trailer Rental',
           width: {
             '@type': 'QuantitativeValue',
@@ -208,7 +217,7 @@ export const dumpsterSizeItemListSchema = () => {
             price: s.price,
             availability: 'https://schema.org/InStock',
             areaServed: allAreasServed,
-            seller: { '@id': `${SITE_URL}/#localbusiness` },
+            seller: { '@id': ORG_ID },
             url: absoluteUrl('/dumpster-rentals/'),
           },
         },
