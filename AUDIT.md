@@ -316,7 +316,7 @@ Scope of change for the Southwest Ranches (second location) build. Not yet merge
 
 ## Routes added (2)
 - `/locations/coral-springs/` — original/primary location page (NAP from site.json, map pinned to street address, 19-city list, LocalBusiness schema)
-- `/locations/southwest-ranches/` — second location page (locked address 5011 SW 210 Terrace, Southwest Ranches, FL 33332; map centered on 26.057349, -80.429417; 15-city list; LocalBusiness schema; phone + hours omitted pending client values)
+- `/locations/southwest-ranches/` — second location page (locked address 5011 SW 210 Terrace, Southwest Ranches, FL 33332; map centered on 26.057349, -80.429417; 15-city list; LocalBusiness schema; phone (305) 326-2436 and hours Monday–Saturday 8:00 AM – 6:00 PM added 2026-08-06 from client values)
 
 ## Schema changes
 - Root layout: sitewide `HomeAndConstructionBusiness` (`/#localbusiness`) replaced by `Organization` (`/#organization`) with `subOrganization` refs to both location `#location` @ids.
@@ -327,7 +327,7 @@ Scope of change for the Southwest Ranches (second location) build. Not yet merge
 - Footer: two-location NAP blocks (each city name links to its /locations/ page); Adimize credit and all other content preserved.
 - AreasServed (homepage + /service-areas/): split into two location territories (19 + 15 locked city lists), each panel heading linking to its location page. Replaces the former Broward/Miami-Dade/Palm Beach county grouping.
 - Sitemap: both /locations/ routes added, pinned to the www host with trailing slashes.
-- public/llms.txt: two-location structure (both addresses, CS phone/hours, two city lists, location URLs). SW phone/hours omitted pending.
-- project-data/locations.json (new) + src/data/locations.ts (new): single source for location data; SW phone/hours null pending.
+- public/llms.txt: two-location structure (both addresses, both phones, both hours, two city lists, location URLs).
+- project-data/locations.json (new) + src/data/locations.ts (new): single source for location data.
 - project-data/faqs.json: audited — no FAQ states single-location facts; unchanged.
 - Pricing content, Housecall Pro lead form, Wave 1 city pages, email/DNS/analytics: untouched.
