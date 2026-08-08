@@ -179,6 +179,49 @@
       "title": "Junk Removal in Sunrise, FL | Sunshine State",
       "metaDescription": "Junk removal in Sunrise, FL for homes, offices, and retail spaces near Sawgrass Mills. Fast quotes, same-day service. Call today!",
       "closer": "Home, office, or storefront — Sunrise homeowners and businesses rely on us for quick, dependable turnarounds. Send a photo and let's make it easy."
+    },
+    {
+      "slug": "southwest-ranches",
+      "city": "Southwest Ranches",
+      "county": "Broward County",
+      "isHQ": false,
+      "eyebrow": "Acreage & equestrian property cleanouts",
+      "distinctIntro": "Southwest Ranches is built around land. The town's rural-preservation zoning keeps lots large — many at an acre and a half or more — with barns, workshops, paddocks, and detached outbuildings that ordinary curbside pickup was never designed for. Neighborhoods like Sunshine Ranches, Rolling Oaks, Green Meadows, Country Estates, and Landmark Ranch Estates share that character: long private driveways, and a lot of gravel and grass between the road and whatever actually needs hauling. We keep a yard in town, so this is local work for us rather than a drive in from somewhere else.",
+      "commonScenarios": [
+        "Barn, tack room, and detached outbuilding cleanouts on acreage properties",
+        "Pasture brush, downed limbs, and storm debris spread across a large lot",
+        "Estate and full-property cleanouts where one load was never going to cover it",
+        "Renovation and remodeling debris carried out from long private driveways",
+        "Old fencing, farm equipment, and scrap metal removal"
+      ],
+      "serviceNote": "Southwest Ranches is one of our two locations, so a crew is already in town rather than driving across the county. That matters most on acreage jobs, where the work is usually several loads instead of one, and where the walk between the structure and the truck is longer than the drive between neighborhoods.",
+      "neighborhoods": [
+        "Sunshine Ranches",
+        "Rolling Oaks",
+        "Green Meadows",
+        "Country Estates",
+        "Landmark Ranch Estates"
+      ],
+      "landmarks": [
+        "Vista View Park",
+        "Frontier Trails Park",
+        "Griffin Road corridor"
+      ],
+      "nearby": [
+        { "label": "Davie", "href": "/davie/" },
+        { "label": "Cooper City", "href": "/cooper-city-florida/" },
+        { "label": "Weston", "href": "/weston/" },
+        { "label": "Pembroke Pines", "href": "/pembroke-pines/" }
+      ],
+      "cityFaqs": [
+        { "q": "Can you get a truck down an unpaved or gravel driveway?", "a": "Yes — that describes most of Southwest Ranches, and it's what we plan for here. We position on stable ground, stay off soft grass after heavy rain, and carry from the barn or outbuilding to the truck when driving closer isn't a good idea." },
+        { "q": "Do you handle barn, paddock, and outbuilding cleanouts?", "a": "Yes. Tack, feed equipment, old fencing, lumber, scrap metal, and general barn clutter are all within our Southwest Ranches service area. Send photos of what's there and we'll tell you how many loads it realistically takes." },
+        { "q": "Can you clear brush and storm debris from a large lot?", "a": "Yes — pasture brush, downed limbs, and fence sections after a storm are common acreage work. Because the debris is usually spread out rather than piled at the curb, photos of the whole area help us quote it accurately the first time." },
+        { "q": "Are you actually based in Southwest Ranches?", "a": "Yes — it's one of our two locations, alongside Coral Springs. See our Southwest Ranches location page for the address, phone, and hours." }
+      ],
+      "title": "Junk Removal in Southwest Ranches, FL | Sunshine State",
+      "metaDescription": "Junk removal in Southwest Ranches, FL for barn, acreage, and estate cleanouts. Locally based, photo quotes, same-day service. Call now!",
+      "closer": "Acreage, barns, and long gravel driveways are the normal case here, not the exception — and we're based in town rather than driving in. Text a photo and we'll size the job right."
     }
   ]
 }
