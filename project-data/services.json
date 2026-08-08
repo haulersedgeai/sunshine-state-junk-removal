@@ -75,7 +75,7 @@
     "model": "Volume-based — priced by how much space items take up in the 18-yard dump trailer, not per item.",
     "quoteIncludes": ["Labor for loading", "Transportation to approved disposal/recycling", "Dump / disposal fees", "Time on-site to complete the job"],
     "affectFactors": ["Bagging loose material", "Carrying items up or down stairs", "Light demolition or item breakdown", "Bed bug–infested furniture", "Items needing special handling or disposal"],
-    "trailerPricing": "18 Yard Dump Trailer — $495 flat rate (includes 7 days and the first 2 tons). 21 Yard Dump Trailer — $525 flat rate (includes 7 days and the first 2 tons).",
+    "trailerPricingTemplate": "18 Yard Dump Trailer — {size18Price} flat rate (includes 7 days and the first 2 tons). 21 Yard Dump Trailer — {size21Price} flat rate (includes 7 days and the first 2 tons).",
     "fastestQuote": "Text clear photos from a few angles for the fastest accurate quote.",
     "noHiddenFees": true,
     "currency": "USD",
@@ -127,11 +127,13 @@
           "price": 525
         }
       ],
-      "notes": [
-        "A 14-day rental period is available for all containers for an additional $125 added to the base rate, if requested at the time of booking.",
-        "Dump & Return service is charged as a new rental at the full flat rate for your trailer size ($495 for the 18 yard, $525 for the 21 yard).",
-        "Rentals that extend beyond the 14th day will accrue a $25 per day fee beginning on the 15th day after delivery.",
-        "Weight over the included tonnage is charged by weight at a rate of $120 per ton."
+      "extendedRentalUsd": 125,
+      "lateFeePerDayUsd": 25,
+      "noteTemplates": [
+        "A 14-day rental period is available for all containers for an additional {extendedRental} added to the base rate, if requested at the time of booking.",
+        "Dump & Return service is charged as a new rental at the full flat rate for your trailer size ({size18Price} for the 18 yard, {size21Price} for the 21 yard).",
+        "Rentals that extend beyond the 14th day will accrue a {lateFeePerDay} per day fee beginning on the 15th day after delivery.",
+        "Weight over the included tonnage is charged by weight at a rate of {overagePerTon} per ton."
       ],
       "serviceArea": "Serving all of Broward and Palm Beach Counties. Miami-Dade available by appointment only — restrictions apply.",
       "prohibitedItems": {

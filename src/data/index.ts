@@ -41,16 +41,71 @@ export const getRedirects = () => redirects;
 
 export const formatUsd = (amount: number): string => `$${amount}`;
 
+const dumpsterPricing = () => (services as Services).pricing.dumpsterRental;
+
+/**
+ * Price of a dump trailer size, looked up by its yardage rather than by array
+ * index, so reordering `sizes` cannot silently swap the two rates in prose.
+ * Throws rather than rendering "$undefined" — a missing size is a data error
+ * that should stop the build, not ship a broken sentence.
+ */
+const sizePrice = (yards: number): string => {
+  const match = dumpsterPricing().sizes.find((s) => parseInt(s.size, 10) === yards);
+  if (!match) {
+    throw new Error(
+      `services.json: pricing.dumpsterRental.sizes has no ${yards}-yard entry, but prose references it.`
+    );
+  }
+  return formatUsd(match.price);
+};
+
+/**
+ * Every price token a prose template may reference. Adding a placeholder to
+ * services.json without adding it here leaves the raw "{token}" visible on the
+ * page — deliberate, so the omission is caught at a glance instead of shipping.
+ */
+const priceTokens = (): Record<string, string> => {
+  const dr = dumpsterPricing();
+  return {
+    '{extendedRental}': formatUsd(dr.extendedRentalUsd),
+    '{lateFeePerDay}': formatUsd(dr.lateFeePerDayUsd),
+    '{overagePerTon}': formatUsd(dr.overagePerTon),
+    '{surcharge}': formatUsd(dr.prohibitedItems.surchargeUsd),
+    '{size18Price}': sizePrice(18),
+    '{size21Price}': sizePrice(21),
+  };
+};
+
+/** Resolve every {token} in a pricing prose template against services.json. */
+export const resolvePriceTemplate = (template: string): string => {
+  const tokens = priceTokens();
+  return Object.entries(tokens).reduce(
+    (out, [token, value]) => out.split(token).join(value),
+    template
+  );
+};
+
 /** The prohibited-items surcharge, as a formatted string (e.g. "$100"). */
 export const prohibitedItemsSurcharge = (): string =>
-  formatUsd((services as Services).pricing.dumpsterRental.prohibitedItems.surchargeUsd);
+  formatUsd(dumpsterPricing().prohibitedItems.surchargeUsd);
 
 /** The prohibited-items intro sentence with the live surcharge interpolated. */
 export const prohibitedItemsIntro = (): string =>
-  (services as Services).pricing.dumpsterRental.prohibitedItems.introTemplate.replace(
-    '{surcharge}',
-    prohibitedItemsSurcharge()
-  );
+  resolvePriceTemplate(dumpsterPricing().prohibitedItems.introTemplate);
+
+/** The 14-day rental upcharge, as a formatted string (e.g. "$125"). */
+export const extendedRentalFee = (): string => formatUsd(dumpsterPricing().extendedRentalUsd);
+
+/** The per-day fee past day 14, as a formatted string (e.g. "$25"). */
+export const lateFeePerDay = (): string => formatUsd(dumpsterPricing().lateFeePerDayUsd);
+
+/** Dumpster-rental footnotes with every price interpolated from services.json. */
+export const dumpsterRentalNotes = (): string[] =>
+  dumpsterPricing().noteTemplates.map(resolvePriceTemplate);
+
+/** The dump-trailer rate summary sentence, prices interpolated. */
+export const trailerPricingSummary = (): string =>
+  resolvePriceTemplate((services as Services).pricing.trailerPricingTemplate);
 
 export type JunkRemovalCity = {
   slug: string;

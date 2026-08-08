@@ -40,18 +40,15 @@ const rel = (p) => path.relative(ROOT, p);
 
 /**
  * Prices that legitimately live only in services.json prose because no
- * structured field exists for them yet. Keep this list empty if you can — each
- * entry is a number that rule 1 cannot protect from drifting out of sync with
- * a structured field.
+ * structured field exists for them.
  *
- * TODO(followup): promote these to discrete fields
- *   (extendedRentalUsd, lateFeePerDayUsd) the way surchargeUsd was, then delete
- *   this allowlist.
+ * This list is EMPTY, and should stay that way. Every price in services.json
+ * now has a discrete numeric field, and every sentence that quotes one is a
+ * template with a {token} placeholder resolved at render time. An entry here
+ * is a number rule 1 cannot protect from drifting out of sync — so the fix for
+ * a new prose-only price is a new structured field, not a new allowlist entry.
  */
-const PROSE_ONLY = new Map([
-  [125, 'dumpsterRental.notes — 14-day rental period upcharge'],
-  [25, 'dumpsterRental.notes — per-day fee past day 14'],
-]);
+const PROSE_ONLY = new Map([]);
 
 const PRICE_RE = /\$\s?(\d[\d,]*)/g;
 
@@ -105,6 +102,8 @@ junkRemoval.tiers.forEach((t, i) => put(t.price, `pricing.junkRemoval.tiers[${i}
 put(dumpsterRental.priceFrom, 'pricing.dumpsterRental.priceFrom');
 put(dumpsterRental.priceTo, 'pricing.dumpsterRental.priceTo');
 put(dumpsterRental.overagePerTon, 'pricing.dumpsterRental.overagePerTon');
+put(dumpsterRental.extendedRentalUsd, 'pricing.dumpsterRental.extendedRentalUsd');
+put(dumpsterRental.lateFeePerDayUsd, 'pricing.dumpsterRental.lateFeePerDayUsd');
 dumpsterRental.sizes.forEach((s, i) => put(s.price, `pricing.dumpsterRental.sizes[${i}] (${s.size})`));
 put(dumpsterRental.prohibitedItems.surchargeUsd, 'pricing.dumpsterRental.prohibitedItems.surchargeUsd');
 
