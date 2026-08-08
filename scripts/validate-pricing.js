@@ -27,12 +27,25 @@
  *      document the pricing a customer asks about, not the full price list.
  *      The prohibited-items surcharge, for one, has no FAQ entry today.
  *
- *   3. NO HARDCODED PRICES IN src/ — every "$N" in a .ts/.tsx file must also be
- *      a price services.json defines. Components are supposed to derive prices
- *      through the @/data helpers; a literal that agrees with services.json
- *      today will silently disagree the moment a price moves. This is how
- *      CityDumpsterPage.tsx once carried a retyped "$100" surcharge across 12
- *      live pages (see DECISIONS.md).
+ *   3. NO HARDCODED PRICES IN src/ — ANY "$N" in a .ts/.tsx file fails,
+ *      regardless of its value. Not "any price services.json doesn't define" —
+ *      any price literal at all.
+ *
+ *      The stricter form is the point. A literal that AGREES with
+ *      services.json is not safe, it is unenforced: agreement is not
+ *      derivation. That is precisely the pre-refactor state of
+ *      CityDumpsterPage.tsx, which carried a retyped "$100" surcharge and the
+ *      18yd/21yd rates that happened to match services.json exactly — and
+ *      would have gone silently stale across 12 live city pages the moment a
+ *      price moved, with no gate to catch it (see DECISIONS.md). A rule that
+ *      only checks values cannot distinguish a correct literal from a derived
+ *      one, so it would have passed that code unchanged.
+ *
+ *      Components have no legitimate need for a price literal: every price
+ *      reaches the page through the @/data helpers (prohibitedItemsSurcharge,
+ *      dumpsterRentalNotes, resolvePriceTemplate, formatUsd). There are zero
+ *      such literals in src/ today, so this rule costs nothing to hold and
+ *      fails loudly the first time someone reintroduces one.
  *
  *      Comments are excluded — the helper docblocks in src/data/index.ts cite
  *      example values like "$100" and are documentation, not rendered output.
@@ -280,24 +293,23 @@ for (const file of [FAQS, LLMS]) {
 // Rule 3 — no hardcoded prices in src/. Components derive through @/data; a
 // literal that matches services.json today drifts the moment a price changes.
 //
-// Scope note: this fails on a src/ literal that services.json does NOT define.
-// A literal that happens to agree with services.json today (a hardcoded "$495")
-// passes, even though nothing keeps it in sync once the price moves. Catching
-// those too would mean failing on every "$N" in src/, which is enforceable —
-// there are legitimately zero today, since components derive through @/data —
-// but it is a stricter gate than specified, so it is not applied unilaterally.
+// Note there is no canonical-value check here, unlike rules 0 and 1. Whether
+// the literal matches services.json is irrelevant: a matching literal is an
+// unenforced coincidence, not a derivation, and it goes stale the moment the
+// price moves. Every "$N" fails.
 const sourceFiles = listSourceFiles(SRC);
 for (const file of sourceFiles) {
   for (const hit of pricesInSourceFile(file)) {
-    if (!canonical.has(hit.value)) {
-      errors.push({
-        file: rel(file),
-        line: hit.line,
-        value: hit.value,
-        text: hit.text,
-        why: 'hardcoded price literal in src/ that services.json does not define — derive it through the @/data helpers instead',
-      });
-    }
+    const matches = canonical.has(hit.value);
+    errors.push({
+      file: rel(file),
+      line: hit.line,
+      value: hit.value,
+      text: hit.text,
+      why: matches
+        ? 'hardcoded price literal in src/. It agrees with services.json today, which is not the same as deriving from it — nothing keeps it in sync once the price moves. Derive it through the @/data helpers (prohibitedItemsSurcharge, dumpsterRentalNotes, resolvePriceTemplate)'
+        : 'hardcoded price literal in src/, and services.json does not even define this value. Derive it through the @/data helpers (prohibitedItemsSurcharge, dumpsterRentalNotes, resolvePriceTemplate)',
+    });
   }
 }
 
