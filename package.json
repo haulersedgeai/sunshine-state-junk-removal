@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/validate-pricing.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "validate-pricing": "node scripts/validate-pricing.js",
     "download-images": "node scripts/download-images.js"
   },
   "dependencies": {

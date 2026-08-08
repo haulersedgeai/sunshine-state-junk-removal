@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { getSite, getServices, getServiceAreas, getFaqs } from '@/data';
+import { getSite, getServices, getServiceAreas, getFaqs, prohibitedItemsIntro } from '@/data';
 import { pageMetadata } from '@/lib/seo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -119,7 +119,7 @@ export default function DumpsterHubPage() {
         <div className="container-p">
           <div className="rounded-3xl bg-white ring-1 ring-navy-100 p-8 sm:p-10 shadow-card">
             <p className="eyebrow">Prohibited items</p>
-            <p className="mt-3 text-ink-soft max-w-3xl">{services.pricing.dumpsterRental.prohibitedItems.intro}</p>
+            <p className="mt-3 text-ink-soft max-w-3xl">{prohibitedItemsIntro()}</p>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {services.pricing.dumpsterRental.prohibitedItems.items.map((it) => (
                 <li key={it} className="flex items-start gap-2 text-navy-800 text-sm">

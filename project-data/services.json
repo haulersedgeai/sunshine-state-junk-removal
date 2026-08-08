@@ -135,7 +135,8 @@
       ],
       "serviceArea": "Serving all of Broward and Palm Beach Counties. Miami-Dade available by appointment only — restrictions apply.",
       "prohibitedItems": {
-        "intro": "The following items are not accepted in our dumpsters. If any of these materials are found in the bin, the load will be returned to your job site and a $100 surcharge will apply:",
+        "surchargeUsd": 100,
+        "introTemplate": "The following items are not accepted in our dumpsters. If any of these materials are found in the bin, the load will be returned to your job site and a {surcharge} surcharge will apply:",
         "items": [
           "Appliances containing refrigerant (air conditioners, refrigerators, freezers)",
           "Tires and batteries",
