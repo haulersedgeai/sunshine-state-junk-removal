@@ -84,9 +84,9 @@
     },
     {
       "source": "/southwest-ranches/",
-      "destination": "/dumpster-rentals-in-southwest-ranches-florida/",
+      "destination": "/junk-removal/southwest-ranches/",
       "permanent": true,
-      "note": "Southwest Ranches has no junk-removal service-area page — the dumpster page is the only Southwest Ranches page on the site, so it is the only city-relevant target."
+      "note": "Retargeted 2026-08-08: 78ac761 sent this to the dump-trailer rental page on the reasoning that it was the only Southwest Ranches page on the site. That was true then, but the destination was the wrong service. The Wayback capture (web.archive.org/web/20260124231341) shows the legacy page was a junk-removal service page — h1 \"Southwest Ranches, Florida\", h2s \"WHAT WE OFFER\", \"JUNK REMOVAL IN SOUTHWEST RANCHES\", \"CLEANOUTS IN SOUTHWEST RANCHES\", \"WHY CHOOSE\", \"SERVICE PROCESS\" — so it was pointing junk-removal intent and equity at a dumpster-rental page. /junk-removal/southwest-ranches/ was built for this in the preceding commit and is the correct topical match. Deliberately not /locations/southwest-ranches/: that page is the yard address, not service information, and someone following an old service-page link wants the latter."
     },
     {
       "source": "/cooper-city/",
@@ -99,6 +99,54 @@
       "destination": "/weston/",
       "permanent": true,
       "note": "Legacy blog post. No dedicated construction-debris-removal service page exists, so per fallback rule this maps to the Weston service-area page, which preserves the post's local intent."
+    },
+    {
+      "source": "/transform-your-garage-with-sunshine-state-junk-removal-in-davie-florida/",
+      "destination": "/davie/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. Wayback h1: \"Transform Your Garage with Sunshine State Junk Removal in Davie, Florida\". Garage cleanouts with explicit Davie intent — the Davie service-area page preserves the local signal, matching how the Weston construction-debris post was handled."
+    },
+    {
+      "source": "/rental-property-cleanouts-with-sunshine-state-junk-removal-in-weston-florida/",
+      "destination": "/weston/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. Wayback h1: \"Rental Property Cleanouts with Sunshine State Junk Removal in Weston, Florida\". Same city and same shape as the construction-debris Weston post above, so it maps the same way."
+    },
+    {
+      "source": "/the-benefits-of-office-junk-removal-services-in-broward-county-florida/",
+      "destination": "/what-we-take/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. Commercial/office junk removal; /what-we-take/ is the page that covers commercial and office cleanouts. County-wide rather than city-specific, so no city page applies. NOTE: the Wayback capture for this URL returned an empty document, so unlike the others in this batch the topic is inferred from the slug rather than confirmed from archived content — operator-approved on that basis."
+    },
+    {
+      "source": "/keeping-your-yard-neat-and-tidy-with-sunshine-state-junk-removal/",
+      "destination": "/what-we-take/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. Wayback h1: \"Keeping Your Yard Neat and Tidy with Sunshine State Junk Removal\". Yard waste and brush removal, no city named. /what-we-take/ is the items page and covers yard debris; no yard-specific service page exists."
+    },
+    {
+      "source": "/sunshine-state-junk-removal-your-reliable-junk-removal-company-in-florida/",
+      "destination": "/what-we-take/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. Wayback h1: \"Sunshine State Junk Removal: Your Reliable Junk Removal Company in Florida\", but the body is a disposal guide — h2s \"List of Items That Can Be Recycled in Florida\", \"How to Recycle Old Electronics\", \"Where to Donate Old Clothes and Furniture\", \"How to Properly Dispose of Hazardous Materials\". /what-we-take/ is the closest match: it documents accepted items and, in the prohibited-items section, hazardous materials. The generic title would have suggested the homepage; the actual content does not."
+    },
+    {
+      "source": "/sunshine-state-removal-hauling-your-reliable-junk-removal-company-in-florida/",
+      "destination": "/what-we-take/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. A near-duplicate of the entry above under the company's former name (\"Removal & Hauling\" rather than \"Junk Removal\") — identical h2 structure covering recycling, electronics, donation, and hazardous disposal. Same destination for the same reason."
+    },
+    {
+      "source": "/declutter-your-life-with-sunshine-state-removal-hauling/",
+      "destination": "/what-we-take/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. Wayback h1: \"Declutter Your Life with Sunshine State Removal & Hauling\", h2s \"A Ray of Sunshine in Your Cluttered Life\", \"Meet the Sunshine State Removal & Hauling Team\", \"Services That Shine\", \"Contact Sunshine State Removal & Hauling\". Household decluttering framed around a services overview, so /what-we-take/ carries the primary intent. /about-us/ was considered for the team section and rejected — it is one of four sections, and the post's title and lead are about clearing clutter, not about the company."
+    },
+    {
+      "source": "/junk-removal-in-broward-county/",
+      "destination": "/",
+      "permanent": true,
+      "note": "Legacy blog post, orphaned 2026-08-08 audit. Wayback title: \"Junk Removal in Broward County - Sunshine State Removal & Hauling\". County-wide junk removal, which is exactly what the homepage is about (h1 covers junk removal and dump-trailer rentals in Broward County), so the homepage is the topical match here rather than a fallback. /service-areas/ was considered and rejected: it is a coverage index, while this post was about the service itself. Operator-approved."
     }
   ],
   "preLaunchChecklist": [
