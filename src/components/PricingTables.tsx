@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getServices } from '@/data';
+import { getServices, dumpsterRentalNotes } from '@/data';
 import { CheckIcon, ChevronRightIcon } from './Icon';
 
 export function PricingHookStrip({ variant = 'junk' }: { variant?: 'junk' | 'dumpster' }) {
@@ -113,7 +113,7 @@ export function DumpsterRentalPricingTable() {
       </div>
 
       <ul className="border-t border-navy-100 bg-sky-soft/40 px-6 sm:px-8 py-4 space-y-2 text-xs text-ink-soft">
-        {dr.notes.map((n) => (
+        {dumpsterRentalNotes().map((n) => (
           <li key={n} className="flex items-start gap-2">
             <span aria-hidden="true" className="mt-1.5 inline-block h-1 w-1 rounded-full bg-navy-400 shrink-0" />
             <span>{n}</span>
