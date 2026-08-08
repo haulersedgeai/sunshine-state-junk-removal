@@ -4,18 +4,20 @@ You are building a complete, production-ready website for **Sunshine State Junk 
 
 ## ⚠️ Deploy policy — READ FIRST
 
-**This is a LIVE CLIENT SITE on a real public domain: `https://www.sunshineremoval.com`.** Real visitors hit it. Any bad deploy is visible to the client and to the world immediately.
+**This is a LIVE CLIENT SITE on a real public domain: `https://www.sunshineremoval.com`.** Real visitors hit it. Anything that reaches `main` is visible to the client and to the world within about a minute.
 
-**Rules (non-negotiable):**
+**How deployment actually works here.** The Vercel project is git-linked with Production Branch = `main`, and there is **no manual promotion gate**. Pushing to `main` — including via a merge — builds and ships production automatically. Verified 2026-08-08: production went live roughly 30 seconds after the push. There is no preview step in between, no approval prompt, and nothing to click.
 
-1. **Never deploy to production.** Production promotion is a human decision, performed manually by the operator. Full stop.
-2. **Never run `vercel --prod`, `vercel deploy --prod`, `vercel promote`, or `vercel deploy` from the CLI at all** while on the `main` branch or in a linked directory whose Production Branch is `main`. The CLI happily ships to prod from a linked project — treat `vercel deploy` as a production command and do not use it.
-3. The assistant may merge branches into main when the operator explicitly instructs it to do so in-session. Merging without explicit instruction remains prohibited.
-4. **Do not merge to `main`.** Opening a PR is fine (it also produces a preview). Merging is the operator's call, and merging = production deploy.
-5. **Any earlier language in this file that says "deploy to Vercel," "print the live URL," or otherwise implies autonomous production deploys is superseded by this section.** That language was written before the site went live.
-6. **Rollback (operator use, for reference)**: `vercel rollback <deployment-url>` — or use the Vercel dashboard's "Instant Rollback" on the previous production deployment. Do not run rollback yourself unless explicitly told to.
+**Rules:**
 
-**How to know you're safe:** if the deployment URL you're about to report contains a random hash slug like `sunshine-state-junk-removal-abc123xyz.vercel.app` AND `vercel inspect` shows `target: preview` AND `www.sunshineremoval.com` is NOT in its Aliases list, you're on a preview. If any of those aren't true, stop and flag it.
+1. **Claude Code is authorized to push and merge to `main` directly.** No PR, no preview gate, no wait for a human to promote. This is a deliberate grant from the operator, not an inference from silence.
+2. **Merging to `main` ships to production.** Treat every merge as a production deploy, because it is one. There is no separate deploy step to be careful about later — the merge *is* the careful moment.
+3. **Never run `vercel --prod`, `vercel deploy --prod`, `vercel promote`, or `vercel deploy` from the CLI.** This restriction survives the change above and is not a leftover. Rule 1 authorizes deploying *through git*, where every shipped change is a reviewable commit with a message and a diff. The CLI bypasses that: it can ship uncommitted local state, leaves no record of what went out, and produces a production deployment that matches no commit in history. Deploy by merging, always.
+4. **Green build before merge, verification after.** Preview deployments no longer stand between a mistake and the public, so the local build is the only gate that exists. Run `npm run build` (which runs the pricing-integrity `prebuild` gate) and confirm it passes before merging. After the deploy lands, verify the actual change against the live site with `curl` — status codes for redirect work, rendered HTML for content work. A merge is not finished until production has been checked.
+5. **Ordinary work ships; consequential work gets flagged first.** Content, copy, SEO, redirects, data, and refactors are routine — do them and merge. Pause and surface it when the change is hard to reverse or hard to notice: anything touching NAP/business identity, pricing customers are quoted, canonical/indexation logic, or the deploy configuration itself. Judgment about *when to ask* is the real safety mechanism now that the preview gate is gone.
+6. **Rollback**: `vercel rollback <deployment-url>`, or the Vercel dashboard's "Instant Rollback" on the previous production deployment. If a merge breaks production, say so immediately and plainly — do not quietly patch forward and hope the next deploy covers it.
+
+**Superseded language.** Earlier revisions of this file said "never deploy to production," "do not merge to `main`," and "push to a feature branch and report the preview URL." Those were written when production promotion was manual. They are obsolete and contradicted themselves (an old rule 3 permitted operator-instructed merges while rule 4 forbade merging outright). Anywhere else in this file that implies a preview-only workflow is superseded by this section.
 
 ---
 
@@ -41,7 +43,13 @@ You are building a complete, production-ready website for **Sunshine State Junk 
 
 ## How to work (autonomy directive)
 
-Build the entire site end-to-end. Do not stop to ask small questions — make reasonable decisions, note them inline in a `DECISIONS.md`, and keep moving. Only surface **blockers** (missing credentials, or the two flagged data conflicts in `site.json`). Work in this order and check off `BUILD_PLAN` as you go. When finished: push to a feature branch, let Vercel build the **preview** deployment, and print the preview URL + a short "what I built / what needs your input" summary. **Do not deploy to production** — see Deploy policy above.
+Do not stop to ask small questions — make reasonable decisions, note them in `DECISIONS.md`, and keep moving. Surface **blockers** (missing credentials, the two flagged data conflicts in `site.json`) and the consequential-change cases in Deploy policy rule 5.
+
+**Shipping is part of the task, not a separate approval step.** The site is built and live; work now arrives as changes to it. Unless told otherwise, carry a change all the way through: branch, commit with a message that explains *why*, build green, merge to `main`, and verify against production once the deploy lands. Merging ships to production automatically — see Deploy policy above. Then report what went live, what you verified, and what needs the operator's input.
+
+Work on a feature branch and merge it rather than committing straight to `main`, so every change is a reviewable unit with a real commit message. Opening a PR is optional, not required.
+
+**Check the premise before executing.** Instructions written from memory of this repo are often stale — several have described work that was already shipped, or assumed a page was 404ing when it was redirecting. Verify the current state first (`git log -S`, the live site, `redirects.json`), and if the request's premise turns out to be wrong, say so and stop rather than implementing against a false picture.
 
 Everything factual about the business lives in `/project-data/*.json`. **Treat those files as the source of truth. Do not invent NAP, hours, services, prices, or reviews.** If it's not in the data and you need it, add a clearly-labeled `TODO(client)` rather than guessing.
 
@@ -198,13 +206,13 @@ QUOTE_TO_EMAIL=info@sunshineremoval.com
 
 ## Deploy (do this yourself)
 
-> **⚠️ SUPERSEDED by the "Deploy policy" at the top of this file.** The site is now live. Do not run `vercel --prod`, `vercel promote`, or `vercel deploy` from the CLI. The steps below described the initial launch and are kept for historical context only. For any further work: create a feature branch, push, and report the preview URL — production is not yours to promote.
+> **⚠️ Historical — see "Deploy policy" at the top of this file for current rules.** The steps below describe the one-time initial launch and are kept only as a record of how the project was wired up. The CLI prohibition still stands: do not run `vercel --prod`, `vercel promote`, or `vercel deploy`. Ongoing work deploys by merging to `main`.
 
 1. ~~`git init`, sensible `.gitignore`, initial commit.~~ (done — repo exists at `github.com/haulersedgeai/sunshine-state-junk-removal`)
 2. ~~Create a GitHub repo.~~ (done)
 3. ~~Deploy to Vercel (`vercel --prod` if the CLI is authed, or connect the GitHub repo in Vercel). Set the env vars above in Vercel.~~ (done — Vercel is git-linked; Production Branch = `main`. **Do NOT run `vercel --prod`.**)
 4. ~~Keep the production **domain unchanged** (`sunshineremoval.com`).~~ (done — DNS is live on the production Vercel deployment)
-5. Ongoing: push feature branches → report **preview** URLs. Production promotion is manual/human-only.
+5. Ongoing: branch → commit → build green → merge to `main`, which deploys production automatically. Verify against the live site afterward. See Deploy policy at the top.
 
 ---
 
