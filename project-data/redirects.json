@@ -84,9 +84,9 @@
     },
     {
       "source": "/southwest-ranches/",
-      "destination": "/dumpster-rentals-in-southwest-ranches-florida/",
+      "destination": "/junk-removal/southwest-ranches/",
       "permanent": true,
-      "note": "Southwest Ranches has no junk-removal service-area page — the dumpster page is the only Southwest Ranches page on the site, so it is the only city-relevant target."
+      "note": "Retargeted 2026-08-08: 78ac761 sent this to the dump-trailer rental page on the reasoning that it was the only Southwest Ranches page on the site. That was true then, but the destination was the wrong service. The Wayback capture (web.archive.org/web/20260124231341) shows the legacy page was a junk-removal service page — h1 \"Southwest Ranches, Florida\", h2s \"WHAT WE OFFER\", \"JUNK REMOVAL IN SOUTHWEST RANCHES\", \"CLEANOUTS IN SOUTHWEST RANCHES\", \"WHY CHOOSE\", \"SERVICE PROCESS\" — so it was pointing junk-removal intent and equity at a dumpster-rental page. /junk-removal/southwest-ranches/ was built for this in the preceding commit and is the correct topical match. Deliberately not /locations/southwest-ranches/: that page is the yard address, not service information, and someone following an old service-page link wants the latter."
     },
     {
       "source": "/cooper-city/",
