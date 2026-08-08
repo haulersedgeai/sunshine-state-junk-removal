@@ -78,9 +78,9 @@
     },
     {
       "source": "/home-junk-removal/",
-      "destination": "/what-we-take/",
+      "destination": "/",
       "permanent": true,
-      "note": "No residential/household junk removal service page exists. /what-we-take/ is the closest topical match — it is the household/residential items page and explicitly covers residential, commercial, renovation, and cleanout items."
+      "note": "Legacy WordPress duplicate-homepage path, a sibling of /home-2/. Retargeted 2026-08-08: 78ac761 originally sent this to /what-we-take/ on the assumption it was a residential junk-removal service page. The Wayback capture (web.archive.org/web/20260125000341) disproves that — the page's h1 is \"Home\" and the body is the old homepage (hero, 3-step process, service areas), with title \"No. 1 and Reliable Junk Removal and Hauling Sunshine State Removal & Hauling\". The homepage is therefore the true topical equivalent, and the old mapping was sending homepage-level equity to a subpage."
     },
     {
       "source": "/southwest-ranches/",

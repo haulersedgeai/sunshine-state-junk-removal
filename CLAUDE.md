@@ -19,6 +19,26 @@ You are building a complete, production-ready website for **Sunshine State Junk 
 
 ---
 
+## ⚠️ Pricing integrity — HARD RULE
+
+**Pricing lives in three places that must never disagree.** A customer who is quoted one price on the pricing page, a different one in an FAQ, and a third by an AI assistant reading `llms.txt` is a real-world billing dispute, not a cosmetic bug.
+
+| File | Role |
+| --- | --- |
+| `project-data/services.json` | **Canonical.** Every price originates here. |
+| `project-data/faqs.json` | Restates prices as prose in answer copy. Cannot derive at runtime. |
+| `public/llms.txt` | Static file served verbatim to AI crawlers. Cannot derive at runtime. |
+
+**Rules (non-negotiable):**
+
+1. **Any pricing change updates all three files in the same commit.** Never split a price change across commits — an intermediate commit that ships an inconsistent price is the exact failure this rule exists to prevent.
+2. **`services.json` is the only place a price may originate.** Everything under `src/` must read it through the `@/data` helpers. Do not hardcode a price, and do not restate one in a component's prose — interpolate it (see `prohibitedItemsIntro()` / `prohibitedItemsSurcharge()` in `src/data/index.ts` for the pattern).
+3. **Prices belong in discrete numeric fields**, not buried inside prose strings. When a price appears in a sentence, store the number as its own field and store the sentence as a template with a placeholder.
+4. **`npm run prebuild` enforces this** via `scripts/validate-pricing.js`, which runs automatically before `next build` and **fails the build** on any mismatch. It is a gate, not a warning — do not bypass it, and do not "fix" a failure by editing the script's allowlist. Fix the data. Run it standalone with `npm run validate-pricing`.
+5. When adding a new price, add it to `services.json` first, then propagate. The validator requires every structured price to appear in `llms.txt`, so a price the AI crawlers can't see will fail the build.
+
+---
+
 ## How to work (autonomy directive)
 
 Build the entire site end-to-end. Do not stop to ask small questions — make reasonable decisions, note them inline in a `DECISIONS.md`, and keep moving. Only surface **blockers** (missing credentials, or the two flagged data conflicts in `site.json`). Work in this order and check off `BUILD_PLAN` as you go. When finished: push to a feature branch, let Vercel build the **preview** deployment, and print the preview URL + a short "what I built / what needs your input" summary. **Do not deploy to production** — see Deploy policy above.

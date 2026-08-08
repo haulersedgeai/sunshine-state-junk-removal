@@ -22,6 +22,36 @@ export const getReviews = (): Reviews => reviews as Reviews;
 export const getImages = (): Images => images as Images;
 export const getRedirects = () => redirects;
 
+// ---------------------------------------------------------------------------
+// Pricing derivation
+//
+// services.json is the single source of truth for every price on the site.
+// Prose that quotes a price must derive it from a structured field rather than
+// restating the literal, so a price change is a one-line edit in one file.
+//
+// The prohibited-items surcharge lives in `prohibitedItems.surchargeUsd`; the
+// sentence that quotes it is stored as `introTemplate` with a {surcharge}
+// placeholder. Rendering the template raw would leak the placeholder to the
+// page, which is why the key is named `introTemplate` and not `intro` — a raw
+// render is then obviously wrong at the call site instead of silently shipping.
+//
+// scripts/validate-pricing.js enforces the two files that cannot derive
+// (faqs.json, public/llms.txt) against this file at prebuild time.
+// ---------------------------------------------------------------------------
+
+export const formatUsd = (amount: number): string => `$${amount}`;
+
+/** The prohibited-items surcharge, as a formatted string (e.g. "$100"). */
+export const prohibitedItemsSurcharge = (): string =>
+  formatUsd((services as Services).pricing.dumpsterRental.prohibitedItems.surchargeUsd);
+
+/** The prohibited-items intro sentence with the live surcharge interpolated. */
+export const prohibitedItemsIntro = (): string =>
+  (services as Services).pricing.dumpsterRental.prohibitedItems.introTemplate.replace(
+    '{surcharge}',
+    prohibitedItemsSurcharge()
+  );
+
 export type JunkRemovalCity = {
   slug: string;
   city: string;
