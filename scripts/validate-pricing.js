@@ -13,7 +13,7 @@
  * Those are the files this script polices. Everything under src/ derives from
  * services.json through @/data helpers and needs no checking.
  *
- * Two rules, both hard failures:
+ * Three rules, all hard failures:
  *
  *   1. NO STALE PRICES — every "$N" appearing in faqs.json or llms.txt must be
  *      a price that exists in services.json. Change 495 -> 550 in services.json
@@ -26,6 +26,25 @@
  *      This rule is deliberately NOT applied to faqs.json: the FAQ answers
  *      document the pricing a customer asks about, not the full price list.
  *      The prohibited-items surcharge, for one, has no FAQ entry today.
+ *
+ *   3. NO HARDCODED PRICES IN src/ — every "$N" in a .ts/.tsx file must also be
+ *      a price services.json defines. Components are supposed to derive prices
+ *      through the @/data helpers; a literal that agrees with services.json
+ *      today will silently disagree the moment a price moves. This is how
+ *      CityDumpsterPage.tsx once carried a retyped "$100" surcharge across 12
+ *      live pages (see DECISIONS.md).
+ *
+ *      Comments are excluded — the helper docblocks in src/data/index.ts cite
+ *      example values like "$100" and are documentation, not rendered output.
+ *      Strings are NOT excluded: `Price is $495` in a template literal is
+ *      exactly the hardcoded price this rule exists to catch.
+ *
+ * On false positives: this scans for "$" followed by digits, so phone numbers
+ * (954-247-1399), dates, review counts (159), dimensions (14 ft), and yardage
+ * ("18 Yard") cannot match — none carry a dollar sign. Template interpolation
+ * is also safe: `${x}` and `$${x}` have no digit after the "$". If a genuine
+ * non-price "$N" ever does appear, REPORT IT rather than adding an allowlist
+ * entry — an allowlist here would reopen the hole this rule closes.
  */
 
 const fs = require('fs');
@@ -35,6 +54,7 @@ const ROOT = path.join(__dirname, '..');
 const SERVICES = path.join(ROOT, 'project-data/services.json');
 const FAQS = path.join(ROOT, 'project-data/faqs.json');
 const LLMS = path.join(ROOT, 'public/llms.txt');
+const SRC = path.join(ROOT, 'src');
 
 const rel = (p) => path.relative(ROOT, p);
 
@@ -70,6 +90,121 @@ function pricesInFile(file) {
       hits.push({ value, line: i + 1, text: line.trim() });
     }
   });
+  return hits;
+}
+
+/** Every .ts/.tsx file under src/, recursively. */
+function listSourceFiles(dir) {
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...listSourceFiles(full));
+    else if (/\.tsx?$/.test(entry.name)) out.push(full);
+  }
+  return out.sort();
+}
+
+/**
+ * Blank out comments in TS/TSX source, preserving length so match offsets still
+ * map to the right line, and preserving string contents so a hardcoded price
+ * inside a string is still caught.
+ *
+ * This tracks strings and regex literals rather than naively stripping from
+ * "//", because both appear in this codebase and would break a naive stripper:
+ * layout.tsx embeds 'https://www.googletagmanager.com/...' inside a string, and
+ * src/data/index.ts contains the regex /^https?:\/\/sunshineremoval\.com/i.
+ * Treating either "//" as a comment would blank the rest of the line and hide
+ * whatever followed.
+ *
+ * Not handled: code inside `${...}` within a template literal is treated as
+ * string content, so a comment there is not blanked. That only risks a false
+ * positive from a commented-out price inside an interpolation — vanishingly
+ * rare, and it would surface as a reported finding rather than a silent pass.
+ */
+function maskComments(source) {
+  const out = source.split('');
+  const blank = (i) => {
+    if (out[i] !== '\n') out[i] = ' ';
+  };
+  // Whether a "/" here begins a regex literal rather than division, judged by
+  // the previous significant character.
+  const regexCanStart = (i) => {
+    for (let j = i - 1; j >= 0; j--) {
+      const c = source[j];
+      if (/\s/.test(c)) continue;
+      return '(,=:[!&|?{};+-*%~^'.includes(c);
+    }
+    return true;
+  };
+
+  let i = 0;
+  while (i < source.length) {
+    const c = source[i];
+    const next = source[i + 1];
+
+    if (c === '/' && next === '/') {
+      while (i < source.length && source[i] !== '\n') blank(i++);
+      continue;
+    }
+    if (c === '/' && next === '*') {
+      blank(i++);
+      blank(i++);
+      while (i < source.length && !(source[i] === '*' && source[i + 1] === '/')) blank(i++);
+      if (i < source.length) {
+        blank(i++);
+        blank(i++);
+      }
+      continue;
+    }
+    if (c === "'" || c === '"' || c === '`') {
+      const quote = c;
+      i++;
+      while (i < source.length) {
+        if (source[i] === '\\') { i += 2; continue; }
+        if (source[i] === quote) { i++; break; }
+        // An unterminated single/double quote ends at the newline.
+        if (quote !== '`' && source[i] === '\n') break;
+        i++;
+      }
+      continue;
+    }
+    if (c === '/' && regexCanStart(i)) {
+      i++;
+      while (i < source.length) {
+        if (source[i] === '\\') { i += 2; continue; }
+        if (source[i] === '/' || source[i] === '\n') { i++; break; }
+        i++;
+      }
+      continue;
+    }
+    i++;
+  }
+  return out.join('');
+}
+
+/** Every "$N" in a source file, ignoring comments, with line numbers. */
+function pricesInSourceFile(file) {
+  const raw = fs.readFileSync(file, 'utf8');
+  const masked = maskComments(raw);
+  const lines = raw.split('\n');
+  const lineStarts = [];
+  let pos = 0;
+  for (const line of lines) {
+    lineStarts.push(pos);
+    pos += line.length + 1;
+  }
+  const hits = [];
+  for (const m of masked.matchAll(PRICE_RE)) {
+    let lineNo = lineStarts.findIndex((start, idx) =>
+      m.index >= start && (idx === lineStarts.length - 1 || m.index < lineStarts[idx + 1])
+    );
+    if (lineNo < 0) lineNo = 0;
+    hits.push({
+      value: Number(m[1].replace(/,/g, '')),
+      line: lineNo + 1,
+      text: lines[lineNo].trim(),
+    });
+  }
   return hits;
 }
 
@@ -142,6 +277,30 @@ for (const file of [FAQS, LLMS]) {
   }
 }
 
+// Rule 3 — no hardcoded prices in src/. Components derive through @/data; a
+// literal that matches services.json today drifts the moment a price changes.
+//
+// Scope note: this fails on a src/ literal that services.json does NOT define.
+// A literal that happens to agree with services.json today (a hardcoded "$495")
+// passes, even though nothing keeps it in sync once the price moves. Catching
+// those too would mean failing on every "$N" in src/, which is enforceable —
+// there are legitimately zero today, since components derive through @/data —
+// but it is a stricter gate than specified, so it is not applied unilaterally.
+const sourceFiles = listSourceFiles(SRC);
+for (const file of sourceFiles) {
+  for (const hit of pricesInSourceFile(file)) {
+    if (!canonical.has(hit.value)) {
+      errors.push({
+        file: rel(file),
+        line: hit.line,
+        value: hit.value,
+        text: hit.text,
+        why: 'hardcoded price literal in src/ that services.json does not define — derive it through the @/data helpers instead',
+      });
+    }
+  }
+}
+
 // Rule 2 — no structured price missing from llms.txt.
 const inLlms = new Set(pricesInFile(LLMS).map((h) => h.value));
 for (const [value, labels] of structured) {
@@ -182,4 +341,7 @@ if (errors.length) {
 }
 
 const checked = structured.size + PROSE_ONLY.size;
-console.log(`✓ pricing integrity: ${checked} prices consistent across services.json, faqs.json, llms.txt`);
+console.log(
+  `✓ pricing integrity: ${checked} prices consistent across services.json, faqs.json, llms.txt` +
+    ` — no hardcoded prices in ${sourceFiles.length} src/ files`
+);
